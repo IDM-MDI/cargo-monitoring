@@ -47,10 +47,6 @@ public class Cargo {
     @ToString.Exclude
     private Company company;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "type", nullable = false)
-    private CargoType type;
-
     @OneToOne
     @JoinColumn(name = "cargo_content_id", nullable = false)
     @ToString.Exclude
@@ -64,12 +60,16 @@ public class Cargo {
     @ToString.Exclude
     private Airport departureAirport;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "status", nullable = false)
-    private CargoStatus status;
-
     @ManyToOne
     @JoinColumn(name = "pointcut_id", nullable = false)
     @ToString.Exclude
     private Pointcut pointcut;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type", nullable = false)
+    private CargoType type;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    private CargoStatus status;
 }
