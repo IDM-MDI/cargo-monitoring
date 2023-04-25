@@ -1,0 +1,761 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1682443315358-1
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_accepted_cargos
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: employee_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: cargo_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: time
+                  type: DATETIME
+            tableName: accepted_cargos
+  - changeSet:
+      id: 1682443315358-2
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_airports
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: company_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: origin_id
+                  type: BIGINT
+            tableName: airports
+  - changeSet:
+      id: 1682443315358-3
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_authentications
+                  name: login
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: password
+                  type: VARCHAR(255)
+            tableName: authentications
+  - changeSet:
+      id: 1682443315358-4
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_cargo_contents
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: weight
+                  type: DOUBLE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: height
+                  type: DOUBLE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: width
+                  type: DOUBLE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: length
+                  type: DOUBLE
+            tableName: cargo_contents
+  - changeSet:
+      id: 1682443315358-5
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_cargos
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: person_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: company_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: cargo_content_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: arrival_time
+                  type: DATETIME
+              - column:
+                  constraints:
+                    nullable: false
+                  name: departure_airport_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: pointcut_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: type
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+            tableName: cargos
+  - changeSet:
+      id: 1682443315358-6
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_cities
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+            tableName: cities
+  - changeSet:
+      id: 1682443315358-7
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_companies
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: origin_name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: public_data_id
+                  type: BIGINT
+            tableName: companies
+  - changeSet:
+      id: 1682443315358-8
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_countries
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+            tableName: countries
+  - changeSet:
+      id: 1682443315358-9
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_declined_cargos
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: employee_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: cargo_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: reason
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: time
+                  type: DATETIME
+            tableName: declined_cargos
+  - changeSet:
+      id: 1682443315358-10
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_employees
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: authentication_id
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: position_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: client_person_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: salary
+                  type: DECIMAL
+              - column:
+                  constraints:
+                    nullable: false
+                  name: start_work
+                  type: DATE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: pointcut_id
+                  type: BIGINT
+            tableName: employees
+  - changeSet:
+      id: 1682443315358-11
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_origins
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: country_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: city_id
+                  type: BIGINT
+            tableName: origins
+  - changeSet:
+      id: 1682443315358-12
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_pointcuts
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: surname
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: lastname
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: birthday
+                  type: DATE
+              - column:
+                  constraints:
+                    nullable: false
+                  name: origin_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: gender
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: public_data_id
+                  type: BIGINT
+            tableName: pointcuts
+  - changeSet:
+      id: 1682443315358-13
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_positions
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: name
+                  type: VARCHAR(255)
+            tableName: positions
+  - changeSet:
+      id: 1682443315358-14
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_public_data
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: phone
+                  type: VARCHAR(255)
+            tableName: public_data
+  - changeSet:
+      id: 1682443315358-15
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: password
+            constraintName: uc_authentications_password
+            tableName: authentications
+  - changeSet:
+      id: 1682443315358-16
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_cities_name
+            tableName: cities
+  - changeSet:
+      id: 1682443315358-17
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_companies_name
+            tableName: companies
+  - changeSet:
+      id: 1682443315358-18
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: origin_name
+            constraintName: uc_companies_origin_name
+            tableName: companies
+  - changeSet:
+      id: 1682443315358-19
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_countries_name
+            tableName: countries
+  - changeSet:
+      id: 1682443315358-20
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: lastname
+            constraintName: uc_pointcuts_lastname
+            tableName: pointcuts
+  - changeSet:
+      id: 1682443315358-21
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_pointcuts_name
+            tableName: pointcuts
+  - changeSet:
+      id: 1682443315358-22
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: surname
+            constraintName: uc_pointcuts_surname
+            tableName: pointcuts
+  - changeSet:
+      id: 1682443315358-23
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: name
+            constraintName: uc_positions_name
+            tableName: positions
+  - changeSet:
+      id: 1682443315358-24
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: email
+            constraintName: uc_public_data_email
+            tableName: public_data
+  - changeSet:
+      id: 1682443315358-25
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addUniqueConstraint:
+            columnNames: phone
+            constraintName: uc_public_data_phone
+            tableName: public_data
+  - changeSet:
+      id: 1682443315358-26
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: cargo_id
+            baseTableName: accepted_cargos
+            constraintName: FK_ACCEPTED_CARGOS_ON_CARGO
+            referencedColumnNames: id
+            referencedTableName: cargos
+  - changeSet:
+      id: 1682443315358-27
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: employee_id
+            baseTableName: accepted_cargos
+            constraintName: FK_ACCEPTED_CARGOS_ON_EMPLOYEE
+            referencedColumnNames: id
+            referencedTableName: employees
+  - changeSet:
+      id: 1682443315358-28
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: company_id
+            baseTableName: airports
+            constraintName: FK_AIRPORTS_ON_COMPANY
+            referencedColumnNames: id
+            referencedTableName: companies
+  - changeSet:
+      id: 1682443315358-29
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: origin_id
+            baseTableName: airports
+            constraintName: FK_AIRPORTS_ON_ORIGIN
+            referencedColumnNames: id
+            referencedTableName: origins
+  - changeSet:
+      id: 1682443315358-30
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: cargo_content_id
+            baseTableName: cargos
+            constraintName: FK_CARGOS_ON_CARGO_CONTENT
+            referencedColumnNames: id
+            referencedTableName: cargo_contents
+  - changeSet:
+      id: 1682443315358-31
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: company_id
+            baseTableName: cargos
+            constraintName: FK_CARGOS_ON_COMPANY
+            referencedColumnNames: id
+            referencedTableName: companies
+  - changeSet:
+      id: 1682443315358-32
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: departure_airport_id
+            baseTableName: cargos
+            constraintName: FK_CARGOS_ON_DEPARTURE_AIRPORT
+            referencedColumnNames: id
+            referencedTableName: airports
+  - changeSet:
+      id: 1682443315358-33
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: person_id
+            baseTableName: cargos
+            constraintName: FK_CARGOS_ON_PERSON
+            referencedColumnNames: id
+            referencedTableName: pointcuts
+  - changeSet:
+      id: 1682443315358-34
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: pointcut_id
+            baseTableName: cargos
+            constraintName: FK_CARGOS_ON_POINTCUT
+            referencedColumnNames: id
+            referencedTableName: pointcuts
+  - changeSet:
+      id: 1682443315358-35
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: public_data_id
+            baseTableName: companies
+            constraintName: FK_COMPANIES_ON_PUBLIC_DATA
+            referencedColumnNames: id
+            referencedTableName: public_data
+  - changeSet:
+      id: 1682443315358-36
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: cargo_id
+            baseTableName: declined_cargos
+            constraintName: FK_DECLINED_CARGOS_ON_CARGO
+            referencedColumnNames: id
+            referencedTableName: cargos
+  - changeSet:
+      id: 1682443315358-37
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: employee_id
+            baseTableName: declined_cargos
+            constraintName: FK_DECLINED_CARGOS_ON_EMPLOYEE
+            referencedColumnNames: id
+            referencedTableName: employees
+  - changeSet:
+      id: 1682443315358-38
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: authentication_id
+            baseTableName: employees
+            constraintName: FK_EMPLOYEES_ON_AUTHENTICATION
+            referencedColumnNames: login
+            referencedTableName: authentications
+  - changeSet:
+      id: 1682443315358-39
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: client_person_id
+            baseTableName: employees
+            constraintName: FK_EMPLOYEES_ON_CLIENT_PERSON
+            referencedColumnNames: id
+            referencedTableName: pointcuts
+  - changeSet:
+      id: 1682443315358-40
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: pointcut_id
+            baseTableName: employees
+            constraintName: FK_EMPLOYEES_ON_POINTCUT
+            referencedColumnNames: id
+            referencedTableName: pointcuts
+  - changeSet:
+      id: 1682443315358-41
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: position_id
+            baseTableName: employees
+            constraintName: FK_EMPLOYEES_ON_POSITION
+            referencedColumnNames: id
+            referencedTableName: positions
+  - changeSet:
+      id: 1682443315358-42
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: city_id
+            baseTableName: origins
+            constraintName: FK_ORIGINS_ON_CITY
+            referencedColumnNames: id
+            referencedTableName: cities
+  - changeSet:
+      id: 1682443315358-43
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: country_id
+            baseTableName: origins
+            constraintName: FK_ORIGINS_ON_COUNTRY
+            referencedColumnNames: id
+            referencedTableName: countries
+  - changeSet:
+      id: 1682443315358-44
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: origin_id
+            baseTableName: pointcuts
+            constraintName: FK_POINTCUTS_ON_ORIGIN
+            referencedColumnNames: id
+            referencedTableName: origins
+  - changeSet:
+      id: 1682443315358-45
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: public_data_id
+            baseTableName: pointcuts
+            constraintName: FK_POINTCUTS_ON_PUBLIC_DATA
+            referencedColumnNames: id
+            referencedTableName: public_data
+
