@@ -1,0 +1,20 @@
+package by.ishangulyyev.backend.model;
+
+import by.ishangulyyev.backend.entity.Position;
+import by.ishangulyyev.backend.entity.type.EmployeeStatus;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class EmployeePage {
+    private Long id;
+    private String name;
+    private String surname;
+    private Position position;
+    private EmployeeStatus status;
+}

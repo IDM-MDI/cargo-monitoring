@@ -77,7 +77,7 @@ public class Employee {
     private List<DeclinedCargo> declinedCargos;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pointcut_id", nullable = false)
+    @JoinColumn(name = "pointcut_id")
     @ToString.Exclude
     private Pointcut pointcut;
 
