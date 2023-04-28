@@ -23,7 +23,7 @@ import java.util.Objects;
 
 
 @Entity
-@Table(name = "pointcuts")
+@Table(name = "persons")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
