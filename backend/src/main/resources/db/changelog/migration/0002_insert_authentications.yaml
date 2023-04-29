@@ -2,7 +2,6 @@ databaseChangeLog:
   - changeSet:
       id: 3
       author: Dayanch
-      context: dev OR prod
       changes:
         - insert:
             tableName: authentications
