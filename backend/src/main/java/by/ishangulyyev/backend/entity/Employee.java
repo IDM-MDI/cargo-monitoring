@@ -42,17 +42,17 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "authentication_login", nullable = false)
     @ToString.Exclude
     private Authentication authentication;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "position_id", nullable = false)
     @ToString.Exclude
     private Position position;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "client_person_id", nullable = false)
     @ToString.Exclude
     private Person person;
@@ -75,10 +75,6 @@ public class Employee {
     @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<DeclinedCargo> declinedCargos;
-
-    @OneToOne(mappedBy = "employee")
-    @ToString.Exclude
-    private Pointcut pointcut;
 
     @Override
     public boolean equals(Object o) {

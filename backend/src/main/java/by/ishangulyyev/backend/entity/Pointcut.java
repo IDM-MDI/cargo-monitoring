@@ -39,7 +39,7 @@ public class Pointcut {
     @Column(name = "name",unique = true, updatable = true, nullable = false)
     private String name;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id")
     @ToString.Exclude
     private Employee employee;

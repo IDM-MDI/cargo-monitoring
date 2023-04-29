@@ -4,7 +4,7 @@ databaseChangeLog:
       author: Dayanch
       changes:
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -13,7 +13,7 @@ databaseChangeLog:
                   name: phone
                   value: +0-231-796-2408
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -22,7 +22,7 @@ databaseChangeLog:
                   name: phone
                   value: +322-274-957-4521
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -31,7 +31,7 @@ databaseChangeLog:
                   name: phone
                   value: +832-386-387-1418
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -40,7 +40,7 @@ databaseChangeLog:
                   name: phone
                   value: +832-648-906-0156
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -49,7 +49,7 @@ databaseChangeLog:
                   name: phone
                   value: +375-369-273-2008
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -58,7 +58,7 @@ databaseChangeLog:
                   name: phone
                   value: +375-777-233-2804
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email
@@ -67,7 +67,7 @@ databaseChangeLog:
                   name: phone
                   value: +0-884-300-6885
         - insert:
-            tableName: positions
+            tableName: public_data
             columns:
               - column:
                   name: email

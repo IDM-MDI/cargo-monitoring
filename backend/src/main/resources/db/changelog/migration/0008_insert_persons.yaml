@@ -20,7 +20,7 @@ databaseChangeLog:
                   value: Hogan
               - column:
                   name: birthday
-                  value: 07-05-1971
+                  value: '1971-07-05'
               - column:
                   name: gender
                   value: FEMALE
@@ -47,7 +47,7 @@ databaseChangeLog:
                   value: Sandy
               - column:
                   name: birthday
-                  value: 04-01-1970
+                  value: '1972-04-01'
               - column:
                   name: gender
                   value: MALE
@@ -74,7 +74,7 @@ databaseChangeLog:
                   value: Fairview
               - column:
                   name: birthday
-                  value: 09-02-1952
+                  value: '2000-09-02'
               - column:
                   name: gender
                   value: MALE
@@ -101,7 +101,7 @@ databaseChangeLog:
                   value: Stevens
               - column:
                   name: birthday
-                  value: 01-03-1996
+                  value: '1996-01-03'
               - column:
                   name: gender
                   value: MALE
@@ -128,7 +128,7 @@ databaseChangeLog:
                   value: Stelling
               - column:
                   name: birthday
-                  value: 09-05-1996
+                  value: '1996-09-05'
               - column:
                   name: gender
                   value: MALE
@@ -155,7 +155,7 @@ databaseChangeLog:
                   value: Cackson
               - column:
                   name: birthday
-                  value: 05-05-1946
+                  value: '1971-05-05'
               - column:
                   name: gender
                   value: MALE
@@ -182,7 +182,7 @@ databaseChangeLog:
                   value: Green
               - column:
                   name: birthday
-                  value: 05-04-1990
+                  value: '1990-05-04'
               - column:
                   name: gender
                   value: FEMALE
@@ -209,7 +209,7 @@ databaseChangeLog:
                   value: Red
               - column:
                   name: birthday
-                  value: 03-06-1980
+                  value: '1980-03-06'
               - column:
                   name: gender
                   value: FEMALE

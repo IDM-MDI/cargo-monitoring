@@ -32,7 +32,8 @@ public class RepositoryConfig {
                 .addMappings(mapping -> mapping.map(source -> source.getAuthentication().getLogin(),EmployeeDTO::setLogin));
         modelMapper.createTypeMap(Employee.class, EmployeePage.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getName(),EmployeePage::setName))
-                .addMappings(mapping -> mapping.map(source -> source.getPerson().getSurname(),EmployeePage::setSurname));
+                .addMappings(mapping -> mapping.map(source -> source.getPerson().getSurname(),EmployeePage::setSurname))
+                .addMappings(mapping -> mapping.map(source -> source.getPosition().getName(),EmployeePage::setPosition));
         modelMapper.createTypeMap(Cargo.class, CargoPage.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getName() + source.getPerson().getSurname(),CargoPage::setClient))
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getOrigin().getCountry().getName(),CargoPage::setCountry));
