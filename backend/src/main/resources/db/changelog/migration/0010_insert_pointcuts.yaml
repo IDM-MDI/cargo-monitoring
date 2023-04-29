@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 4
+      id: 11
       author: Dayanch
       changes:
         - insert:
@@ -15,6 +15,9 @@ databaseChangeLog:
               - column:
                   name: name
                   value: pointcut1
+              - column:
+                  name: employee_id
+                  value: edfc0704-44b0-4bb6-b927-6748a947dcc3
         - insert:
             tableName: pointcuts
             columns:
@@ -27,6 +30,9 @@ databaseChangeLog:
               - column:
                   name: name
                   value: pointcut2
+              - column:
+                  name: employee_id
+                  value: 636abe7a-5535-4f53-a83d-967ca41c4d87
         - insert:
             tableName: pointcuts
             columns:
@@ -39,6 +45,9 @@ databaseChangeLog:
               - column:
                   name: name
                   value: pointcut3
+              - column:
+                  name: employee_id
+                  value: 1f57ca84-1a7b-4f40-b307-50dc65c337a5
         - insert:
             tableName: pointcuts
             columns:
@@ -51,6 +60,9 @@ databaseChangeLog:
               - column:
                   name: name
                   value: pointcut4
+              - column:
+                  name: employee_id
+                  value: d5e247d0-defb-46cb-9e44-fbfa8d4e1364
         - insert:
             tableName: pointcuts
             columns:
@@ -63,6 +75,9 @@ databaseChangeLog:
               - column:
                   name: name
                   value: pointcut5
+              - column:
+                  name: employee_id
+                  value: bb5f0a47-1956-4401-9fa5-04ae3d511315
         - insert:
             tableName: pointcuts
             columns:

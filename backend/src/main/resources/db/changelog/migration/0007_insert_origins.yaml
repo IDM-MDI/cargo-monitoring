@@ -1,0 +1,101 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: fe47df08-4a75-4c8c-b12b-bcf4094258b5
+              - column:
+                  name: country_id
+                  value: 806de519-e83f-4108-bcb9-624bca16bea6 #Russia
+              - column:
+                  name: city_id
+                  value: 834800b8-26c8-4fb1-9b18-d97cd4a1cb00 #Moscow
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: fcc70070-5b8e-4cb7-9cae-9202ed8325c8
+              - column:
+                  name: country_id
+                  value: 2def69d3-a5b0-4a5b-a081-44c1b1faf9c6 #Usa
+              - column:
+                  name: city_id
+                  value: 956d455d-45ac-4914-b7f5-0d194f0d5864 #Dallas
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: 96191881-2148-4dbd-b0a5-0598944ffbd4
+              - column:
+                  name: country_id
+                  value: ad6a9349-0f98-4bae-8170-cb8e46d0265d #Ukraine
+              - column:
+                  name: city_id
+                  value: d7c0e022-252d-40fc-ba5a-d687f02d10f4 #Kiev
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: 9768e6d8-cc20-4b4d-b7b2-5c5d3847add2
+              - column:
+                  name: country_id
+                  value: 660a4d7c-6ee3-4958-989e-17a096c567e3 #Japan
+              - column:
+                  name: city_id
+                  value: 14203ad9-3a31-4132-96ce-90934f5885ae #Tokyo
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: 024aaf66-2da4-4b6f-9e9d-d44f962f5eb0
+              - column:
+                  name: country_id
+                  value: ce013e05-f5e2-4cac-ba7b-76ea16c5362c #Italy
+              - column:
+                  name: city_id
+                  value: a0e0a390-f62e-42f3-aeb7-38874e5359dc #Milan
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: a31046d5-06e9-4a12-b066-354ceaf70124
+              - column:
+                  name: country_id
+                  value: c02df14b-2662-42e7-8a5e-4a2491a81aa6 #France
+              - column:
+                  name: city_id
+                  value: 1ed4b028-b620-4117-aa29-8ffe83e3f33e #Paris
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: 5fc61611-2ea1-46cb-8398-5063a3fdf8ba
+              - column:
+                  name: country_id
+                  value: 1f4060f1-8e51-44cc-847a-50884b3e09af #Brazil
+              - column:
+                  name: city_id
+                  value: a5290372-d3af-4261-9ea0-33d4221248c3 #Brazilian
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: 33a66072-94e7-48f5-9b77-bf651b9fc9b0
+              - column:
+                  name: country_id
+                  value: c4291a87-cc0d-417b-9dba-b34a73bd7f61 #Belarus
+              - column:
+                  name: city_id
+                  value: 043844f6-71ec-4966-a708-0f6deabca4c3 #Minsk

@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: 36e0a270-36e8-4f75-b3ba-f4ca9fb14a84
+              - column:
+                  name: name
+                  value: Quality Control Inspector
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: e8302c85-749c-4378-9f87-ded7109c1fde
+              - column:
+                  name: name
+                  value: Security Officer
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: 8a0e1891-d08a-470c-8869-3eef4c920523
+              - column:
+                  name: name
+                  value: Customer Service Agent
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: 2691effa-4d8b-4b76-b361-fa4d9dbe75ef
+              - column:
+                  name: name
+                  value: Sales Representative
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: a5699dd7-c4f2-4500-ab2c-884d87494046
+              - column:
+                  name: name
+                  value: Ramp Agent
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: f0a8d967-6858-4499-b6aa-6ecc67435155
+              - column:
+                  name: name
+                  value: Warehouse Agent
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: 3186be2e-4a2f-4016-b72e-bd8eede01230
+              - column:
+                  name: name
+                  value: Operations Supervisor
+        - insert:
+            tableName: positions
+            columns:
+              - column:
+                  name: id
+                  value: ca7eb9a6-dba9-4363-a19a-405562025d4f
+              - column:
+                  name: name
+                  value: Operations Manager

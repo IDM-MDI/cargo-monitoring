@@ -1,0 +1,197 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: edfc0704-44b0-4bb6-b927-6748a947dcc3
+              - column:
+                  name: authentication_login
+                  value: user1
+              - column:
+                  name: position_id
+                  value: 36e0a270-36e8-4f75-b3ba-f4ca9fb14a84 #Quality Control Inspector
+              - column:
+                  name: client_person_id
+                  value: 85d36e47-8c72-48eb-b8d5-a81313f1cb2c #user1@gmail.com
+              - column:
+                  name: salary
+                  value: 1000
+              - column:
+                  name: start_work
+                  value: 01-01-2020
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: 636abe7a-5535-4f53-a83d-967ca41c4d87
+              - column:
+                  name: authentication_login
+                  value: user2
+              - column:
+                  name: position_id
+                  value: e8302c85-749c-4378-9f87-ded7109c1fde #Security Officer
+              - column:
+                  name: client_person_id
+                  value: bb44bdf8-2a1c-4fb0-9324-1c64b0a6ffc7 #user2@gmail.com
+              - column:
+                  name: salary
+                  value: 1500
+              - column:
+                  name: start_work
+                  value: 01-01-2019
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: 1f57ca84-1a7b-4f40-b307-50dc65c337a5
+              - column:
+                  name: authentication_login
+                  value: user3
+              - column:
+                  name: position_id
+                  value: 8a0e1891-d08a-470c-8869-3eef4c920523 #Custom Service Agent
+              - column:
+                  name: client_person_id
+                  value: f838c763-fd6d-4fbe-ae8f-d0f890b37c0f #user3@gmail.com
+              - column:
+                  name: salary
+                  value: 2000
+              - column:
+                  name: start_work
+                  value: 01-01-2018
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: d5e247d0-defb-46cb-9e44-fbfa8d4e1364
+              - column:
+                  name: authentication_login
+                  value: user4
+              - column:
+                  name: position_id
+                  value: 2691effa-4d8b-4b76-b361-fa4d9dbe75ef #Sales Representative
+              - column:
+                  name: client_person_id
+                  value: 3b6a75b8-cea1-421f-9d36-2729ccd9a7a9 #user4@gmail.com
+              - column:
+                  name: salary
+                  value: 3000
+              - column:
+                  name: start_work
+                  value: 01-01-2010
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: bb5f0a47-1956-4401-9fa5-04ae3d511315
+              - column:
+                  name: authentication_login
+                  value: user5
+              - column:
+                  name: position_id
+                  value: a5699dd7-c4f2-4500-ab2c-884d87494046 #Ramp Agent
+              - column:
+                  name: client_person_id
+                  value: c9d9acba-b3b3-4aa1-ac24-6d84ef196209 #user5@gmail.com
+              - column:
+                  name: salary
+                  value: 4000
+              - column:
+                  name: start_work
+                  value: 01-01-2009
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: bc04c153-7de5-433b-b9db-f4eb50508fc5
+              - column:
+                  name: authentication_login
+                  value: admin1
+              - column:
+                  name: position_id
+                  value: f0a8d967-6858-4499-b6aa-6ecc67435155 #Warehouse Agent
+              - column:
+                  name: client_person_id
+                  value: f63d032d-fec8-4d2c-a355-d71ade5a8e6e #admin1@gmail.com
+              - column:
+                  name: salary
+                  value: 1300
+              - column:
+                  name: start_work
+                  value: 01-01-2021
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: e07390c6-6c6f-4dbc-bd08-16dd0263db45
+              - column:
+                  name: authentication_login
+                  value: admin2
+              - column:
+                  name: position_id
+                  value: 3186be2e-4a2f-4016-b72e-bd8eede01230 #Operations Supervisor
+              - column:
+                  name: client_person_id
+                  value: 16a34d81-36af-404e-9453-824a5769d0df #admin2@gmail.com
+              - column:
+                  name: salary
+                  value: 1900
+              - column:
+                  name: start_work
+                  value: 01-01-2015
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: employees
+            columns:
+              - column:
+                  name: id
+                  value: ee2bd210-148e-45d2-9f07-8fcdf6880611
+              - column:
+                  name: authentication_login
+                  value: admin3
+              - column:
+                  name: position_id
+                  value: ca7eb9a6-dba9-4363-a19a-405562025d4f #Operation Manager
+              - column:
+                  name: client_person_id
+                  value: e8ba1253-d060-4457-a6d6-a1421326f78a #admin3@gmail.com
+              - column:
+                  name: salary
+                  value: 10000
+              - column:
+                  name: start_work
+                  value: 01-01-2000
+              - column:
+                  name: status
+                  value: ACTIVE

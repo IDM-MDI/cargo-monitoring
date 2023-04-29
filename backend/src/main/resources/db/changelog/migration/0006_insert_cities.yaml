@@ -1,0 +1,149 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: f93f199d-f94a-498a-bedc-28c755c3460b
+              - column:
+                  name: name
+                  value: Hong Kong
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: a7ee6832-12ec-4ba9-9084-1fd2a66b4cb6
+              - column:
+                  name: name
+                  value: Bangkok
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: b26489da-5799-4a41-832a-61bb28abcf18
+              - column:
+                  name: name
+                  value: London
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 834800b8-26c8-4fb1-9b18-d97cd4a1cb00
+              - column:
+                  name: name
+                  value: Moscow
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 7c2cd98c-3639-44b1-929d-2e4fad49ca16
+              - column:
+                  name: name
+                  value: Macau
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 9f728d03-72ac-4cdf-a9f4-917a9320a0d9
+              - column:
+                  name: name
+                  value: Singapore
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 1ed4b028-b620-4117-aa29-8ffe83e3f33e
+              - column:
+                  name: name
+                  value: Paris
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: f3b7065d-6998-40e2-b121-0775fa214803
+              - column:
+                  name: name
+                  value: Dubai
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: d7c0e022-252d-40fc-ba5a-d687f02d10f4
+              - column:
+                  name: name
+                  value: Kiev
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 043844f6-71ec-4966-a708-0f6deabca4c3
+              - column:
+                  name: name
+                  value: Minsk
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 956d455d-45ac-4914-b7f5-0d194f0d5864
+              - column:
+                  name: name
+                  value: Dallas
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 9e89f3df-ccea-4cfb-bf38-694d6fec046f
+              - column:
+                  name: name
+                  value: New-York
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: a5290372-d3af-4261-9ea0-33d4221248c3
+              - column:
+                  name: name
+                  value: Brazilian
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: fc9193cc-60c3-4fde-8885-a5849ad7b5a6
+              - column:
+                  name: name
+                  value: Barcelona
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: 14203ad9-3a31-4132-96ce-90934f5885ae
+              - column:
+                  name: name
+                  value: Tokyo
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: a0e0a390-f62e-42f3-aeb7-38874e5359dc
+              - column:
+                  name: name
+                  value: Milan

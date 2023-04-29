@@ -26,9 +26,6 @@ import java.util.Objects;
 @NoArgsConstructor
 public class PublicData {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-
     @Column(name = "email", unique = true, nullable = false)
     private String email;
 
@@ -40,11 +37,11 @@ public class PublicData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PublicData that = (PublicData) o;
-        return id.equals(that.id) && email.equals(that.email) && phone.equals(that.phone);
+        return email.equals(that.email) && phone.equals(that.phone);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, email, phone);
+        return Objects.hash(email, phone);
     }
 }

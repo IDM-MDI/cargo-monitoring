@@ -43,7 +43,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @OneToOne
-    @JoinColumn(name = "authentication_id", nullable = false)
+    @JoinColumn(name = "authentication_login", nullable = false)
     @ToString.Exclude
     private Authentication authentication;
 
@@ -76,8 +76,7 @@ public class Employee {
     @ToString.Exclude
     private List<DeclinedCargo> declinedCargos;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pointcut_id")
+    @OneToOne(mappedBy = "employee")
     @ToString.Exclude
     private Pointcut pointcut;
 

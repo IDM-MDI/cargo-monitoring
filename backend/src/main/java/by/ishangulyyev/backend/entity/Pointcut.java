@@ -6,6 +6,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -38,7 +39,8 @@ public class Pointcut {
     @Column(name = "name",unique = true, updatable = true, nullable = false)
     private String name;
 
-    @OneToOne(mappedBy = "pointcut")
+    @OneToOne
+    @JoinColumn(name = "employee_id")
     @ToString.Exclude
     private Employee employee;
 

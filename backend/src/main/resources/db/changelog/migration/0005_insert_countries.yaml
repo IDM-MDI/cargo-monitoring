@@ -1,0 +1,149 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 806de519-e83f-4108-bcb9-624bca16bea6
+              - column:
+                  name: name
+                  value: Russia
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 2def69d3-a5b0-4a5b-a081-44c1b1faf9c6
+              - column:
+                  name: name
+                  value: Usa
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: ad6a9349-0f98-4bae-8170-cb8e46d0265d
+              - column:
+                  name: name
+                  value: Ukraine
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 660a4d7c-6ee3-4958-989e-17a096c567e3
+              - column:
+                  name: name
+                  value: Japan
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: c4291a87-cc0d-417b-9dba-b34a73bd7f61
+              - column:
+                  name: name
+                  value: Belarus
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 081b37f5-8eb7-48e4-a3a7-ee6a597352ad
+              - column:
+                  name: name
+                  value: Germany
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 1f4060f1-8e51-44cc-847a-50884b3e09af
+              - column:
+                  name: name
+                  value: Brazil
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: f372f82b-da81-430c-8065-33869677773d
+              - column:
+                  name: name
+                  value: Argentina
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: ce013e05-f5e2-4cac-ba7b-76ea16c5362c
+              - column:
+                  name: name
+                  value: Italy
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: c02df14b-2662-42e7-8a5e-4a2491a81aa6
+              - column:
+                  name: name
+                  value: France
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 1bb754e1-42be-4876-b657-e01bc8d376a0
+              - column:
+                  name: name
+                  value: Canada
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 3346348f-3e3e-4cc2-89ea-af7813fd724b
+              - column:
+                  name: name
+                  value: Iceland
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: b3fd9ccc-3f90-4442-8969-da61bc1bd21e
+              - column:
+                  name: name
+                  value: Chile
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 53da6de0-0c79-4921-a8f5-6b04c00d4967
+              - column:
+                  name: name
+                  value: Bulgaria
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 71ea728a-4dab-498f-8162-0242cb726938
+              - column:
+                  name: name
+                  value: Estonia
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 10e1a356-6e6b-4443-9986-933caf11098f
+              - column:
+                  name: name
+                  value: Armenia

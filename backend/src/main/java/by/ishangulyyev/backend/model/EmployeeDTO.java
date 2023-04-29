@@ -1,6 +1,5 @@
 package by.ishangulyyev.backend.model;
 
-import by.ishangulyyev.backend.entity.Position;
 import by.ishangulyyev.backend.entity.type.EmployeeStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,7 +21,7 @@ public class EmployeeDTO {
 
     private LocalDate startWork;
 
-    private Position position;
+    private String position;
 
     private EmployeeStatus status;
 

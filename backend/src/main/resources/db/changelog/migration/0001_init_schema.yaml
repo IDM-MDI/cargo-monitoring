@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 1682459406980-1
+      id: 1682796005702-1
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -12,17 +12,17 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_accepted_cargos
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: employee_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: cargo_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -30,7 +30,7 @@ databaseChangeLog:
                   type: DATETIME
             tableName: accepted_cargos
   - changeSet:
-      id: 1682459406980-2
+      id: 1682796005702-2
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -42,20 +42,20 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_airports
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: company_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: origin_id
-                  type: BIGINT
+                  type: VARCHAR(255)
             tableName: airports
   - changeSet:
-      id: 1682459406980-3
+      id: 1682796005702-3
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -80,7 +80,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: authentications
   - changeSet:
-      id: 1682459406980-4
+      id: 1682796005702-4
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -92,7 +92,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_cargo_contents
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -115,7 +115,7 @@ databaseChangeLog:
                   type: DOUBLE
             tableName: cargo_contents
   - changeSet:
-      id: 1682459406980-5
+      id: 1682796005702-5
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -127,22 +127,22 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_cargos
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: person_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: company_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: cargo_content_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -152,12 +152,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: departure_airport_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: pointcut_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -170,7 +170,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: cargos
   - changeSet:
-      id: 1682459406980-6
+      id: 1682796005702-6
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -182,7 +182,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_cities
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -190,7 +190,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: cities
   - changeSet:
-      id: 1682459406980-7
+      id: 1682796005702-7
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -202,7 +202,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_companies
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -217,10 +217,10 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: public_data_id
-                  type: BIGINT
+                  type: VARCHAR(255)
             tableName: companies
   - changeSet:
-      id: 1682459406980-8
+      id: 1682796005702-8
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -232,7 +232,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_countries
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -240,7 +240,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: countries
   - changeSet:
-      id: 1682459406980-9
+      id: 1682796005702-9
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -252,17 +252,17 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_declined_cargos
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: employee_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: cargo_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -275,7 +275,7 @@ databaseChangeLog:
                   type: DATETIME
             tableName: declined_cargos
   - changeSet:
-      id: 1682459406980-10
+      id: 1682796005702-10
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -287,22 +287,22 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_employees
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
-                  name: authentication_id
+                  name: authentication_login
                   type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: position_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: client_person_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -318,14 +318,9 @@ databaseChangeLog:
                     nullable: false
                   name: status
                   type: VARCHAR(255)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: pointcut_id
-                  type: BIGINT
             tableName: employees
   - changeSet:
-      id: 1682459406980-11
+      id: 1682796005702-11
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -337,20 +332,20 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_origins
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: country_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
                   name: city_id
-                  type: BIGINT
+                  type: VARCHAR(255)
             tableName: origins
   - changeSet:
-      id: 1682459406980-12
+      id: 1682796005702-12
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -362,7 +357,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_persons
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -374,8 +369,6 @@ databaseChangeLog:
                   name: surname
                   type: VARCHAR(255)
               - column:
-                  constraints:
-                    nullable: false
                   name: lastname
                   type: VARCHAR(255)
               - column:
@@ -387,7 +380,7 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                   name: origin_id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -396,11 +389,11 @@ databaseChangeLog:
               - column:
                   constraints:
                     nullable: false
-                  name: public_data_id
-                  type: BIGINT
+                  name: public_data_email
+                  type: VARCHAR(255)
             tableName: persons
   - changeSet:
-      id: 1682459406980-13
+      id: 1682796005702-13
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -412,7 +405,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_pointcuts
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -423,9 +416,12 @@ databaseChangeLog:
                     nullable: false
                   name: name
                   type: VARCHAR(255)
+              - column:
+                  name: employee_id
+                  type: VARCHAR(255)
             tableName: pointcuts
   - changeSet:
-      id: 1682459406980-14
+      id: 1682796005702-14
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -437,7 +433,7 @@ databaseChangeLog:
                     primaryKey: true
                     primaryKeyName: pk_positions
                   name: id
-                  type: BIGINT
+                  type: VARCHAR(255)
               - column:
                   constraints:
                     nullable: false
@@ -445,7 +441,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: positions
   - changeSet:
-      id: 1682459406980-15
+      id: 1682796005702-15
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -456,11 +452,6 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyName: pk_public_data
-                  name: id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
                   name: email
                   type: VARCHAR(255)
               - column:
@@ -470,7 +461,7 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: public_data
   - changeSet:
-      id: 1682459406980-16
+      id: 1682796005702-16
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -479,7 +470,7 @@ databaseChangeLog:
             constraintName: uc_authentications_password
             tableName: authentications
   - changeSet:
-      id: 1682459406980-17
+      id: 1682796005702-17
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -488,7 +479,7 @@ databaseChangeLog:
             constraintName: uc_cities_name
             tableName: cities
   - changeSet:
-      id: 1682459406980-18
+      id: 1682796005702-18
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -497,7 +488,7 @@ databaseChangeLog:
             constraintName: uc_companies_name
             tableName: companies
   - changeSet:
-      id: 1682459406980-19
+      id: 1682796005702-19
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -506,7 +497,7 @@ databaseChangeLog:
             constraintName: uc_companies_origin_name
             tableName: companies
   - changeSet:
-      id: 1682459406980-20
+      id: 1682796005702-20
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -515,34 +506,7 @@ databaseChangeLog:
             constraintName: uc_countries_name
             tableName: countries
   - changeSet:
-      id: 1682459406980-21
-      author: Dayanch (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addUniqueConstraint:
-            columnNames: lastname
-            constraintName: uc_persons_lastname
-            tableName: persons
-  - changeSet:
-      id: 1682459406980-22
-      author: Dayanch (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addUniqueConstraint:
-            columnNames: name
-            constraintName: uc_persons_name
-            tableName: persons
-  - changeSet:
-      id: 1682459406980-23
-      author: Dayanch (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addUniqueConstraint:
-            columnNames: surname
-            constraintName: uc_persons_surname
-            tableName: persons
-  - changeSet:
-      id: 1682459406980-24
+      id: 1682796005702-21
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -551,7 +515,7 @@ databaseChangeLog:
             constraintName: uc_pointcuts_name
             tableName: pointcuts
   - changeSet:
-      id: 1682459406980-25
+      id: 1682796005702-22
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -560,7 +524,7 @@ databaseChangeLog:
             constraintName: uc_pointcuts_order
             tableName: pointcuts
   - changeSet:
-      id: 1682459406980-26
+      id: 1682796005702-23
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -569,16 +533,7 @@ databaseChangeLog:
             constraintName: uc_positions_name
             tableName: positions
   - changeSet:
-      id: 1682459406980-27
-      author: Dayanch (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addUniqueConstraint:
-            columnNames: email
-            constraintName: uc_public_data_email
-            tableName: public_data
-  - changeSet:
-      id: 1682459406980-28
+      id: 1682796005702-24
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -587,7 +542,7 @@ databaseChangeLog:
             constraintName: uc_public_data_phone
             tableName: public_data
   - changeSet:
-      id: 1682459406980-29
+      id: 1682796005702-25
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -598,7 +553,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: cargos
   - changeSet:
-      id: 1682459406980-30
+      id: 1682796005702-26
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -609,7 +564,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: employees
   - changeSet:
-      id: 1682459406980-31
+      id: 1682796005702-27
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -620,7 +575,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: companies
   - changeSet:
-      id: 1682459406980-32
+      id: 1682796005702-28
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -631,7 +586,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: origins
   - changeSet:
-      id: 1682459406980-33
+      id: 1682796005702-29
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -642,7 +597,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: cargo_contents
   - changeSet:
-      id: 1682459406980-34
+      id: 1682796005702-30
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -653,7 +608,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: companies
   - changeSet:
-      id: 1682459406980-35
+      id: 1682796005702-31
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -664,7 +619,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: airports
   - changeSet:
-      id: 1682459406980-36
+      id: 1682796005702-32
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -675,7 +630,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: persons
   - changeSet:
-      id: 1682459406980-37
+      id: 1682796005702-33
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -686,7 +641,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: pointcuts
   - changeSet:
-      id: 1682459406980-38
+      id: 1682796005702-34
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -694,10 +649,10 @@ databaseChangeLog:
             baseColumnNames: public_data_id
             baseTableName: companies
             constraintName: FK_COMPANIES_ON_PUBLIC_DATA
-            referencedColumnNames: id
+            referencedColumnNames: email
             referencedTableName: public_data
   - changeSet:
-      id: 1682459406980-39
+      id: 1682796005702-35
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -708,7 +663,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: cargos
   - changeSet:
-      id: 1682459406980-40
+      id: 1682796005702-36
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -719,18 +674,18 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: employees
   - changeSet:
-      id: 1682459406980-41
+      id: 1682796005702-37
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
         - addForeignKeyConstraint:
-            baseColumnNames: authentication_id
+            baseColumnNames: authentication_login
             baseTableName: employees
-            constraintName: FK_EMPLOYEES_ON_AUTHENTICATION
+            constraintName: FK_EMPLOYEES_ON_AUTHENTICATION_LOGIN
             referencedColumnNames: login
             referencedTableName: authentications
   - changeSet:
-      id: 1682459406980-42
+      id: 1682796005702-38
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -741,18 +696,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: persons
   - changeSet:
-      id: 1682459406980-43
-      author: Dayanch (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addForeignKeyConstraint:
-            baseColumnNames: pointcut_id
-            baseTableName: employees
-            constraintName: FK_EMPLOYEES_ON_POINTCUT
-            referencedColumnNames: id
-            referencedTableName: pointcuts
-  - changeSet:
-      id: 1682459406980-44
+      id: 1682796005702-39
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -763,7 +707,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: positions
   - changeSet:
-      id: 1682459406980-45
+      id: 1682796005702-40
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -774,7 +718,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: cities
   - changeSet:
-      id: 1682459406980-46
+      id: 1682796005702-41
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -785,7 +729,7 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: countries
   - changeSet:
-      id: 1682459406980-47
+      id: 1682796005702-42
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
@@ -796,13 +740,24 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: origins
   - changeSet:
-      id: 1682459406980-48
+      id: 1682796005702-43
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
         - addForeignKeyConstraint:
-            baseColumnNames: public_data_id
+            baseColumnNames: public_data_email
             baseTableName: persons
-            constraintName: FK_PERSONS_ON_PUBLIC_DATA
-            referencedColumnNames: id
+            constraintName: FK_PERSONS_ON_PUBLIC_DATA_EMAIL
+            referencedColumnNames: email
             referencedTableName: public_data
+  - changeSet:
+      id: 1682796005702-44
+      author: Dayanch (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: employee_id
+            baseTableName: pointcuts
+            constraintName: FK_POINTCUTS_ON_EMPLOYEE
+            referencedColumnNames: id
+            referencedTableName: employees

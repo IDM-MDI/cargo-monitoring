@@ -36,13 +36,13 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @Column(name = "name",unique = true, updatable = true, nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "surname",unique = true, updatable = true, nullable = false)
+    @Column(name = "surname", nullable = false)
     private String surname;
 
-    @Column(name = "lastname",unique = true, updatable = true, nullable = false)
+    @Column(name = "lastname")
     private String lastname;
 
     @Column(name = "birthday", nullable = false)
@@ -58,7 +58,7 @@ public class Person {
     private Gender gender;
 
     @OneToOne
-    @JoinColumn(name = "public_data_id", nullable = false)
+    @JoinColumn(name = "public_data_email", nullable = false)
     @ToString.Exclude
     private PublicData publicData;
 
