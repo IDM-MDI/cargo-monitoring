@@ -30,7 +30,7 @@ public class Pointcut {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @Column(name = "order",unique = true, updatable = true, nullable = false)
     private Long order;

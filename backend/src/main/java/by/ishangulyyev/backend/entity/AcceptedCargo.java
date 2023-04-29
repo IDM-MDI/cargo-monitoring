@@ -34,7 +34,7 @@ public class AcceptedCargo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)

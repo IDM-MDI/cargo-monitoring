@@ -27,7 +27,7 @@ import java.util.Objects;
 public class PublicData {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @Column(name = "email", unique = true, nullable = false)
     private String email;

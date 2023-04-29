@@ -27,7 +27,7 @@ import java.util.Objects;
 public class Origin {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "country_id", nullable = false)

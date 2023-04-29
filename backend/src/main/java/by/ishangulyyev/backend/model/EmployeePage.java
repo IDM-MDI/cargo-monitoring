@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeePage {
-    private Long id;
+    private String id;
     private String name;
     private String surname;
     private Position position;

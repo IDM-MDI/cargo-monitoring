@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PublicDataDTO {
-    private Long id;
+    private String id;
     private String phone;
     private String email;
 }

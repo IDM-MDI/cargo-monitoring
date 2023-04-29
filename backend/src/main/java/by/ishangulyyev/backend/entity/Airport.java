@@ -28,7 +28,7 @@ import java.util.Objects;
 public class Airport {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "company_id", nullable = false)

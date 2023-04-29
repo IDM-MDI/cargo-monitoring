@@ -26,7 +26,7 @@ import java.util.Objects;
 public class CargoContent {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @Column(name = "weight", nullable = false)
     private Double weight;

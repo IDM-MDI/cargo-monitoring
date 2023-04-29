@@ -15,7 +15,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeDTO {
-    private Long id;
+    private String id;
+    private PersonDTO person;
 
     private BigDecimal salary;
 
@@ -24,8 +25,6 @@ public class EmployeeDTO {
     private Position position;
 
     private EmployeeStatus status;
-
-    private OriginDTO origin;
 
     private String login;
 }

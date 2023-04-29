@@ -35,7 +35,7 @@ public class Cargo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @OneToOne
     @JoinColumn(name = "person_id", nullable = false)

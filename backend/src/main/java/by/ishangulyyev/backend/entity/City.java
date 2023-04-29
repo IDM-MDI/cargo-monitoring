@@ -26,7 +26,7 @@ import java.util.Objects;
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
     @Column(name = "name",unique = true, updatable = true, nullable = false)
     private String name;
 

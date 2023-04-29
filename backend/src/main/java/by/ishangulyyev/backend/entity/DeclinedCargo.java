@@ -32,7 +32,7 @@ import java.time.LocalDateTime;
 public class DeclinedCargo {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
 
     @ManyToOne
     @JoinColumn(name = "employee_id", nullable = false)

@@ -41,7 +41,7 @@ import java.util.Objects;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private Long id;
+    private String id;
     @OneToOne
     @JoinColumn(name = "authentication_id", nullable = false)
     @ToString.Exclude
