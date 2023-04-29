@@ -73,6 +73,11 @@ databaseChangeLog:
                     nullable: false
                   name: password
                   type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: role
+                  type: VARCHAR(255)
             tableName: authentications
   - changeSet:
       id: 1682459406980-4

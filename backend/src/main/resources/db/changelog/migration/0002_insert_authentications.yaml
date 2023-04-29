@@ -1,0 +1,102 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Dayanch
+      context: dev OR prod
+      changes:
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: user1
+              - column:
+                  name: password
+                  value: $2a$10$cAd8cJNphSLYM3B.pvEQFO1N.AtsybGYgzv62.qQAq3P7VhEnHn9K
+              - column:
+                  name: role
+                  value: USER
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: user2
+              - column:
+                  name: password
+                  value: $2a$10$3DVMIeFMrO6I5taklefZse9cvbDeboVVO2jvJPRNiSpkL.wVcoW2O
+              - column:
+                  name: role
+                  value: USER
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: user3
+              - column:
+                  name: password
+                  value: $2a$10$Tbt3DUu3CY5pciaoedNzdOyz8JNVPzSoxBAnXAAEH/oKfJyLiiiN6
+              - column:
+                  name: role
+                  value: USER
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: user4
+              - column:
+                  name: password
+                  value: $2a$10$zUa2vJiE4fnfXC9wKfhusOu0cpEboHNp51koVfSoulEVnBS/Nukzy
+              - column:
+                  name: role
+                  value: USER
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: user5
+              - column:
+                  name: password
+                  value: $2a$10$0iyruS5ZFiCtYuWquxjQMey4Xtw240x8e8t/y0TSuRcw8DSePSO.u
+              - column:
+                  name: role
+                  value: USER
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: admin1
+              - column:
+                  name: password
+                  value: $2a$10$FyI41TN3O5tO4ImjhQaqG.obHOOhEkm6uirBDldvuPwwDQbicm6x2
+              - column:
+                  name: role
+                  value: ADMIN
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: admin2
+              - column:
+                  name: password
+                  value: $2a$10$uwBVlYDRxG6xBKjrFCPmYemAPtrgq.mDA/442BD45Ek00.7XDS82e
+              - column:
+                  name: role
+                  value: ADMIN
+        - insert:
+            tableName: authentications
+            columns:
+              - column:
+                  name: login
+                  value: admin3
+              - column:
+                  name: password
+                  value: $2a$10$XwjRZ04s1/RNyv7kj/N.Ouml2afBQb9d5nEcO0B2AHD2B8jNIRiGm
+              - column:
+                  name: role
+                  value: ADMIN

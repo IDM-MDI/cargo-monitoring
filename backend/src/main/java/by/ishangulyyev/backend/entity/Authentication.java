@@ -1,7 +1,10 @@
 package by.ishangulyyev.backend.entity;
 
+import by.ishangulyyev.backend.entity.type.AuthenticationRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -28,6 +31,9 @@ public class Authentication {
     private String login;
     @Column(name = "password",unique = true, updatable = true, nullable = false)
     private String password;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private AuthenticationRole role;
 
     @Override
     public boolean equals(Object o) {
