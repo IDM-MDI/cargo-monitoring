@@ -33,6 +33,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public EmployeeDTO findBy(String id) {
+        return repository.findById(id)
+                .map(employee -> mapper.map(employee, EmployeeDTO.class))
+                .orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
     @Transactional
     public EmployeeDTO save(EmployeeDTO employee) {
         Employee entity = mapper.map(employee, Employee.class);
@@ -43,19 +50,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public EmployeeDTO findBy(String id) {
-        return repository.findById(id)
-                .map(employee -> mapper.map(employee, EmployeeDTO.class))
-                .orElseThrow(EntityNotFoundException::new);
-    }
-
-    @Override
+    @Transactional
     public EmployeeDTO update(EmployeeDTO employee, String id) {
         employee.setId(id);
         return save(employee);
     }
 
     @Override
+    @Transactional
     public void delete(String id) {
         Employee byId = repository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
