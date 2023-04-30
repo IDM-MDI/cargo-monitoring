@@ -14,8 +14,8 @@ public class CityServiceImpl implements CityService {
     private final CityRepository repository;
     @Override
     public City save(@NotBlank String city) {
-        return repository.findByNameEqualsIgnoreCase(city)
-                .orElse(repository.save(
+        return repository.findByNameIgnoreCase(city)
+                .orElseGet(() -> repository.save(
                         City.builder()
                                 .name(StringUtil.pascalCase(city))
                                 .build()

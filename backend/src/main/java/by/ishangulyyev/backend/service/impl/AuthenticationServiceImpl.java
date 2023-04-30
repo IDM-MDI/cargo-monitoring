@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class AuthenticationServiceImpl implements AuthenticationService {
@@ -18,13 +20,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public Authentication registration(AuthenticationRequest request) {
         Authentication entity = mapper.map(request, Authentication.class);
-        repository.findById(request.getLogin())
-                .ifPresentOrElse(
-                        data -> {
-                            throw new EntityExistException();
-                        },
-                        () -> repository.save(entity));
-        return entity;
+        Optional<Authentication> byId = repository.findById(request.getLogin());
+        if(byId.isPresent()) {
+            throw new EntityExistException();
+        }
+        return repository.save(entity);
     }
 
     @Override

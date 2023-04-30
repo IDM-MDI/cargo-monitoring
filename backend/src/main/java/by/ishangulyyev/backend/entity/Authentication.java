@@ -30,9 +30,9 @@ import java.util.Objects;
 @ToString
 public class Authentication {
     @Id
-    @Column(name = "login",unique = true, updatable = true, nullable = false)
+    @Column(name = "login")
     private String login;
-    @Column(name = "password",unique = true, updatable = true, nullable = false)
+    @Column(name = "password", nullable = false)
     private String password;
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)

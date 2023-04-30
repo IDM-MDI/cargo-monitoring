@@ -32,6 +32,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    @Transactional
     public EmployeeDTO save(EmployeeDTO employee) {
         Employee entity = mapper.map(employee, Employee.class);
         entity.setPerson(personService.save(employee.getPerson()));

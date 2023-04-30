@@ -13,6 +13,6 @@ public class StringUtil {
         string = string.toLowerCase();
         return Arrays.stream(string.split(EMPTY))
                 .map(s -> s.substring(0, 1).toUpperCase().concat(s.substring(1)))
-                .collect(Collectors.joining());
+                .collect(Collectors.joining(" "));
     }
 }

@@ -9,20 +9,21 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class PublicDataServiceImpl implements PublicDataService {
     private final PublicDataRepository repository;
     private final ModelMapper mapper;
+
     @Override
     public PublicData save(PublicDataDTO publicData) {
         PublicData entity = mapper.map(publicData, PublicData.class);
-        repository.findById(publicData.getEmail())
-                .ifPresentOrElse(
-                        data -> {
-                            throw new EntityExistException();
-                        },
-                        () -> repository.save(entity));
-        return entity;
+        Optional<PublicData> byId = repository.findById(publicData.getEmail());
+        if(byId.isPresent()) {
+            throw new EntityExistException();
+        }
+        return repository.save(entity);
     }
 }

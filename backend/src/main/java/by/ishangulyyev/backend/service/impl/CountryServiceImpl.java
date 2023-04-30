@@ -13,8 +13,8 @@ public class CountryServiceImpl implements CountryService {
     private final CountryRepository repository;
     @Override
     public Country save(String country) {
-        return repository.findByNameEqualsIgnoreCase(country)
-                .orElse(repository.save(
+        return repository.findByNameIgnoreCase(country)
+                .orElseGet(() -> repository.save(
                         Country.builder()
                                 .name(StringUtil.pascalCase(country))
                                 .build()

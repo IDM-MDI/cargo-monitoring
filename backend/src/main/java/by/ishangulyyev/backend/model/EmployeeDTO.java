@@ -2,8 +2,8 @@ package by.ishangulyyev.backend.model;
 
 import by.ishangulyyev.backend.entity.type.EmployeeStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,10 +22,10 @@ public class EmployeeDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
 
-    @NotNull
+    @Valid
     private AuthenticationRequest authentication;
 
-    @NotNull
+    @Valid
     private PersonDTO person;
 
     @Positive

@@ -26,7 +26,7 @@ import java.util.Objects;
 @NoArgsConstructor
 public class PublicData {
     @Id
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email")
     private String email;
 
     @Column(name = "phone", unique = true, nullable = false)

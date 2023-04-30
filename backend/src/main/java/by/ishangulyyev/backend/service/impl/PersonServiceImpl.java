@@ -10,9 +10,11 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class PersonServiceImpl implements PersonService {
     private final PersonRepository repository;
     private final OriginService originService;
@@ -20,6 +22,7 @@ public class PersonServiceImpl implements PersonService {
     private final ModelMapper mapper;
 
     @Override
+    @Transactional
     public Person save(@Valid PersonDTO person) {
         Person entity = mapper.map(person, Person.class);
         entity.setOrigin(originService.save(person.getOrigin()));

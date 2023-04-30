@@ -1,10 +1,12 @@
 package by.ishangulyyev.backend.entity;
 
 import by.ishangulyyev.backend.entity.type.Gender;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -57,8 +59,8 @@ public class Person {
     @Column(name = "gender", nullable = false)
     private Gender gender;
 
-    @OneToOne
-    @JoinColumn(name = "public_data_email", nullable = false)
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "public_data_email", nullable = false, unique = true)
     @ToString.Exclude
     private PublicData publicData;
 

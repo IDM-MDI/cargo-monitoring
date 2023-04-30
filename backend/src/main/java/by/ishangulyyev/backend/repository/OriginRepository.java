@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface OriginRepository extends JpaRepository<Origin, String> {
-    Optional<Origin> findByCountry_NameEqualsIgnoreCaseAndCity_NameEqualsIgnoreCase(String country, String city);
+    Optional<Origin> findByCountry_NameIgnoreCaseAndCity_NameIgnoreCase(String country, String city);
 }
