@@ -1,8 +1,10 @@
 package by.ishangulyyev.backend.entity;
 
+import by.ishangulyyev.backend.entity.listener.AuthenticationEntityListener;
 import by.ishangulyyev.backend.entity.type.AuthenticationRole;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +21,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "authentications")
+@EntityListeners(AuthenticationEntityListener.class)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

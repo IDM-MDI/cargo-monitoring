@@ -5,6 +5,7 @@ import by.ishangulyyev.backend.entity.type.EmployeeStatus;
 import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
 import by.ishangulyyev.backend.repository.EmployeeRepository;
+import by.ishangulyyev.backend.service.AuthenticationService;
 import by.ishangulyyev.backend.service.EmployeeService;
 import by.ishangulyyev.backend.service.PersonService;
 import by.ishangulyyev.backend.service.PositionService;
@@ -22,6 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository repository;
     private final PersonService personService;
     private final PositionService positionService;
+    private final AuthenticationService authenticationService;
     private final ModelMapper mapper;
     @Override
     public Page<EmployeePage> findAll(Pageable pageable) {
@@ -34,6 +36,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee entity = mapper.map(employee, Employee.class);
         entity.setPerson(personService.save(employee.getPerson()));
         entity.setPosition(positionService.save(employee.getPosition()));
+        entity.setAuthentication(authenticationService.registration(employee.getAuthentication()));
         return mapper.map(repository.save(entity), EmployeeDTO.class);
     }
 }

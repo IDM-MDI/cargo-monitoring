@@ -12,7 +12,7 @@ import org.hibernate.validator.constraints.Length;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationDTO {
+public class AuthenticationRequest {
     @NotBlank
     @Length(min = 2, max = 50)
     private String login;

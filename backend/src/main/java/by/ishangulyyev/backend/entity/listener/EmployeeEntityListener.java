@@ -1,5 +1,6 @@
-package by.ishangulyyev.backend.entity;
+package by.ishangulyyev.backend.entity.listener;
 
+import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.entity.type.EmployeeStatus;
 import jakarta.persistence.PrePersist;
 
