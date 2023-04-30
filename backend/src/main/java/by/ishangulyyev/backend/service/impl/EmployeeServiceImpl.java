@@ -6,6 +6,8 @@ import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
 import by.ishangulyyev.backend.repository.EmployeeRepository;
 import by.ishangulyyev.backend.service.EmployeeService;
+import by.ishangulyyev.backend.service.PersonService;
+import by.ishangulyyev.backend.service.PositionService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
@@ -18,6 +20,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public class EmployeeServiceImpl implements EmployeeService {
     private final EmployeeRepository repository;
+    private final PersonService personService;
+    private final PositionService positionService;
     private final ModelMapper mapper;
     @Override
     public Page<EmployeePage> findAll(Pageable pageable) {
@@ -28,7 +32,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeDTO save(EmployeeDTO employee) {
         Employee entity = mapper.map(employee, Employee.class);
-        entity.setStatus(EmployeeStatus.ACTIVE);
-        return null;
+        entity.setPerson(personService.save(employee.getPerson()));
+        entity.setPosition(positionService.save(employee.getPosition()));
+        return mapper.map(repository.save(entity), EmployeeDTO.class);
     }
 }

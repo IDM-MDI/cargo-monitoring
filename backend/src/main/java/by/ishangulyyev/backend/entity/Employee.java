@@ -31,7 +31,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "employees")
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(EmployeeEntityListener.class)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -61,7 +61,6 @@ public class Employee {
     private BigDecimal salary;
 
     @Column(name = "start_work", nullable = false, updatable = false)
-    @CreatedDate
     private LocalDate startWork;
 
     @Enumerated(EnumType.STRING)

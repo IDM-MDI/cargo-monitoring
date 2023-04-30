@@ -38,6 +38,9 @@ public class PersonDTO {
     private LocalDate birthday;
 
     @NotNull
+    private OriginDTO origin;
+
+    @NotNull
     private Gender gender;
 
     @NotNull

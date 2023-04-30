@@ -1,6 +1,7 @@
 package by.ishangulyyev.backend.config;
 
 import by.ishangulyyev.backend.entity.Cargo;
+import by.ishangulyyev.backend.entity.Country;
 import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.entity.Origin;
 import by.ishangulyyev.backend.model.CargoPage;
@@ -28,8 +29,24 @@ public class RepositoryConfig {
         modelMapper.createTypeMap(Origin.class, OriginDTO.class)
                 .addMappings(mapping -> mapping.map(source -> source.getCountry().getName(),OriginDTO::setCountry))
                 .addMappings(mapping -> mapping.map(source -> source.getCity().getName(), OriginDTO::setCity));
+
+        modelMapper.createTypeMap(OriginDTO.class, Origin.class)
+                .addMappings(mapping -> mapping.map(OriginDTO::getCountry,(destination, value) ->
+                                destination.setCountry(
+                                                Country.builder()
+                                                        .name(value.toString())
+                                                        .build()
+                                        )
+                        ))
+                .addMappings(mapping -> mapping.map(OriginDTO::getCity,(destination, value) ->
+                        destination.setCountry(
+                                        Country.builder()
+                                                .name(value.toString())
+                                                .build()
+                                )
+                ));
+
         modelMapper.createTypeMap(Employee.class, EmployeeDTO.class)
-                .addMappings(mapping -> mapping.map(source -> source.getAuthentication().getLogin(),EmployeeDTO::setLogin))
                 .addMappings(mapping -> mapping.map(source -> source.getPosition().getName(),EmployeeDTO::setPosition));
         modelMapper.createTypeMap(Employee.class, EmployeePage.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getName(),EmployeePage::setName))
