@@ -29,7 +29,8 @@ public class RepositoryConfig {
                 .addMappings(mapping -> mapping.map(source -> source.getCountry().getName(),OriginDTO::setCountry))
                 .addMappings(mapping -> mapping.map(source -> source.getCity().getName(), OriginDTO::setCity));
         modelMapper.createTypeMap(Employee.class, EmployeeDTO.class)
-                .addMappings(mapping -> mapping.map(source -> source.getAuthentication().getLogin(),EmployeeDTO::setLogin));
+                .addMappings(mapping -> mapping.map(source -> source.getAuthentication().getLogin(),EmployeeDTO::setLogin))
+                .addMappings(mapping -> mapping.map(source -> source.getPosition().getName(),EmployeeDTO::setPosition));
         modelMapper.createTypeMap(Employee.class, EmployeePage.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getName(),EmployeePage::setName))
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getSurname(),EmployeePage::setSurname))

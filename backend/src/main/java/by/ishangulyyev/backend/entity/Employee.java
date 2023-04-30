@@ -43,7 +43,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "authentication_login", nullable = false)
+    @JoinColumn(name = "authentication_login", unique = true, nullable = false)
     @ToString.Exclude
     private Authentication authentication;
 
@@ -53,7 +53,7 @@ public class Employee {
     private Position position;
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "client_person_id", nullable = false)
+    @JoinColumn(name = "client_person_id", unique = true, nullable = false)
     @ToString.Exclude
     private Person person;
 

@@ -1,5 +1,8 @@
 package by.ishangulyyev.backend.service.impl;
 
+import by.ishangulyyev.backend.entity.Employee;
+import by.ishangulyyev.backend.entity.type.EmployeeStatus;
+import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
 import by.ishangulyyev.backend.repository.EmployeeRepository;
 import by.ishangulyyev.backend.service.EmployeeService;
@@ -20,5 +23,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Page<EmployeePage> findAll(Pageable pageable) {
         return repository.findAll(pageable)
                 .map(employee -> mapper.map(employee, EmployeePage.class));
+    }
+
+    @Override
+    public EmployeeDTO save(EmployeeDTO employee) {
+        Employee entity = mapper.map(employee, Employee.class);
+        entity.setStatus(EmployeeStatus.ACTIVE);
+        return null;
     }
 }
