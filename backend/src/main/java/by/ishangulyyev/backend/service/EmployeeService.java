@@ -7,6 +7,8 @@ import org.springframework.data.domain.Pageable;
 
 public interface EmployeeService {
     Page<EmployeePage> findAll(Pageable pageable);
-
     EmployeeDTO save(EmployeeDTO employee);
+    EmployeeDTO findBy(String id);
+    EmployeeDTO update(EmployeeDTO employee, String id);
+    void delete(String id);
 }

@@ -2,6 +2,7 @@ package by.ishangulyyev.backend.service.impl;
 
 import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.entity.type.EmployeeStatus;
+import by.ishangulyyev.backend.exception.EntityNotFoundException;
 import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
 import by.ishangulyyev.backend.repository.EmployeeRepository;
@@ -39,5 +40,26 @@ public class EmployeeServiceImpl implements EmployeeService {
         entity.setPosition(positionService.save(employee.getPosition()));
         entity.setAuthentication(authenticationService.registration(employee.getAuthentication()));
         return mapper.map(repository.save(entity), EmployeeDTO.class);
+    }
+
+    @Override
+    public EmployeeDTO findBy(String id) {
+        return repository.findById(id)
+                .map(employee -> mapper.map(employee, EmployeeDTO.class))
+                .orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
+    public EmployeeDTO update(EmployeeDTO employee, String id) {
+        employee.setId(id);
+        return save(employee);
+    }
+
+    @Override
+    public void delete(String id) {
+        Employee byId = repository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+        byId.setStatus(EmployeeStatus.DELETED);
+        repository.save(byId);
     }
 }
