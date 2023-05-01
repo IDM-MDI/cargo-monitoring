@@ -2,6 +2,7 @@ package by.ishangulyyev.backend.entity;
 
 import by.ishangulyyev.backend.entity.type.CargoStatus;
 import by.ishangulyyev.backend.entity.type.CargoType;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -38,7 +39,7 @@ public class Cargo {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id", unique = true, nullable = false)
     @ToString.Exclude
     private Person person;
@@ -48,7 +49,7 @@ public class Cargo {
     @ToString.Exclude
     private Company company;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "cargo_content_id", nullable = false)
     @ToString.Exclude
     private CargoContent content;

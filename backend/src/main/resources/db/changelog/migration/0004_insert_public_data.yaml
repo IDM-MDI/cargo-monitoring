@@ -75,3 +75,48 @@ databaseChangeLog:
               - column:
                   name: phone
                   value: +0-276-291-4353
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: client1@gmail.com
+              - column:
+                  name: phone
+                  value: +1-231-796-2408
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: client2@gmail.com
+              - column:
+                  name: phone
+                  value: +422-274-957-4521
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: client3@gmail.com
+              - column:
+                  name: phone
+                  value: +932-386-387-1418
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: client4@gmail.com
+              - column:
+                  name: phone
+                  value: +932-648-906-0156
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: client5@gmail.com
+              - column:
+                  name: phone
+                  value: +475-369-273-2008
