@@ -24,12 +24,11 @@ public class OriginServiceImpl implements OriginService {
     @Transactional
     public Origin save(@Valid OriginDTO origin) {
         return repository.findByCountry_NameIgnoreCaseAndCity_NameIgnoreCase(origin.getCountry(), origin.getCity())
-                .orElse(save(
+                .orElseGet(() -> save(
                         Origin.builder()
                                 .country(Country.builder().name(origin.getCountry()).build())
                                 .city(City.builder().name(origin.getCity()).build())
-                                .build()
-                ));
+                                .build()));
     }
 
     private Origin save(Origin origin) {

@@ -9,11 +9,13 @@ import by.ishangulyyev.backend.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Transactional(readOnly = true)
 public class AuthenticationServiceImpl implements AuthenticationService {
     private final AuthenticationRepository repository;
     private final ModelMapper mapper;
@@ -30,5 +32,17 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public AuthenticationResponse authentication(AuthenticationRequest request) {
         return null;
+    }
+
+    @Override
+    @Transactional
+    public Authentication update(AuthenticationRequest authentication, String id) {
+        Optional<Authentication> byId = repository.findById(id);
+        if(byId.isEmpty()) {
+            return registration(authentication);
+        }
+        Authentication entity = byId.get();
+        entity.setPassword(authentication.getPassword());
+        return repository.save(entity);
     }
 }

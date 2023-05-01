@@ -7,4 +7,6 @@ import by.ishangulyyev.backend.model.AuthenticationResponse;
 public interface AuthenticationService {
     Authentication registration(AuthenticationRequest request);
     AuthenticationResponse authentication(AuthenticationRequest request);
+
+    Authentication update(AuthenticationRequest authentication, String id);
 }

@@ -52,8 +52,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     @Transactional
     public EmployeeDTO update(EmployeeDTO employee, String id) {
-        employee.setId(id);
-        return save(employee);
+        Employee entity = repository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+        entity.setPerson(personService.update(employee.getPerson(), entity.getPerson().getId()));
+        entity.setPosition(positionService.save(employee.getPosition()));
+        entity.setAuthentication(authenticationService.update(employee.getAuthentication(), entity.getAuthentication().getLogin()));
+        return mapper.map(repository.save(entity), EmployeeDTO.class);
     }
 
     @Override

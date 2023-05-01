@@ -5,4 +5,6 @@ import by.ishangulyyev.backend.model.PersonDTO;
 
 public interface PersonService {
     Person save(PersonDTO person);
+
+    Person update(PersonDTO person, String id);
 }

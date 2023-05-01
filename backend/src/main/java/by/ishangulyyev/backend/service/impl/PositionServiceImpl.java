@@ -14,7 +14,7 @@ public class PositionServiceImpl implements PositionService {
     @Override
     public Position save(String position) {
         return repository.findByNameEqualsIgnoreCase(position)
-                .orElse(repository.save(
+                .orElseGet(() -> repository.save(
                         Position.builder()
                                 .name(StringUtil.pascalCase(position))
                                 .build()

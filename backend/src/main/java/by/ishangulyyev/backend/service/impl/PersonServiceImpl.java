@@ -1,6 +1,7 @@
 package by.ishangulyyev.backend.service.impl;
 
 import by.ishangulyyev.backend.entity.Person;
+import by.ishangulyyev.backend.exception.EntityNotFoundException;
 import by.ishangulyyev.backend.model.PersonDTO;
 import by.ishangulyyev.backend.repository.PersonRepository;
 import by.ishangulyyev.backend.service.OriginService;
@@ -27,6 +28,17 @@ public class PersonServiceImpl implements PersonService {
         Person entity = mapper.map(person, Person.class);
         entity.setOrigin(originService.save(person.getOrigin()));
         entity.setPublicData(publicDataService.save(person.getPublicData()));
+        return repository.save(entity);
+    }
+
+    @Override
+    public Person update(@Valid PersonDTO person, String id) {
+        repository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+        Person entity = mapper.map(person, Person.class);
+        entity.setId(id);
+        entity.setOrigin(originService.save(person.getOrigin()));
+        entity.setPublicData(publicDataService.update(person.getPublicData(), entity.getPublicData().getEmail()));
         return repository.save(entity);
     }
 }

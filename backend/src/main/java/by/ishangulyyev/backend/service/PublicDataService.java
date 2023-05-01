@@ -5,4 +5,5 @@ import by.ishangulyyev.backend.model.PublicDataDTO;
 
 public interface PublicDataService {
     PublicData save(PublicDataDTO publicData);
+    PublicData update(PublicDataDTO publicData, String email);
 }
