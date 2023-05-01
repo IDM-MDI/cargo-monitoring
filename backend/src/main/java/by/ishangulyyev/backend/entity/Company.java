@@ -1,7 +1,9 @@
 package by.ishangulyyev.backend.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -36,7 +38,7 @@ public class Company {
     @Column(name = "origin_name",unique = true, updatable = true, nullable = false)
     private String originName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "public_data_id", nullable = false)
     @ToString.Exclude
     private PublicData publicData;

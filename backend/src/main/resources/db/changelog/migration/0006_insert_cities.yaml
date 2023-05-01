@@ -147,3 +147,12 @@ databaseChangeLog:
               - column:
                   name: name
                   value: Milan
+        - insert:
+            tableName: cities
+            columns:
+              - column:
+                  name: id
+                  value: f9f72a55-84f7-418b-8e7f-8fd137578ef0
+              - column:
+                  name: name
+                  value: Ankara

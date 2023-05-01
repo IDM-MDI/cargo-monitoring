@@ -3,6 +3,7 @@ databaseChangeLog:
       id: 9
       author: Dayanch
       changes:
+        # USER
         - insert:
             tableName: persons
             columns:
@@ -26,7 +27,7 @@ databaseChangeLog:
                   value: FEMALE
               - column:
                   name: origin_id
-                  value: fcc70070-5b8e-4cb7-9cae-9202ed8325c8
+                  value: fcc70070-5b8e-4cb7-9cae-9202ed8325c8 #USA DALLAS
               - column:
                   name: public_data_email
                   value: user1@gmail.com
@@ -53,7 +54,7 @@ databaseChangeLog:
                   value: MALE
               - column:
                   name: origin_id
-                  value: fe47df08-4a75-4c8c-b12b-bcf4094258b5
+                  value: fe47df08-4a75-4c8c-b12b-bcf4094258b5 #RUSSIA MOSCOW
               - column:
                   name: public_data_email
                   value: user2@gmail.com
@@ -80,7 +81,7 @@ databaseChangeLog:
                   value: MALE
               - column:
                   name: origin_id
-                  value: 96191881-2148-4dbd-b0a5-0598944ffbd4
+                  value: 96191881-2148-4dbd-b0a5-0598944ffbd4 #UKRAINE KIEV
               - column:
                   name: public_data_email
                   value: user3@gmail.com
@@ -107,7 +108,7 @@ databaseChangeLog:
                   value: MALE
               - column:
                   name: origin_id
-                  value: 9768e6d8-cc20-4b4d-b7b2-5c5d3847add2
+                  value: 9768e6d8-cc20-4b4d-b7b2-5c5d3847add2 #JAPAN TOKYO
               - column:
                   name: public_data_email
                   value: user4@gmail.com
@@ -134,10 +135,11 @@ databaseChangeLog:
                   value: MALE
               - column:
                   name: origin_id
-                  value: 024aaf66-2da4-4b6f-9e9d-d44f962f5eb0
+                  value: 024aaf66-2da4-4b6f-9e9d-d44f962f5eb0 #ITALY MILAN
               - column:
                   name: public_data_email
                   value: user5@gmail.com
+        # ADMIN
         - insert:
             tableName: persons
             columns:
@@ -161,7 +163,7 @@ databaseChangeLog:
                   value: MALE
               - column:
                   name: origin_id
-                  value: a31046d5-06e9-4a12-b066-354ceaf70124
+                  value: a31046d5-06e9-4a12-b066-354ceaf70124 #FRANCE PARIS
               - column:
                   name: public_data_email
                   value: admin1@gmail.com
@@ -188,7 +190,7 @@ databaseChangeLog:
                   value: FEMALE
               - column:
                   name: origin_id
-                  value: 33a66072-94e7-48f5-9b77-bf651b9fc9b0
+                  value: 33a66072-94e7-48f5-9b77-bf651b9fc9b0 #BELARUS MINSK
               - column:
                   name: public_data_email
                   value: admin2@gmail.com
@@ -215,7 +217,143 @@ databaseChangeLog:
                   value: FEMALE
               - column:
                   name: origin_id
-                  value: 5fc61611-2ea1-46cb-8398-5063a3fdf8ba
+                  value: 5fc61611-2ea1-46cb-8398-5063a3fdf8ba #BRAZIL BRAZILIAN
               - column:
                   name: public_data_email
                   value: admin3@gmail.com
+        #CLIENT
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: 85d36e47-8c72-48eb-b8d5-a81313f1cb2c
+              - column:
+                  name: name
+                  value: Jane
+              - column:
+                  name: surname
+                  value: Sandy
+              - column:
+                  name: lastname
+                  value: Hart
+              - column:
+                  name: birthday
+                  value: '1996-07-07'
+              - column:
+                  name: gender
+                  value: FEMALE
+              - column:
+                  name: origin_id
+                  value: fcc70070-5b8e-4cb7-9cae-9202ed8325c8 #USA DALLAS
+              - column:
+                  name: public_data_email
+                  value: client1@gmail.com
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: bb44bdf8-2a1c-4fb0-9324-1c64b0a6ffc7
+              - column:
+                  name: name
+                  value: Minnie
+              - column:
+                  name: surname
+                  value: Curtis
+              - column:
+                  name: lastname
+                  value: Mockingbird
+              - column:
+                  name: birthday
+                  value: '1989-02-02'
+              - column:
+                  name: gender
+                  value: FEMALE
+              - column:
+                  name: origin_id
+                  value: fe47df08-4a75-4c8c-b12b-bcf4094258b5 #RUSSIA MOSCOW
+              - column:
+                  name: public_data_email
+                  value: client2@gmail.com
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: f838c763-fd6d-4fbe-ae8f-d0f890b37c0f
+              - column:
+                  name: name
+                  value: Raul
+              - column:
+                  name: surname
+                  value: Pearson
+              - column:
+                  name: lastname
+                  value: Valwood
+              - column:
+                  name: birthday
+                  value: '1952-06-11'
+              - column:
+                  name: gender
+                  value: MALE
+              - column:
+                  name: origin_id
+                  value: 96191881-2148-4dbd-b0a5-0598944ffbd4 #UKRAINE KIEV
+              - column:
+                  name: public_data_email
+                  value: client3@gmail.com
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: 3b6a75b8-cea1-421f-9d36-2729ccd9a7a9
+              - column:
+                  name: name
+                  value: Minnie
+              - column:
+                  name: surname
+                  value: Wheeler
+              - column:
+                  name: lastname
+                  value: Adams
+              - column:
+                  name: birthday
+                  value: '1956-07-03'
+              - column:
+                  name: gender
+                  value: FEMALE
+              - column:
+                  name: origin_id
+                  value: 9768e6d8-cc20-4b4d-b7b2-5c5d3847add2 #JAPAN TOKYO
+              - column:
+                  name: public_data_email
+                  value: client4@gmail.com
+        - insert:
+            tableName: persons
+            columns:
+              - column:
+                  name: id
+                  value: c9d9acba-b3b3-4aa1-ac24-6d84ef196209
+              - column:
+                  name: name
+                  value: Lauren
+              - column:
+                  name: surname
+                  value: Dixon
+              - column:
+                  name: lastname
+                  value: Ash
+              - column:
+                  name: birthday
+                  value: '1956-05-06'
+              - column:
+                  name: gender
+                  value: FEMALE
+              - column:
+                  name: origin_id
+                  value: 024aaf66-2da4-4b6f-9e9d-d44f962f5eb0 #ITALY MILAN
+              - column:
+                  name: public_data_email
+                  value: client5@gmail.com

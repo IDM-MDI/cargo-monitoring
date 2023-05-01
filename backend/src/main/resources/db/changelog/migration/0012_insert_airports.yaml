@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 13
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: airports
+            columns:
+              - column:
+                  name: id
+                  value: 8f64ceef-9c45-457c-b10c-e8bb0f42c3c8
+              - column:
+                  name: company_id
+                  value: 4d0da5da-0cd1-45c8-aad0-65df0fe2e86d #Belavia
+              - column:
+                  name: origin_id
+                  value: 33a66072-94e7-48f5-9b77-bf651b9fc9b0 #Belarus Minsk
+        - insert:
+            tableName: airports
+            columns:
+              - column:
+                  name: id
+                  value: 6831e26f-e349-4e15-b41a-5d6f5125f926
+              - column:
+                  name: company_id
+                  value: a1cbb989-1517-4eee-8e25-733c01d75f0c #Россия
+              - column:
+                  name: origin_id
+                  value: fe47df08-4a75-4c8c-b12b-bcf4094258b5 #Russia Moscow
+        - insert:
+            tableName: airports
+            columns:
+              - column:
+                  name: id
+                  value: 556e536c-c6a8-4e65-999e-3f6def546765
+              - column:
+                  name: company_id
+                  value: 88d6aebc-3e68-44bd-bc3a-9ca844cf6f03 #Turkish Airlines
+              - column:
+                  name: origin_id
+                  value: 717ccfa6-43ee-474c-a8e3-997b20fa1a1f #Turkish Ankara

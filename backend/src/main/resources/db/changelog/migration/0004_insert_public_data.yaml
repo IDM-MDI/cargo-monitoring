@@ -120,3 +120,49 @@ databaseChangeLog:
               - column:
                   name: phone
                   value: +475-369-273-2008
+        #Company
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: company1@gmail.com
+              - column:
+                  name: phone
+                  value: +10-231-796-2408
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: company2@gmail.com
+              - column:
+                  name: phone
+                  value: +122-274-957-4521
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: company3@gmail.com
+              - column:
+                  name: phone
+                  value: +132-386-387-1418
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: company4@gmail.com
+              - column:
+                  name: phone
+                  value: +132-648-906-0156
+        - insert:
+            tableName: public_data
+            columns:
+              - column:
+                  name: email
+                  value: company5@gmail.com
+              - column:
+                  name: phone
+                  value: +175-369-273-2008

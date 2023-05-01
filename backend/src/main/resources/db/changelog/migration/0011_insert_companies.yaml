@@ -1,0 +1,80 @@
+databaseChangeLog:
+  - changeSet:
+      id: 12
+      author: Dayanch
+      changes:
+        - insert:
+            tableName: companies
+            columns:
+              - column:
+                  name: id
+                  value: 4d0da5da-0cd1-45c8-aad0-65df0fe2e86d
+              - column:
+                  name: name
+                  value: Belavia
+              - column:
+                  name: origin_name
+                  value: ОАО «Авиакомпания Белавиа»
+              - column:
+                  name: public_data_id
+                  value: company1@gmail.com
+        - insert:
+            tableName: companies
+            columns:
+              - column:
+                  name: id
+                  value: 281d9df8-e924-48a5-a85b-ca1e3e72bc62
+              - column:
+                  name: name
+                  value: Wildberries
+              - column:
+                  name: origin_name
+                  value: ООО «Вайлдберриз»
+              - column:
+                  name: public_data_id
+                  value: company2@gmail.com
+        - insert:
+            tableName: companies
+            columns:
+              - column:
+                  name: id
+                  value: a1cbb989-1517-4eee-8e25-733c01d75f0c
+              - column:
+                  name: name
+                  value: Россия
+              - column:
+                  name: origin_name
+                  value: АО «Авиакомпания «Россия»
+              - column:
+                  name: public_data_id
+                  value: company3@gmail.com
+        - insert:
+            tableName: companies
+            columns:
+              - column:
+                  name: id
+                  value: 69442921-e34c-498a-a527-a16b5eef0535
+              - column:
+                  name: name
+                  value: OZON
+              - column:
+                  name: origin_name
+                  value: ООО «ИНТЕРНЕТ РЕШЕНИЯ»
+              - column:
+                  name: public_data_id
+                  value: company4@gmail.com
+        - insert:
+            tableName: companies
+            columns:
+              - column:
+                  name: id
+                  value: 88d6aebc-3e68-44bd-bc3a-9ca844cf6f03
+              - column:
+                  name: name
+                  value: Turkish Airlines
+              - column:
+                  name: origin_name
+                  value: Turkish Airlines
+              - column:
+                  name: public_data_id
+                  value: company5@gmail.com

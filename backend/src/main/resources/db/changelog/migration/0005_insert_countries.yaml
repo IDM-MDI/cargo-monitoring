@@ -147,3 +147,12 @@ databaseChangeLog:
               - column:
                   name: name
                   value: Armenia
+        - insert:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  value: 8eece8ab-25be-4231-9100-5b7484fa144e
+              - column:
+                  name: name
+                  value: Turkish

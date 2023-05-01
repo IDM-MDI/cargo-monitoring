@@ -57,7 +57,7 @@ public class Cargo {
     @JoinColumn(name = "arrival_time",nullable = false)
     private LocalDateTime arrivalTime;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "departure_airport_id", nullable = false)
     @ToString.Exclude
     private Airport departureAirport;

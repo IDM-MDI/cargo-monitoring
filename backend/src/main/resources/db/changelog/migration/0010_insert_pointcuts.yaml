@@ -14,7 +14,7 @@ databaseChangeLog:
                   value: 1
               - column:
                   name: name
-                  value: pointcut1
+                  value: start
               - column:
                   name: employee_id
                   value: edfc0704-44b0-4bb6-b927-6748a947dcc3

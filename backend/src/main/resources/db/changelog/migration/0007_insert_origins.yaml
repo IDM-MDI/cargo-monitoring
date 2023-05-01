@@ -99,3 +99,15 @@ databaseChangeLog:
               - column:
                   name: city_id
                   value: 043844f6-71ec-4966-a708-0f6deabca4c3 #Minsk
+        - insert:
+            tableName: origins
+            columns:
+              - column:
+                  name: id
+                  value: 717ccfa6-43ee-474c-a8e3-997b20fa1a1f
+              - column:
+                  name: country_id
+                  value: 8eece8ab-25be-4231-9100-5b7484fa144e #Turkish
+              - column:
+                  name: city_id
+                  value: f9f72a55-84f7-418b-8e7f-8fd137578ef0 #Ankara
