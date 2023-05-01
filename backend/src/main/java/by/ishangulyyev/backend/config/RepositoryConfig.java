@@ -33,13 +33,23 @@ public class RepositoryConfig {
 
         modelMapper.createTypeMap(Employee.class, EmployeeDTO.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPosition().getName(),EmployeeDTO::setPosition));
+
         modelMapper.createTypeMap(Employee.class, EmployeePage.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getName(),EmployeePage::setName))
                 .addMappings(mapping -> mapping.map(source -> source.getPerson().getSurname(),EmployeePage::setSurname))
                 .addMappings(mapping -> mapping.map(source -> source.getPosition().getName(),EmployeePage::setPosition));
+
         modelMapper.createTypeMap(Cargo.class, CargoPage.class)
-                .addMappings(mapping -> mapping.map(source -> source.getPerson().getName() + source.getPerson().getSurname(),CargoPage::setClient))
-                .addMappings(mapping -> mapping.map(source -> source.getPerson().getOrigin().getCountry().getName(),CargoPage::setCountry));
+                .setConverter(context -> {
+                    Cargo source = context.getSource();
+                    return CargoPage.builder()
+                            .id(source.getId())
+                            .country(source.getPerson().getOrigin().getCountry().getName())
+                            .client(source.getPerson().getName() + " " + source.getPerson().getSurname())
+                            .type(source.getType())
+                            .status(source.getStatus())
+                            .build();
+                });
         return modelMapper;
     }
 }
