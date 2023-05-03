@@ -10,4 +10,6 @@ public interface PointcutService {
     Page<PointcutDTO> findAll(Pageable pageable);
     PointcutDTO save(PointcutDTO pointcut);
     void delete(String id);
+
+    PointcutDTO patchLogin(String id, String login);
 }

@@ -39,8 +39,8 @@ public class PointcutServiceImpl implements PointcutService {
     @Override
     @Transactional
     public PointcutDTO save(PointcutDTO pointcut) {
-        changeExistedOrder(pointcut);
-        nullExistedEmployee(pointcut);
+        changeExistedOrder(pointcut.getNumber());
+        nullExistedEmployee(pointcut.getLogin());
         return mapper.map(savePointcut(pointcut), PointcutDTO.class);
     }
 
@@ -49,6 +49,19 @@ public class PointcutServiceImpl implements PointcutService {
     public void delete(String id) {
         repository.findById(id).orElseThrow(EntityNotFoundException::new);
         repository.deleteById(id);
+    }
+
+    @Override
+    @Transactional
+    public PointcutDTO patchLogin(String id, String login) {
+        Pointcut pointcut = repository.findById(id)
+                .orElseThrow(EntityNotFoundException::new);
+        nullExistedEmployee(login);
+        pointcut.setEmployee(
+                        employeeService.findByLogin(login)
+                                .orElseThrow(EntityNotFoundException::new)
+                );
+        return mapper.map(repository.save(pointcut), PointcutDTO.class);
     }
 
     private Pointcut savePointcut(PointcutDTO pointcut) {
@@ -72,8 +85,8 @@ public class PointcutServiceImpl implements PointcutService {
     }
 
 
-    private void changeExistedOrder(PointcutDTO pointcut) {
-        Optional<Pointcut> byNumber = repository.findByNumber(pointcut.getNumber());
+    private void changeExistedOrder(Long order) {
+        Optional<Pointcut> byNumber = repository.findByNumber(order);
         if(byNumber.isPresent()) {
             Pointcut entityByNumber = byNumber.get();
             entityByNumber.setNumber(findOrder());
@@ -81,8 +94,8 @@ public class PointcutServiceImpl implements PointcutService {
         }
     }
 
-    private void nullExistedEmployee(PointcutDTO pointcut) {
-        Optional<Pointcut> byLogin = repository.findByEmployee_Authentication_Login(pointcut.getLogin());
+    private void nullExistedEmployee(String login) {
+        Optional<Pointcut> byLogin = repository.findByEmployee_Authentication_Login(login);
         if(byLogin.isPresent()) {
             Pointcut entityByLogin = byLogin.get();
             entityByLogin.setEmployee(null);
