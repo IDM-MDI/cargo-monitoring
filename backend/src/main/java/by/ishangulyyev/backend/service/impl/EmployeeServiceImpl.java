@@ -17,6 +17,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
@@ -67,5 +69,10 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .orElseThrow(EntityNotFoundException::new);
         byId.setStatus(EmployeeStatus.DELETED);
         repository.save(byId);
+    }
+
+    @Override
+    public Optional<Employee> findByLogin(String login) {
+        return repository.findByAuthentication_Login(login);
     }
 }

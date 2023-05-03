@@ -114,3 +114,15 @@ databaseChangeLog:
               - column:
                   name: name
                   value: pointcut8
+        - insert:
+            tableName: pointcuts
+            columns:
+              - column:
+                  name: id
+                  value: 5ad3f8a7-8e55-4491-9bae-e8af3527dc5a
+              - column:
+                  name: point_order
+                  value: 10
+              - column:
+                  name: name
+                  value: pointcut9
