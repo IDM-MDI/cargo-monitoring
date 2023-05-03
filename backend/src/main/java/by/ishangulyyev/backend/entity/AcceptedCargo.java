@@ -46,6 +46,11 @@ public class AcceptedCargo {
     @ToString.Exclude
     private Cargo cargo;
 
+    @ManyToOne
+    @JoinColumn(name = "pointcut_id", nullable = false)
+    @ToString.Exclude
+    private Pointcut pointcut;
+
     @Column(name = "time", nullable = false, updatable = false)
     @CreatedDate
     private LocalDateTime time;

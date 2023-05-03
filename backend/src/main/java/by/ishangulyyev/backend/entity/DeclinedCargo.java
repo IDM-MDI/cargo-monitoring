@@ -44,6 +44,11 @@ public class DeclinedCargo {
     @ToString.Exclude
     private Cargo cargo;
 
+    @ManyToOne
+    @JoinColumn(name = "pointcut_id", nullable = false)
+    @ToString.Exclude
+    private Pointcut pointcut;
+
     @Column(name = "reason", nullable = false, updatable = false)
     private String reason;
 
