@@ -11,7 +11,7 @@ databaseChangeLog:
                   value: 9ec0d4cd-1321-474a-8665-2fbc9981111a
               - column:
                   name: person_id
-                  value: 85d36e47-8c72-48eb-b8d5-a81313f1cb2c
+                  value: f951056f-c1dd-49a2-9c8f-c08bbe4a6fe5
               - column:
                   name: company_id
                   value: 281d9df8-e924-48a5-a85b-ca1e3e72bc62
@@ -41,7 +41,7 @@ databaseChangeLog:
                   value: 3958254b-70a8-41a5-9567-2f11344b931e
               - column:
                   name: person_id
-                  value: bb44bdf8-2a1c-4fb0-9324-1c64b0a6ffc7
+                  value: 6eafc73f-0e73-4d42-9d17-5fa2d6ebb8e7
               - column:
                   name: company_id
                   value: 69442921-e34c-498a-a527-a16b5eef0535
@@ -71,7 +71,7 @@ databaseChangeLog:
                   value: 328df384-3cda-4971-9f16-397fc8bd3bdf
               - column:
                   name: person_id
-                  value: f838c763-fd6d-4fbe-ae8f-d0f890b37c0f
+                  value: cd4983cc-234e-4c9f-b7f5-8a09f786364f
               - column:
                   name: company_id
                   value: 69442921-e34c-498a-a527-a16b5eef0535
@@ -101,7 +101,7 @@ databaseChangeLog:
                   value: 39c577d6-1ec7-483c-a123-b44e698f02ad
               - column:
                   name: person_id
-                  value: 3b6a75b8-cea1-421f-9d36-2729ccd9a7a9
+                  value: c73e1d6c-632b-48d7-ada4-9a1e81c6475a
               - column:
                   name: company_id
                   value: 69442921-e34c-498a-a527-a16b5eef0535
@@ -131,7 +131,7 @@ databaseChangeLog:
                   value: fe73a457-ed9f-4fba-a4dd-894f7555e8a1
               - column:
                   name: person_id
-                  value: c9d9acba-b3b3-4aa1-ac24-6d84ef196209
+                  value: 25dca007-b25a-4493-9a20-9aa0208e21cc
               - column:
                   name: company_id
                   value: 281d9df8-e924-48a5-a85b-ca1e3e72bc62

@@ -1,8 +1,6 @@
 package by.ishangulyyev.backend.config;
 
 import by.ishangulyyev.backend.entity.Cargo;
-import by.ishangulyyev.backend.entity.City;
-import by.ishangulyyev.backend.entity.Country;
 import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.entity.Origin;
 import by.ishangulyyev.backend.model.CargoPage;

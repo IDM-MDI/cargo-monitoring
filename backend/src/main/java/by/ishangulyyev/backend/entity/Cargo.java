@@ -1,10 +1,12 @@
 package by.ishangulyyev.backend.entity;
 
+import by.ishangulyyev.backend.entity.listener.CargoEntityListener;
 import by.ishangulyyev.backend.entity.type.CargoStatus;
 import by.ishangulyyev.backend.entity.type.CargoType;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
@@ -27,6 +29,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "cargos")
+@EntityListeners(CargoEntityListener.class)
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -38,7 +41,6 @@ public class Cargo {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id", unique = true, nullable = false)
     @ToString.Exclude
@@ -57,7 +59,7 @@ public class Cargo {
     @JoinColumn(name = "arrival_time",nullable = false)
     private LocalDateTime arrivalTime;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "departure_airport_id", nullable = false)
     @ToString.Exclude
     private Airport departureAirport;

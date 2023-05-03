@@ -20,6 +20,8 @@ import java.time.LocalDateTime;
 public class CargoDTO {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String id;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private String qrCodeURL;
     @Valid
     private CargoContentDTO content;
     @Valid
@@ -32,6 +34,7 @@ public class CargoDTO {
     private LocalDateTime arrivalTime;
     @NotNull
     private CargoType type;
-    @NotNull
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private CargoStatus status;
 }

@@ -10,7 +10,7 @@ databaseChangeLog:
                   name: id
                   value: fbf45156-ed7a-495d-9d57-a6ceea495489
               - column:
-                  name: order
+                  name: point_order
                   value: 1
               - column:
                   name: name
@@ -25,7 +25,7 @@ databaseChangeLog:
                   name: id
                   value: 64074d09-9390-47bb-8ce0-00300f6b8f33
               - column:
-                  name: order
+                  name: point_order
                   value: 2
               - column:
                   name: name
@@ -40,7 +40,7 @@ databaseChangeLog:
                   name: id
                   value: e152f7fd-4a7a-4736-9ce7-209498465e49
               - column:
-                  name: order
+                  name: point_order
                   value: 3
               - column:
                   name: name
@@ -55,7 +55,7 @@ databaseChangeLog:
                   name: id
                   value: 5185d4fa-4162-49d9-bdb8-c4c59ff0a394
               - column:
-                  name: order
+                  name: point_order
                   value: 4
               - column:
                   name: name
@@ -70,7 +70,7 @@ databaseChangeLog:
                   name: id
                   value: 7b8fdbb2-fffb-4d24-a3e8-d34a5e58f189
               - column:
-                  name: order
+                  name: point_order
                   value: 5
               - column:
                   name: name
@@ -85,7 +85,7 @@ databaseChangeLog:
                   name: id
                   value: 027456ef-2e55-420d-87f6-f80ab7ad3076
               - column:
-                  name: order
+                  name: point_order
                   value: 6
               - column:
                   name: name
@@ -97,7 +97,7 @@ databaseChangeLog:
                   name: id
                   value: 7e1d5068-4750-4a8a-a105-ba83597825f7
               - column:
-                  name: order
+                  name: point_order
                   value: 7
               - column:
                   name: name
@@ -109,7 +109,7 @@ databaseChangeLog:
                   name: id
                   value: 0c2b0ca9-cc89-478d-9073-4386dc8758ed
               - column:
-                  name: order
+                  name: point_order
                   value: 8
               - column:
                   name: name
