@@ -131,9 +131,9 @@
         <TableView layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF;">
             <columns>
                 <TableColumn editable="false" prefWidth="215.19997787475586" style="-fx-background-color: FFFFFF;" text="id" />
-                <TableColumn editable="false" minWidth="9.60003662109375" prefWidth="244.00001525878906" style="-fx-background-color: FFFFFF;" text="name" />
-                <TableColumn editable="false" prefWidth="234.4000244140625" style="-fx-background-color: FFFFFF;" text="surname" />
-                <TableColumn editable="false" prefWidth="254.39996337890625" style="-fx-background-color: FFFFFF;" text="position" />
+                <TableColumn editable="false" minWidth="9.60003662109375" prefWidth="244.00001525878906" style="-fx-background-color: FFFFFF;" text="client" />
+                <TableColumn editable="false" prefWidth="234.4000244140625" style="-fx-background-color: FFFFFF;" text="country" />
+                <TableColumn editable="false" prefWidth="254.39996337890625" style="-fx-background-color: FFFFFF;" text="type" />
                 <TableColumn editable="false" prefWidth="200.00006103515625" style="-fx-background-color: FFFFFF;" text="status" />
             </columns>
         </TableView>
