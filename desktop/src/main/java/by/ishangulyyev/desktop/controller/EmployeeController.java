@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeeController extends PageController implements Initializable, AddPageButton {
+public class EmployeeController extends PageController implements Initializable, AddableButton {
 
     @Override
     public void add(ActionEvent event) {
