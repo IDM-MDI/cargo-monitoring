@@ -1,4 +1,10 @@
 package by.ishangulyyev.desktop.controller;
 
-public class RouteController extends PageController {
+import javafx.event.ActionEvent;
+
+public class RouteController extends PageController implements AddPageButton {
+    @Override
+    public void add(ActionEvent event) {
+
+    }
 }

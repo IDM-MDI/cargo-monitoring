@@ -1,4 +1,10 @@
 package by.ishangulyyev.desktop.controller;
 
-public class CargoController extends PageController {
+import javafx.event.ActionEvent;
+
+public class CargoController extends PageController implements AddPageButton {
+    @Override
+    public void add(ActionEvent event) {
+
+    }
 }

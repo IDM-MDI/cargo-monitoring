@@ -2,15 +2,14 @@ package by.ishangulyyev.desktop.controller;
 
 import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeeController extends PageController implements Initializable {
+public class EmployeeController extends PageController implements Initializable, AddPageButton {
 
-    @FXML
+    @Override
     public void add(ActionEvent event) {
         SceneUtil.switchScene(event, "add-employee.fxml");
     }

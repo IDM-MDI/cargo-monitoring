@@ -40,32 +40,32 @@
                 <RowConstraints maxHeight="25.59999694824218" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Line fx:id="employeeLine" visible="false" endX="11.292895317077637" endY="0.5928947329521179" startX="128.77159118652344" startY="0.592890202999115" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Line fx:id="employeeLine" endX="11.292895317077637" endY="0.5928947329521179" startX="128.77159118652344" startY="0.592890202999115" stroke="#045794" strokeWidth="3.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <Line fx:id="cargoLine" disable="true" endX="11.292895317077637" endY="0.5928947329521179" startX="98.3715591430664" startY="0.5928743481636047" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                <Line fx:id="pointLine" visible="false" endX="11.292895317077637" endY="0.5928947329521179" startX="163.17153930664062" startY="0.5928986668586731" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                <Line fx:id="statisticLine" visible="false" endX="11.292895317077637" endY="0.5928947329521179" startX="112.77155303955078" startY="-0.07265176624059677" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-                <Line fx:id="reportLine" visible="false" endX="11.292895317077637" endY="0.5928947329521179" startX="104.77155303955078" startY="0.5928426384925842" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-                <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Employee" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Line fx:id="pointLine" endX="11.292895317077637" endY="0.5928947329521179" startX="163.17153930664062" startY="0.5928986668586731" stroke="#045794" strokeWidth="3.0" visible="false" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+                <Line fx:id="statisticLine" endX="11.292895317077637" endY="0.5928947329521179" startX="112.77155303955078" startY="-0.07265176624059677" stroke="#045794" strokeWidth="3.0" visible="false" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+                <Line fx:id="reportLine" endX="11.292895317077637" endY="0.5928947329521179" startX="104.77155303955078" startY="0.5928426384925842" stroke="#045794" strokeWidth="3.0" visible="false" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+                <Button mnemonicParsing="false" onAction="#employee" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Employee" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: transparent;" text="Point &amp; route" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                <Button mnemonicParsing="false" onAction="#route" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Point &amp; route" GridPane.columnIndex="5" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Cargo" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Cargo" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Statistic" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                <Button mnemonicParsing="false" onAction="#statistic" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Statistic" GridPane.columnIndex="7" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Report" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                <Button mnemonicParsing="false" onAction="#report" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Report" GridPane.columnIndex="9" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>

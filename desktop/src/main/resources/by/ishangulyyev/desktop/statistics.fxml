@@ -114,15 +114,6 @@
                         <Insets top="7.0" />
                     </HBox.margin>
                 </Text>
-                <Separator prefHeight="52.0" prefWidth="316.0" visible="false" />
-                <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: FFFFFF; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4);;" text="Add">
-                    <font>
-                        <Font size="24.0" />
-                    </font>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
             </children>
         </HBox>
         <Separator layoutX="503.0" layoutY="155.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
