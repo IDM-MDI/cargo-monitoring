@@ -14,6 +14,10 @@ public class EmployeeController implements Initializable {
     public void add(ActionEvent event) {
         SceneUtil.switchScene(event, "add-employee.fxml");
     }
+    @FXML
+    public void cargo(ActionEvent event) {
+        SceneUtil.switchScene(event, "cargos.fxml");
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Initialize");

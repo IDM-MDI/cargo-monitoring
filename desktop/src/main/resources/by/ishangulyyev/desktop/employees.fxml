@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -20,15 +22,15 @@
       <GridPane prefHeight="91.0" prefWidth="1200.0" style="-fx-background-color: FFFFFF;">
         <columnConstraints>
             <ColumnConstraints maxWidth="81.60000228881836" minWidth="44.0" prefWidth="60.000009918212896" />
-            <ColumnConstraints maxWidth="111.19999008178709" minWidth="10.0" prefWidth="89.59999389648438" />
-            <ColumnConstraints maxWidth="159.0" minWidth="118.40001220703127" prefWidth="140.8000061035156" />
-            <ColumnConstraints maxWidth="128.7999900817871" minWidth="10.0" prefWidth="54.399993896484375" />
-            <ColumnConstraints maxWidth="162.0" minWidth="162.0" prefWidth="162.0" />
-          <ColumnConstraints maxWidth="316.8000091552734" minWidth="10.0" prefWidth="122.4000244140625" />
-          <ColumnConstraints maxWidth="176.0" minWidth="176.0" prefWidth="176.0" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="557.6" minWidth="10.0" prefWidth="66.4000366210937" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.5999633789063" minWidth="167.0" prefWidth="181.5999633789063" />
-           <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="63.40000000000009" />
+            <ColumnConstraints maxWidth="142.39999389648438" minWidth="10.0" prefWidth="120.00000610351562" />
+            <ColumnConstraints maxWidth="159.0" minWidth="89.60000610351562" prefWidth="103.20003662109374" />
+            <ColumnConstraints maxWidth="128.7999900817871" minWidth="10.0" prefWidth="90.19999999999999" />
+            <ColumnConstraints maxWidth="162.0" minWidth="126.99997558593753" prefWidth="133.40000000000003" />
+          <ColumnConstraints maxWidth="316.8000091552734" minWidth="10.0" prefWidth="155.1999633789062" />
+          <ColumnConstraints maxWidth="184.0" minWidth="120.0" prefWidth="126.39998779296877" />
+           <ColumnConstraints hgrow="SOMETIMES" maxWidth="557.6" minWidth="10.0" prefWidth="104.39997558593745" />
+           <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.5999633789063" minWidth="132.00002441406252" prefWidth="139.19997558593752" />
+           <ColumnConstraints hgrow="SOMETIMES" maxWidth="496.0" minWidth="10.0" prefWidth="94.4000244140625" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.59990234375005" minWidth="47.199951171875" prefWidth="76.20000000000005" />
         </columnConstraints>
         <rowConstraints>
@@ -38,67 +40,82 @@
             <RowConstraints maxHeight="25.59999694824218" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text fx:id="employeeHeader" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Inter;" styleClass="label" text="Employee" wrappingWidth="86.259765625" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <font>
-                  <Font name="Microsoft Tai Le" size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="cargoHeader" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="Cargo" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-            <Text fx:id="pointHeader" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="Point &amp; route" GridPane.columnIndex="5" GridPane.rowIndex="1">
+            <Line fx:id="employeeLine" endX="11.292895317077637" endY="0.5928947329521179" startX="128.77159118652344" startY="0.592890202999115" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Line fx:id="cargoLine" disable="true" endX="11.292895317077637" endY="0.5928947329521179" startX="98.3715591430664" startY="0.5928743481636047" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Line fx:id="pointLine" endX="11.292895317077637" endY="0.5928947329521179" startX="163.17153930664062" startY="0.5928986668586731" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Line fx:id="statisticLine" endX="11.292895317077637" endY="0.5928947329521179" startX="112.77155303955078" startY="-0.07265176624059677" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Line fx:id="reportLine" endX="11.292895317077637" endY="0.5928947329521179" startX="104.77155303955078" startY="0.5928426384925842" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Employee" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
-            </Text>
-            <Text fx:id="statisticHeader" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="Statistic" GridPane.columnIndex="7" GridPane.rowIndex="1">
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: transparent;" text="Point &amp; route" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
-            </Text>
-            <Text fx:id="reportHeader" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-cursor: hand;" text="Report" GridPane.columnIndex="9" GridPane.rowIndex="1">
+            </Button>
+            <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Cargo" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
-            </Text>
-            <Line fx:id="employeeLine" endX="11.292895317077637" endY="0.5928947329521179" startX="99.38578033447266" startY="0.5928939580917358" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Line fx:id="cargoLine" disable="true" endX="11.292895317077637" endY="0.5928947329521179" startX="63.38577651977539" startY="0.5929031372070312" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Line fx:id="pointLine" endX="11.292895317077637" endY="0.5928947329521179" startX="133.78578186035156" startY="0.2539985179901123" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Line fx:id="statisticLine" endX="11.292895317077637" endY="0.5928947329521179" startX="83.38577270507812" startY="0.5928756594657898" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Line fx:id="reportLine" endX="11.292895317077637" endY="0.5928947329521179" startX="77.78583526611328" startY="0.5929214358329773" stroke="#045794" strokeWidth="3.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            </Button>
+            <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Statistic" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Report" GridPane.columnIndex="9" GridPane.rowIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </GridPane>
-      <Separator layoutX="503.0" layoutY="91.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
-      <HBox layoutY="115.0" prefHeight="39.0" prefWidth="1200.0">
+      <Separator layoutX="503.0" layoutY="91.0" orientation="VERTICAL" prefHeight="32.0" prefWidth="36.0" visible="false" />
+      <HBox layoutY="123.0" prefHeight="39.0" prefWidth="1200.0">
          <children>
-            <Separator prefWidth="499.0" visible="false" />
+            <Separator prefHeight="52.0" prefWidth="86.0" visible="false" />
+            <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../reload.png" />
+               </image>
+            </ImageView>
+            <Separator prefHeight="52.0" prefWidth="374.0" visible="false" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="21.890625">
                <font>
-                  <Font size="32.0" />
+                  <Font size="24.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <HBox.margin>
+                  <Insets top="7.0" />
+               </HBox.margin>
             </Text>
             <Separator prefWidth="40.0" visible="false" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                <font>
-                  <Font size="32.0" />
+                  <Font size="24.0" />
                </font>
+               <HBox.margin>
+                  <Insets top="7.0" />
+               </HBox.margin>
             </Text>
             <Separator prefWidth="40.0" visible="false" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;">
                <font>
-                  <Font size="32.0" />
+                  <Font size="24.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <HBox.margin>
+                  <Insets top="7.0" />
+               </HBox.margin>
             </Text>
-            <Separator prefWidth="327.0" visible="false" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" text="Add">
+            <Separator prefHeight="52.0" prefWidth="316.0" visible="false" />
+            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#add" prefHeight="52.0" prefWidth="200.0" style="-fx-background-color: FFFFFF; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4);;" text="Add">
                <font>
                   <Font size="24.0" />
                </font>
@@ -111,7 +128,7 @@
       <Separator layoutX="503.0" layoutY="155.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
       <Separator layoutX="-6.0" layoutY="191.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
       <Separator layoutX="1168.0" layoutY="179.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
-      <TableView layoutX="22.0" layoutY="179.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF;">
+      <TableView layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF;">
         <columns>
           <TableColumn editable="false" prefWidth="215.19997787475586" style="-fx-background-color: FFFFFF;" text="id" />
           <TableColumn editable="false" minWidth="9.60003662109375" prefWidth="244.00001525878906" style="-fx-background-color: FFFFFF;" text="name" />
