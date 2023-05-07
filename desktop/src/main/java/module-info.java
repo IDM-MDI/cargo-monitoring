@@ -1,7 +1,7 @@
 module by.ishangulyyev.desktop {
     requires javafx.controls;
     requires javafx.fxml;
-    requires lombok;
+    requires static lombok;
 
 
     opens by.ishangulyyev.desktop to javafx.fxml;
