@@ -1,4 +1,4 @@
 package by.ishangulyyev.desktop.controller;
 
-public class CargoController {
+public class CargoController extends PageController {
 }

@@ -8,15 +8,11 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class EmployeeController implements Initializable {
+public class EmployeeController extends PageController implements Initializable {
 
     @FXML
     public void add(ActionEvent event) {
         SceneUtil.switchScene(event, "add-employee.fxml");
-    }
-    @FXML
-    public void cargo(ActionEvent event) {
-        SceneUtil.switchScene(event, "cargos.fxml");
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
