@@ -23,7 +23,7 @@
          </image>
       </ImageView>
       <Separator layoutX="88.0" layoutY="41.0" orientation="VERTICAL" prefHeight="66.0" visible="false" />
-      <Pane layoutX="88.0" layoutY="107.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #192756;">
+      <Pane layoutX="88.0" layoutY="107.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #192756; -fx-background-radius: 10;">
          <children>
             <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-width: 3; -fx-border-color: #192756;" />
          </children>
@@ -177,13 +177,13 @@
       <Separator layoutX="88.0" layoutY="464.0" orientation="VERTICAL" prefHeight="130.0" prefWidth="23.0" visible="false" />
       <HBox layoutX="88.0" layoutY="594.0" prefHeight="50.0" prefWidth="1062.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Main">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #46A537; -fx-background-radius: 10;" text="Main" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
             <Separator prefWidth="33.0" visible="false" />
-            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #46A537; -fx-background-radius: 10;" text="Client" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Client">
                <font>
                   <Font size="20.0" />
                </font>
