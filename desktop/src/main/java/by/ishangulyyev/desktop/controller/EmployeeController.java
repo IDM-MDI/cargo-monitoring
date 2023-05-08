@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class EmployeeController extends PageController<EmployeePage> implements Initializable, AddableButton {
-    private static final String EMPLOYEE_PAGE_URL = "http://localhost:8080/api/v1/employees";
+    private static final String PAGE_URL = "http://localhost:8080/api/v1/employees";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";
@@ -33,7 +33,7 @@ public class EmployeeController extends PageController<EmployeePage> implements 
     private TableColumn<EmployeePage, String> statusColumn;
 
     public EmployeeController() {
-        super(EMPLOYEE_PAGE_URL, SIZE, FILTER, DIRECTION);
+        super(PAGE_URL, SIZE, FILTER, DIRECTION);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class EmployeeController extends PageController<EmployeePage> implements 
     }
 
     @Override
-    protected void tableAbstractMethod(MouseEvent event, TableView<EmployeePage> table) {
+    protected void tableClicked(MouseEvent event, TableView<EmployeePage> table) {
         EmployeePage selectedItem = table.getSelectionModel().getSelectedItem();
         System.out.println(selectedItem);
     }

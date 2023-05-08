@@ -17,7 +17,7 @@ public class ReportController extends PageController<Void> {
     }
 
     @Override
-    protected void tableAbstractMethod(MouseEvent event, TableView<Void> table) {
+    protected void tableClicked(MouseEvent event, TableView<Void> table) {
 
     }
 }
