@@ -26,7 +26,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="nameField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -46,7 +46,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="surnameField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="lastnameField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -101,7 +101,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="statusField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -121,7 +121,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="startDateField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -141,7 +141,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="salaryField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -161,7 +161,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="positionField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -181,7 +181,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="loginField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -201,7 +201,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="emailField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -221,7 +221,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="cityField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -241,7 +241,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="countryField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -261,7 +261,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="genderField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -281,7 +281,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="phoneField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>
@@ -301,7 +301,7 @@
                   <Insets left="14.0" top="6.0" />
                </HBox.margin>
             </Text>
-            <TextField editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+            <TextField fx:id="birthdayField" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
                <font>
                   <Font size="20.0" />
                </font>

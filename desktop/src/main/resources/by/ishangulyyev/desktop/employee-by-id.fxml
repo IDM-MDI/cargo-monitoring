@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200" style="-fx-background-color: #045794;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.ishangulyyev.desktop.controller.AddEmployeeController">
+    <children>
+        <Text fill="WHITE" layoutX="504.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD EMPLOYEE" wrappingWidth="191.73663330078125">
+            <font>
+                <Font name="SansSerif Regular" size="24.0" />
+            </font>
+        </Text>
+        <HBox layoutX="73.0" layoutY="112.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="nameField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="44.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="73.0" layoutY="197.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="surnameField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="19.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <Separator layoutX="378.0" layoutY="154.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <HBox layoutX="73.0" layoutY="281.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lastname">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="lastnameField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="11.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <Separator layoutX="378.0" layoutY="238.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="378.0" layoutY="322.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="378.0" layoutY="406.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="378.0" layoutY="490.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="378.0" layoutY="574.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="573.0" layoutY="131.0" prefWidth="53.0" visible="false" />
+        <Separator layoutX="932.0" layoutY="154.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="932.0" layoutY="238.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="932.0" layoutY="322.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="932.0" layoutY="406.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="932.0" layoutY="490.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Separator layoutX="932.0" layoutY="574.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
+        <Button layoutX="73.0" layoutY="723.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #46A537; -fx-font-size: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4);" text="OK" textFill="WHITE" />
+        <Button layoutX="887.0" layoutY="724.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="240.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-font-size: 20;" text="Back" />
+        <HBox layoutX="627.0" layoutY="616.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="statusField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="42.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="627.0" layoutY="532.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="StartDate">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="startDateField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="15.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="627.0" layoutY="448.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="salaryField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="45.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="627.0" layoutY="364.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="positionField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="25.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="627.0" layoutY="281.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="loginField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="48.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="627.0" layoutY="197.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="emailField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="47.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="73.0" layoutY="616.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="cityField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="61.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="73.0" layoutY="532.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Country">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="countryField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="25.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="73.0" layoutY="448.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="genderField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="31.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="627.0" layoutY="112.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="phoneField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="40.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <HBox layoutX="73.0" layoutY="364.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birthday">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="14.0" top="6.0" />
+                    </HBox.margin>
+                </Text>
+                <TextField fx:id="birthdayField" editable="false" prefHeight="38.0" prefWidth="388.0" style="-fx-background-color: #FFFFFF;">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="23.0" />
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
