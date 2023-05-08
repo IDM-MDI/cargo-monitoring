@@ -73,6 +73,16 @@ public class CargoServiceImpl implements CargoService {
     }
 
     @Override
+    public void accept(String id) {
+
+    }
+
+    @Override
+    public void decline(String id, String reason) {
+
+    }
+
+    @Override
     @Transactional
     public void delete(String id) {
         Cargo cargo = repository.findById(id)

@@ -1,30 +1,22 @@
 package by.ishangulyyev.desktop.service.impl;
 
+import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.service.WebFetch;
+import by.ishangulyyev.desktop.util.UrlUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.mashape.unirest.http.Unirest;
 import lombok.SneakyThrows;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RestApiFetch<T> implements WebFetch<T> {
+    private static final String URL_PAGE_PARSE = "?page=%d&size=%d&filter=%s&direction=%s";
     @SneakyThrows
     @Override
-    public List<T> getDTO(String url, int page, int size, String filter, String direction) {
+    public Page getDTO(String url, int page, int size, String filter, String direction) {
         return new Gson()
                 .fromJson(
-                        Unirest.get(url)
-                                .routeParam("page", String.valueOf(page))
-                                .routeParam("size", String.valueOf(size))
-                                .routeParam("filter", filter)
-                                .routeParam("direction", direction)
-                                .asJson()
-                                .getBody()
-                                .toString(),
-                        new TypeToken<ArrayList<T>>(){}.getType()
-        );
+                        UrlUtil.readUrl(url + String.format(URL_PAGE_PARSE,page, size, filter, direction)),
+                        new TypeToken<Page>(){}.getType()
+                );
     }
 
     @SneakyThrows
@@ -32,10 +24,7 @@ public class RestApiFetch<T> implements WebFetch<T> {
     public T getDTO(String url, String id) {
         return new Gson()
                 .fromJson(
-                        Unirest.get(url + "/" + id)
-                                .asJson()
-                                .getBody()
-                                .toString(),
+                        UrlUtil.readUrl(url + "/" + id),
                         new TypeToken<T>(){}.getType()
                 );
     }
@@ -45,10 +34,7 @@ public class RestApiFetch<T> implements WebFetch<T> {
     public T getDTO(String url) {
         return new Gson()
                 .fromJson(
-                        Unirest.get(url)
-                                .asJson()
-                                .getBody()
-                                .toString(),
+                        UrlUtil.readUrl(url),
                         new TypeToken<T>(){}.getType()
                 );
     }
