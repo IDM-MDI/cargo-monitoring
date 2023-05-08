@@ -1,10 +1,18 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.service.WebFetch;
+import by.ishangulyyev.desktop.service.impl.RestApiFetch;
 import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-public abstract class PageController {
+public abstract class PageController<T> {
+    protected final WebFetch<T> webFetch;
+
+    protected PageController() {
+        this.webFetch = new RestApiFetch<>();
+    }
+
     @FXML
     public void cargo(ActionEvent event) {
         SceneUtil.switchScene(event, "cargos.fxml");

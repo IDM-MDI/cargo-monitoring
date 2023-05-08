@@ -1,6 +1,8 @@
 module by.ishangulyyev.desktop {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.google.gson;
+    requires unirest.java;
     requires static lombok;
 
 
