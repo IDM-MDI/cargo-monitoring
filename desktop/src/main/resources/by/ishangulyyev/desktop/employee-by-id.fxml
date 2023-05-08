@@ -89,7 +89,8 @@
         <Separator layoutX="932.0" layoutY="406.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
         <Separator layoutX="932.0" layoutY="490.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
         <Separator layoutX="932.0" layoutY="574.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="139.0" visible="false" />
-        <Button layoutX="73.0" layoutY="723.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #46A537; -fx-font-size: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4);" text="OK" textFill="WHITE" />
+        <Button layoutX="73.0" layoutY="723.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #D8BD31; -fx-font-size: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4);" text="Edit" textFill="WHITE" />
+      <Button layoutX="333.0" layoutY="723.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="240.0" style="-fx-background-color: #D45555; -fx-font-size: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4);" text="Delete" textFill="WHITE" />
         <Button layoutX="887.0" layoutY="724.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="240.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-font-size: 20;" text="Back" />
         <HBox layoutX="627.0" layoutY="616.0" prefHeight="38.0" prefWidth="500.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 2;">
             <children>
