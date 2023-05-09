@@ -1,5 +1,7 @@
 package by.ishangulyyev.desktop.model;
 
+import by.ishangulyyev.desktop.service.LocalDateAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +15,6 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Person {
-    @SerializedName("id")
     private String id;
     @SerializedName("name")
     private String name;
@@ -22,6 +23,7 @@ public class Person {
     @SerializedName("lastname")
     private String lastname;
     @SerializedName("birthday")
+    @JsonAdapter(LocalDateAdapter.class)
     private LocalDate birthday;
     @SerializedName("origin")
     private Origin origin;

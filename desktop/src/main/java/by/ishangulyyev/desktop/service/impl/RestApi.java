@@ -1,17 +1,15 @@
 package by.ishangulyyev.desktop.service.impl;
 
 import by.ishangulyyev.desktop.model.Page;
-import by.ishangulyyev.desktop.service.LocalDateAdapter;
-import by.ishangulyyev.desktop.service.WebFetch;
+import by.ishangulyyev.desktop.service.WebDelete;
+import by.ishangulyyev.desktop.service.WebGet;
+import by.ishangulyyev.desktop.service.WebPut;
 import by.ishangulyyev.desktop.util.UrlUtil;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import lombok.SneakyThrows;
 
-import java.time.LocalDate;
-
-public class RestApiFetch<T> implements WebFetch<T> {
+public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete {
     private static final String URL_PAGE_PARSE = "?page=%d&size=%d&filter=%s&direction=%s";
     @SneakyThrows
     @Override
@@ -32,12 +30,20 @@ public class RestApiFetch<T> implements WebFetch<T> {
     @SneakyThrows
     @Override
     public T getDTO(String url, Class<T> tClass) {
-        return new GsonBuilder()
-                .registerTypeAdapter(LocalDate.class, new LocalDateAdapter())
-                .create()
+        return new Gson()
                 .fromJson(
                         UrlUtil.readUrl(url),
                         tClass
                 );
+    }
+
+    @Override
+    public int delete(String url, String id) {
+        return UrlUtil.delete(url + "/" + id);
+    }
+
+    @Override
+    public T put(String url, String id, T entity, Class<T> tClass) {
+        return UrlUtil.put(url + "/" + id, entity, tClass);
     }
 }

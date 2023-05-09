@@ -1,19 +1,39 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.model.AuthenticationRequest;
 import by.ishangulyyev.desktop.model.Employee;
 import by.ishangulyyev.desktop.model.EmployeePage;
-import by.ishangulyyev.desktop.service.WebFetch;
-import by.ishangulyyev.desktop.service.impl.RestApiFetch;
+import by.ishangulyyev.desktop.model.Origin;
+import by.ishangulyyev.desktop.model.Person;
+import by.ishangulyyev.desktop.model.PublicData;
+import by.ishangulyyev.desktop.service.impl.RestApi;
+import by.ishangulyyev.desktop.util.PageUtil;
+import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
+
+import java.time.LocalDate;
 
 import static by.ishangulyyev.desktop.controller.EmployeeController.EMPLOYEE_PAGE_URL;
 
-public class EmployeeByIDController implements BackButton {
-    private final WebFetch<Employee> webFetch;
+public class EmployeeByIDController implements BackButton, EditButton, DeleteButton {
+    private final RestApi<Employee> restApi;
     private Employee employee;
-
+    private boolean isEdit;
+    @FXML
+    private Text mainText;
+    @FXML
+    private Button editButton;
+    @FXML
+    private HBox statusBlock;
+    @FXML
+    private HBox startDateBlock;
+    @FXML
+    private HBox passwordBlock;
     @FXML
     private TextField nameField;
     @FXML
@@ -35,6 +55,8 @@ public class EmployeeByIDController implements BackButton {
     @FXML
     private TextField loginField;
     @FXML
+    private TextField passwordField;
+    @FXML
     private TextField positionField;
     @FXML
     private TextField salaryField;
@@ -44,11 +66,18 @@ public class EmployeeByIDController implements BackButton {
     private TextField statusField;
 
     public EmployeeByIDController() {
-        this.webFetch = new RestApiFetch<>();
+        this.restApi = new RestApi<>();
     }
 
     public void setId(EmployeePage employeePage) {
-        this.employee = webFetch.getDTO(EMPLOYEE_PAGE_URL, employeePage.getId(), Employee.class);
+        isEdit = false;
+        this.employee = restApi.getDTO(EMPLOYEE_PAGE_URL, employeePage.getId(), Employee.class);
+        setScene();
+    }
+
+    private void setScene() {
+        editButton.setText("Edit");
+        isEdit = false;
         nameField.setText(employee.getPerson().getName());
         surnameField.setText(employee.getPerson().getSurname());
         lastnameField.setText(employee.getPerson().getLastname());
@@ -63,12 +92,98 @@ public class EmployeeByIDController implements BackButton {
         salaryField.setText(String.valueOf(employee.getSalary()));
         startDateField.setText(employee.getStartWork().toString());
         statusField.setText(employee.getStatus());
+        PageUtil.setDisableNonEditable(nameField);
+        PageUtil.setDisableNonEditable(surnameField);
+        PageUtil.setDisableNonEditable(lastnameField);
+        PageUtil.setDisableNonEditable(birthdayField);
+        PageUtil.setDisableNonEditable(genderField);
+        PageUtil.setDisableNonEditable(countryField);
+        PageUtil.setDisableNonEditable(cityField);
+        PageUtil.setDisableNonEditable(phoneField);
+        PageUtil.setDisableNonEditable(emailField);
+        PageUtil.setDisableNonEditable(loginField);
+        PageUtil.setDisableNonEditable(positionField);
+        PageUtil.setDisableNonEditable(salaryField);
+        PageUtil.setDisableNonEditable(statusField);
+        PageUtil.setDisableNonEditable(startDateField);
+        PageUtil.setVisible(statusBlock);
+        PageUtil.setVisible(startDateBlock);
+        PageUtil.setInvisible(passwordBlock);
     }
 
 
     @Override
     public void back(ActionEvent event) {
-
+        SceneUtil.switchScene(event, "employees.fxml");
     }
 
+    @Override
+    public void edit(ActionEvent event) {
+        if(!isEdit) {
+            isEdit = true;
+            editButton.setText("OK");
+            PageUtil.setEditable(nameField);
+            PageUtil.setEditable(surnameField);
+            PageUtil.setEditable(lastnameField);
+            PageUtil.setEditable(birthdayField);
+            PageUtil.setEditable(genderField);
+            PageUtil.setEditable(countryField);
+            PageUtil.setEditable(cityField);
+            PageUtil.setEditable(emailField);
+            PageUtil.setEditable(phoneField);
+            PageUtil.setEditable(loginField);
+            PageUtil.setEditable(positionField);
+            PageUtil.setEditable(salaryField);
+            PageUtil.setVisible(passwordBlock);
+            PageUtil.setInvisible(startDateBlock);
+            PageUtil.setInvisible(statusBlock);
+            mainText.setText("EMPLOYEE(EDIT)");
+        } else {
+            isEdit = false;
+            mainText.setText("EMPLOYEE");
+            // TODO: 5/9/2023 ADD VALIDATION
+            this.employee = restApi.put(EMPLOYEE_PAGE_URL, employee.getId() , createEmployee(), Employee.class);
+            setScene();
+        }
+    }
+    private Employee createEmployee() {
+        return Employee.builder()
+                .authentication(
+                        AuthenticationRequest.builder()
+                                .login(loginField.getText())
+                                .password(passwordField.getText())
+                                .build()
+                )
+                .person(
+                        Person.builder()
+                                .name(nameField.getText())
+                                .surname(surnameField.getText())
+                                .lastname(lastnameField.getText())
+                                .birthday(LocalDate.parse(birthdayField.getText()))
+                                .gender(genderField.getText())
+                                .origin(
+                                        Origin.builder()
+                                                .country(countryField.getText())
+                                                .city(cityField.getText())
+                                                .build()
+                                )
+                                .publicData(
+                                        PublicData.builder()
+                                                .email(emailField.getText())
+                                                .phone(phoneField.getText())
+                                                .build()
+                                )
+                                .build()
+                )
+                .salary(Integer.parseInt(salaryField.getText()))
+                .position(positionField.getText())
+                .build();
+    }
+
+    @Override
+    public void delete(ActionEvent event) {
+        if(restApi.delete(EMPLOYEE_PAGE_URL, employee.getId()) == 200) {
+            back(event);
+        }
+    }
 }

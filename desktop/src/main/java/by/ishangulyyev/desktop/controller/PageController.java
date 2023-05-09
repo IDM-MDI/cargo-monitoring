@@ -1,8 +1,8 @@
 package by.ishangulyyev.desktop.controller;
 
 import by.ishangulyyev.desktop.model.Page;
-import by.ishangulyyev.desktop.service.WebFetch;
-import by.ishangulyyev.desktop.service.impl.RestApiFetch;
+import by.ishangulyyev.desktop.service.WebGet;
+import by.ishangulyyev.desktop.service.impl.RestApi;
 import by.ishangulyyev.desktop.util.PageUtil;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -13,7 +13,7 @@ import javafx.scene.text.Text;
 import java.util.List;
 
 public abstract class PageController<T> extends PageHeader {
-    private final WebFetch<T> webFetch;
+    private final WebGet<T> webGet;
     private final String url;
     private final int size;
     private final String filter;
@@ -32,7 +32,7 @@ public abstract class PageController<T> extends PageHeader {
         this.size = size;
         this.filter = filter;
         this.direction = direction;
-        this.webFetch = new RestApiFetch<>();
+        this.webGet = new RestApi<>();
     }
     @FXML
     public void onLeftArrowClick(MouseEvent event) {
@@ -61,7 +61,7 @@ public abstract class PageController<T> extends PageHeader {
         tableClicked(event,table);
     }
     protected void setTable(int page) {
-        setTable(webFetch.getDTO(url, page, size, filter, direction));
+        setTable(webGet.getDTO(url, page, size, filter, direction));
     }
 
     protected void setTable(Page page) {
