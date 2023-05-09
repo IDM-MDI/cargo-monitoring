@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
@@ -17,24 +18,27 @@
     <children>
         <Separator orientation="VERTICAL" prefHeight="38.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <Separator layoutY="38.0" prefWidth="89.0" visible="false" AnchorPane.leftAnchor="0.0" />
-        <ImageView fitHeight="38.0" fitWidth="53.0" layoutX="90.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="38.0" fitWidth="53.0" layoutX="90.0" layoutY="22.0" onMouseClicked="#onBackClick" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../../../left.png" />
             </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </ImageView>
         <Separator layoutX="88.0" layoutY="41.0" orientation="VERTICAL" prefHeight="66.0" visible="false" />
         <Pane layoutX="88.0" layoutY="107.0" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: #FFFFFF; -fx-border-width: 2; -fx-border-color: #192756; -fx-background-radius: 10;">
             <children>
-                <ImageView fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-width: 3; -fx-border-color: #192756;" />
+                <ImageView fx:id="image" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-width: 3; -fx-border-color: #192756;" />
             </children>
         </Pane>
         <Separator layoutX="88.0" layoutY="407.0" orientation="VERTICAL" prefHeight="22.0" visible="false" />
-        <Button layoutX="88.0" layoutY="429.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #D8BD31;" text="Edit" textFill="WHITE">
+        <Button layoutX="88.0" layoutY="429.0" mnemonicParsing="false" onAction="#edit" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #D8BD31;" text="Edit" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
         </Button>
-        <Button layoutX="268.0" layoutY="429.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #D45555;" text="Delete" textFill="WHITE">
+        <Button layoutX="268.0" layoutY="429.0" mnemonicParsing="false" onAction="#delete" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #D45555;" text="Delete" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font>
@@ -64,7 +68,10 @@
                             </font>
                         </Text>
                         <Separator prefHeight="10.0" prefWidth="118.0" visible="false" />
-                  <TextField fx:id="departureNameField" editable="false" prefHeight="36.0" prefWidth="314.0" style="-fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="departureNameField" editable="false" prefHeight="36.0" prefWidth="314.0" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
                 <Separator orientation="VERTICAL" prefHeight="19.0" />
@@ -80,7 +87,10 @@
                             </font>
                         </Text>
                         <Separator prefHeight="10.0" prefWidth="98.0" visible="false" />
-                  <TextField fx:id="departureCountryField" editable="false" prefHeight="36.0" prefWidth="317.0" style="-fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="departureCountryField" editable="false" prefHeight="36.0" prefWidth="317.0" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
                 <Separator orientation="VERTICAL" prefHeight="19.0" visible="false" />
@@ -96,7 +106,10 @@
                             </font>
                         </Text>
                         <Separator prefHeight="10.0" prefWidth="136.0" visible="false" />
-                  <TextField fx:id="departureCityField" editable="false" prefHeight="36.0" prefWidth="317.0" style="-fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="departureCityField" editable="false" prefHeight="36.0" prefWidth="317.0" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
                 <Separator orientation="VERTICAL" prefHeight="19.0" visible="false" />
@@ -112,7 +125,10 @@
                             </font>
                         </Text>
                         <Separator prefHeight="10.0" prefWidth="26.0" visible="false" />
-                  <TextField fx:id="departureCompanyField" editable="false" prefHeight="36.0" prefWidth="322.0" style="-fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="departureCompanyField" editable="false" prefHeight="36.0" prefWidth="322.0" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
                 <Separator orientation="VERTICAL" prefHeight="19.0" visible="false" />
@@ -135,7 +151,10 @@
                                 <Insets />
                             </HBox.margin>
                         </Separator>
-                  <TextField fx:id="departureArrivalField" editable="false" prefHeight="36.0" prefWidth="322.0" style="-fx-background-color: #FFFFFF;" />
+                  <TextField fx:id="departureArrivalField" editable="false" prefHeight="36.0" prefWidth="322.0" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
                     </children>
                 </HBox>
             </children>

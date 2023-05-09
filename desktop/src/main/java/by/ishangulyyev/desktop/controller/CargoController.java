@@ -1,5 +1,6 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.model.Cargo;
 import by.ishangulyyev.desktop.model.CargoPage;
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.util.SceneUtil;
@@ -14,9 +15,10 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 public class CargoController extends PageController<CargoPage> implements AddButton, Initializable {
-    private static final String PAGE_URL = "http://localhost:8080/api/v1/cargos";
+    public static final String CARGO_PAGE_URL = "http://localhost:8080/api/v1/cargos";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";
@@ -31,7 +33,7 @@ public class CargoController extends PageController<CargoPage> implements AddBut
     @FXML
     private TableColumn<CargoPage, String> statusColumn;
     public CargoController() {
-        super(PAGE_URL, SIZE, FILTER, DIRECTION);
+        super(CARGO_PAGE_URL, SIZE, FILTER, DIRECTION);
     }
 
     @Override
@@ -57,7 +59,8 @@ public class CargoController extends PageController<CargoPage> implements AddBut
 
     @Override
     protected void tableClicked(MouseEvent event, TableView<CargoPage> table) {
-        SceneUtil.switchScene(event, "cargo-by-id-main.fxml");
+        Consumer<CargoByIDController> consumer = controller -> controller.setInitial(table.getSelectionModel().getSelectedItem().getId());
+        SceneUtil.switchScene(event, "cargo-by-id-main.fxml", consumer);
     }
 
     @Override

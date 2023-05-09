@@ -32,6 +32,13 @@ public class PageUtil {
         box.setDisable(false);
         box.setVisible(true);
     }
+    public void setEditField(TextField field, boolean isEdit) {
+        if(isEdit) {
+            setEditable(field);
+        } else {
+            setDisableNonEditable(field);
+        }
+    }
     private void setArrow(Page page, Predicate<Page> predicate, Text arrow) {
         if(predicate.test(page)) {
             arrow.setDisable(true);
