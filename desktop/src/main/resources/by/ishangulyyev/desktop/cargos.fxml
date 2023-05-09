@@ -131,7 +131,7 @@
         <Separator layoutX="503.0" layoutY="155.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
         <Separator layoutX="-6.0" layoutY="191.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
         <Separator layoutX="1168.0" layoutY="179.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
-        <TableView fx:id="table" layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
+        <TableView fx:id="table" onMouseClicked="#tableClicked" layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
             <columns>
                 <TableColumn fx:id="idColumn" editable="false" prefWidth="215.19997787475586" style="-fx-background-color: FFFFFF;" text="id" />
                 <TableColumn fx:id="clientColumn" editable="false" minWidth="9.60003662109375" prefWidth="244.00001525878906" style="-fx-background-color: FFFFFF;" text="client" />

@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #045794;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.ishangulyyev.desktop.controller.EmployeeByIDController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #045794;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.ishangulyyev.desktop.controller.CargoByIDController">
     <children>
         <Separator orientation="VERTICAL" prefHeight="38.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
         <Separator layoutY="38.0" prefWidth="89.0" visible="false" AnchorPane.leftAnchor="0.0" />
@@ -111,31 +111,31 @@
         <Separator layoutX="88.0" layoutY="464.0" orientation="VERTICAL" prefHeight="130.0" prefWidth="23.0" visible="false" />
         <HBox layoutX="88.0" layoutY="594.0" prefHeight="50.0" prefWidth="1062.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Main">
+                <Button mnemonicParsing="false" onAction="#main" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Main">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
                 <Separator prefWidth="33.0" visible="false" />
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Client">
+                <Button mnemonicParsing="false" onAction="#client" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Client">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
                 <Separator prefWidth="33.0" visible="false" />
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="From">
+                <Button mnemonicParsing="false" onAction="#from" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="From">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
                 <Separator prefWidth="33.0" visible="false" />
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Departure">
+                <Button mnemonicParsing="false" onAction="#departure" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;" text="Departure">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Button>
                 <Separator prefWidth="33.0" visible="false" />
-                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #46A537; -fx-background-radius: 10;" text="Parameters" textFill="WHITE">
+                <Button mnemonicParsing="false" onAction="#parameters" prefHeight="50.0" prefWidth="186.0" style="-fx-background-color: #46A537; -fx-background-radius: 10;" text="Parameters" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>

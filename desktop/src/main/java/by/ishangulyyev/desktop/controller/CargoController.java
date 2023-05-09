@@ -2,6 +2,7 @@ package by.ishangulyyev.desktop.controller;
 
 import by.ishangulyyev.desktop.model.CargoPage;
 import by.ishangulyyev.desktop.model.Page;
+import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,7 +57,7 @@ public class CargoController extends PageController<CargoPage> implements AddBut
 
     @Override
     protected void tableClicked(MouseEvent event, TableView<CargoPage> table) {
-
+        SceneUtil.switchScene(event, "cargo-by-id-main.fxml");
     }
 
     @Override
