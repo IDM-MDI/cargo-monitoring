@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: D9D9D9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.ishangulyyev.desktop.controller.CargoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: D9D9D9;" styleClass="root" stylesheets="@application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.ishangulyyev.desktop.controller.CargoController">
     <children>
         <GridPane prefHeight="91.0" prefWidth="1200.0" style="-fx-background-color: FFFFFF; -fx-border-width: 0 0 0.3 0; -fx-border-color: #000;">
             <columnConstraints>
@@ -76,13 +76,16 @@
         <HBox layoutY="123.0" prefHeight="39.0" prefWidth="1200.0">
             <children>
                 <Separator prefHeight="52.0" prefWidth="86.0" visible="false" />
-                <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="60.0" fitWidth="50.0" onMouseClicked="#onReloadClick" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../reload.png" />
                     </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </ImageView>
                 <Separator prefHeight="52.0" prefWidth="374.0" visible="false" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="21.890625">
+                <Text fx:id="leftArrow" disable="true" onMouseClicked="#onLeftArrowClick" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" visible="false" wrappingWidth="21.890625">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -94,7 +97,7 @@
                     </HBox.margin>
                 </Text>
                 <Separator prefWidth="40.0" visible="false" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                <Text fx:id="pageNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -103,7 +106,7 @@
                     </HBox.margin>
                 </Text>
                 <Separator prefWidth="40.0" visible="false" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;">
+                <Text fx:id="rightArrow" disable="true" onMouseClicked="#onRightArrowClick" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" visible="false">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -128,13 +131,13 @@
         <Separator layoutX="503.0" layoutY="155.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
         <Separator layoutX="-6.0" layoutY="191.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
         <Separator layoutX="1168.0" layoutY="179.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
-        <TableView layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
+        <TableView fx:id="table" layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
             <columns>
-                <TableColumn editable="false" prefWidth="215.19997787475586" style="-fx-background-color: FFFFFF;" text="id" />
-                <TableColumn editable="false" minWidth="9.60003662109375" prefWidth="244.00001525878906" style="-fx-background-color: FFFFFF;" text="client" />
-                <TableColumn editable="false" prefWidth="234.4000244140625" style="-fx-background-color: FFFFFF;" text="country" />
-                <TableColumn editable="false" prefWidth="254.39996337890625" style="-fx-background-color: FFFFFF;" text="type" />
-                <TableColumn editable="false" prefWidth="200.00006103515625" style="-fx-background-color: FFFFFF;" text="status" />
+                <TableColumn fx:id="idColumn" editable="false" prefWidth="215.19997787475586" style="-fx-background-color: FFFFFF;" text="id" />
+                <TableColumn fx:id="clientColumn" editable="false" minWidth="9.60003662109375" prefWidth="244.00001525878906" style="-fx-background-color: FFFFFF;" text="client" />
+                <TableColumn fx:id="countryColumn" editable="false" prefWidth="234.4000244140625" style="-fx-background-color: FFFFFF;" text="country" />
+                <TableColumn fx:id="typeColumn" editable="false" prefWidth="254.39996337890625" style="-fx-background-color: FFFFFF;" text="type" />
+                <TableColumn fx:id="statusColumn" editable="false" prefWidth="200.00006103515625" style="-fx-background-color: FFFFFF;" text="status" />
             </columns>
         </TableView>
         <Separator layoutX="521.0" layoutY="736.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="36.0" visible="false" />

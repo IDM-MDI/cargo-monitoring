@@ -1,5 +1,5 @@
 package by.ishangulyyev.desktop.controller;
 
-public class StatisticController implements PageHeader {
+public class StatisticController extends PageHeader {
 
 }

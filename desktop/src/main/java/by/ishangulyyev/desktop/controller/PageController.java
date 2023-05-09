@@ -12,7 +12,7 @@ import javafx.scene.text.Text;
 
 import java.util.List;
 
-public abstract class PageController<T> implements PageHeader {
+public abstract class PageController<T> extends PageHeader {
     private final WebFetch<T> webFetch;
     private final String url;
     private final int size;

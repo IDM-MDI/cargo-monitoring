@@ -3,17 +3,32 @@ package by.ishangulyyev.desktop.controller;
 import by.ishangulyyev.desktop.model.CargoPage;
 import by.ishangulyyev.desktop.model.Page;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class CargoController extends PageController<CargoPage> implements AddableButton {
+public class CargoController extends PageController<CargoPage> implements AddableButton, Initializable {
     private static final String PAGE_URL = "http://localhost:8080/api/v1/cargos";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";
-
+    @FXML
+    private TableColumn<CargoPage, String> idColumn;
+    @FXML
+    private TableColumn<CargoPage, String> clientColumn;
+    @FXML
+    private TableColumn<CargoPage, String> countryColumn;
+    @FXML
+    private TableColumn<CargoPage, String> typeColumn;
+    @FXML
+    private TableColumn<CargoPage, String> statusColumn;
     public CargoController() {
         super(PAGE_URL, SIZE, FILTER, DIRECTION);
     }
@@ -42,5 +57,15 @@ public class CargoController extends PageController<CargoPage> implements Addabl
     @Override
     protected void tableClicked(MouseEvent event, TableView<CargoPage> table) {
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        clientColumn.setCellValueFactory(new PropertyValueFactory<>("client"));
+        countryColumn.setCellValueFactory(new PropertyValueFactory<>("country"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
+        setTable(0);
     }
 }
