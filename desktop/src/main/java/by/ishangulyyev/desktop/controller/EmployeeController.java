@@ -1,10 +1,12 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.HelloApplication;
 import by.ishangulyyev.desktop.model.EmployeePage;
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -14,9 +16,11 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
-public class EmployeeController extends PageController<EmployeePage> implements Initializable, AddableButton {
-    private static final String PAGE_URL = "http://localhost:8080/api/v1/employees";
+
+public class EmployeeController extends PageController<EmployeePage> implements Initializable, AddButton {
+    public static final String EMPLOYEE_PAGE_URL = "http://localhost:8080/api/v1/employees";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";
@@ -33,7 +37,7 @@ public class EmployeeController extends PageController<EmployeePage> implements 
     private TableColumn<EmployeePage, String> statusColumn;
 
     public EmployeeController() {
-        super(PAGE_URL, SIZE, FILTER, DIRECTION);
+        super(EMPLOYEE_PAGE_URL, SIZE, FILTER, DIRECTION);
     }
 
     @Override
@@ -68,7 +72,7 @@ public class EmployeeController extends PageController<EmployeePage> implements 
 
     @Override
     protected void tableClicked(MouseEvent event, TableView<EmployeePage> table) {
-        EmployeePage selectedItem = table.getSelectionModel().getSelectedItem();
-        System.out.println(selectedItem);
+        Consumer<EmployeeByIDController> consumer = controller -> controller.setId(table.getSelectionModel().getSelectedItem());
+        SceneUtil.switchScene(event, "employee-by-id.fxml", consumer);
     }
 }

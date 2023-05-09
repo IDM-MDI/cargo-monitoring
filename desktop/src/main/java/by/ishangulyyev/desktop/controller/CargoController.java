@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class CargoController extends PageController<CargoPage> implements AddableButton, Initializable {
+public class CargoController extends PageController<CargoPage> implements AddButton, Initializable {
     private static final String PAGE_URL = "http://localhost:8080/api/v1/cargos";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
