@@ -3,13 +3,14 @@ package by.ishangulyyev.desktop.service.impl;
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.service.WebDelete;
 import by.ishangulyyev.desktop.service.WebGet;
+import by.ishangulyyev.desktop.service.WebPost;
 import by.ishangulyyev.desktop.service.WebPut;
 import by.ishangulyyev.desktop.util.UrlUtil;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import lombok.SneakyThrows;
 
-public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete {
+public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete, WebPost<T> {
     private static final String URL_PAGE_PARSE = "?page=%d&size=%d&filter=%s&direction=%s";
     @SneakyThrows
     @Override
@@ -45,5 +46,10 @@ public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete {
     @Override
     public T put(String url, String id, T entity, Class<T> tClass) {
         return UrlUtil.put(url + "/" + id, entity, tClass);
+    }
+
+    @Override
+    public T post(String url, T entity, Class<T> tClass) {
+        return UrlUtil.post(url, entity, tClass);
     }
 }

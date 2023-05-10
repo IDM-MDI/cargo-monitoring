@@ -13,11 +13,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 import java.time.LocalDate;
 
+import static by.ishangulyyev.desktop.controller.AddEmployeeController.getEmployee;
 import static by.ishangulyyev.desktop.controller.EmployeeController.EMPLOYEE_PAGE_URL;
 
 public class EmployeeByIDController implements BackButton, EditButton, DeleteButton {
@@ -113,7 +115,7 @@ public class EmployeeByIDController implements BackButton, EditButton, DeleteBut
 
 
     @Override
-    public void back(ActionEvent event) {
+    public void onBackClick(MouseEvent event) {
         SceneUtil.switchScene(event, "employees.fxml");
     }
 
@@ -146,44 +148,14 @@ public class EmployeeByIDController implements BackButton, EditButton, DeleteBut
             setScene();
         }
     }
-    private Employee createEmployee() {
-        return Employee.builder()
-                .authentication(
-                        AuthenticationRequest.builder()
-                                .login(loginField.getText())
-                                .password(passwordField.getText())
-                                .build()
-                )
-                .person(
-                        Person.builder()
-                                .name(nameField.getText())
-                                .surname(surnameField.getText())
-                                .lastname(lastnameField.getText())
-                                .birthday(LocalDate.parse(birthdayField.getText()))
-                                .gender(genderField.getText())
-                                .origin(
-                                        Origin.builder()
-                                                .country(countryField.getText())
-                                                .city(cityField.getText())
-                                                .build()
-                                )
-                                .publicData(
-                                        PublicData.builder()
-                                                .email(emailField.getText())
-                                                .phone(phoneField.getText())
-                                                .build()
-                                )
-                                .build()
-                )
-                .salary(Integer.parseInt(salaryField.getText()))
-                .position(positionField.getText())
-                .build();
+    public Employee createEmployee() {
+        return getEmployee(loginField, passwordField, nameField, surnameField, lastnameField, birthdayField, genderField, countryField, cityField, emailField, phoneField, salaryField, positionField);
     }
 
     @Override
     public void delete(ActionEvent event) {
         if(restApi.delete(EMPLOYEE_PAGE_URL, employee.getId()) == 200) {
-            back(event);
+            SceneUtil.switchScene(event, "employees.fxml");
         }
     }
 }

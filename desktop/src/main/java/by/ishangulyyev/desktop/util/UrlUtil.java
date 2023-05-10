@@ -34,28 +34,22 @@ public class UrlUtil {
 
     @SneakyThrows
     public static <T> T put(String url, T entity, Class<T> tClass) {
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(Cargo.class, new CargoSerializer())
-                .registerTypeAdapter(CargoContent.class, new CargoContentSerializer())
-                .registerTypeAdapter(Employee.class, new EmployeeSerializer())
-                .registerTypeAdapter(AuthenticationRequest.class, new AuthenticationSerializer())
-                .registerTypeAdapter(Person.class, new PersonSerializer())
-                .create();
-        String json = gson.toJson(entity);
-        URL uri = new URL(url);
-        HttpURLConnection connection = (HttpURLConnection) uri.openConnection();
-        connection.setRequestMethod("PUT");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setDoOutput(true);
-        try(OutputStream outputStream = connection.getOutputStream()) {
-            outputStream.write(json.getBytes());
-            outputStream.flush();
-        }
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-            return gson.fromJson(getResponseString(reader), tClass);
-        }
+        return sendRequestWithBody(
+                url,
+                "PUT",
+                entity,
+                tClass
+        );
     }
-
+    @SneakyThrows
+    public static <T> T post(String url, T entity, Class<T> tClass) {
+        return sendRequestWithBody(
+                url,
+                "POST",
+                entity,
+                tClass
+        );
+    }
     @SneakyThrows
     public int delete(String uri) {
         URL url = new URL(uri);
@@ -73,5 +67,28 @@ public class UrlUtil {
         while ((read = reader.read(chars)) != -1)
             buffer.append(chars, 0, read);
         return buffer.toString();
+    }
+
+    private static <T> T sendRequestWithBody(String url, String method, T entity, Class<T> tClass) throws IOException {
+        Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Cargo.class, new CargoSerializer())
+                .registerTypeAdapter(CargoContent.class, new CargoContentSerializer())
+                .registerTypeAdapter(Employee.class, new EmployeeSerializer())
+                .registerTypeAdapter(AuthenticationRequest.class, new AuthenticationSerializer())
+                .registerTypeAdapter(Person.class, new PersonSerializer())
+                .create();
+        String json = gson.toJson(entity);
+        URL uri = new URL(url);
+        HttpURLConnection connection = (HttpURLConnection) uri.openConnection();
+        connection.setRequestMethod(method);
+        connection.setRequestProperty("Content-Type", "application/json");
+        connection.setDoOutput(true);
+        try(OutputStream outputStream = connection.getOutputStream()) {
+            outputStream.write(json.getBytes());
+            outputStream.flush();
+        }
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+            return gson.fromJson(getResponseString(reader), tClass);
+        }
     }
 }

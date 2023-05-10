@@ -49,26 +49,41 @@
                <font>
                   <Font size="20.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" onAction="#route" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: transparent;" text="Point &amp; route" GridPane.columnIndex="5" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Cargo" GridPane.columnIndex="3" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" onAction="#statistic" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Statistic" GridPane.columnIndex="7" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Button mnemonicParsing="false" onAction="#report" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Report" GridPane.columnIndex="9" GridPane.rowIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </GridPane>

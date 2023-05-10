@@ -49,26 +49,41 @@
                     <font>
                         <Font size="20.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button mnemonicParsing="false" onAction="#route" prefHeight="38.0" prefWidth="154.0" style="-fx-background-color: transparent;" text="Point &amp; route" GridPane.columnIndex="5" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button mnemonicParsing="false" onAction="#cargo" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Cargo" GridPane.columnIndex="3" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button mnemonicParsing="false" onAction="#statistic" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Statistic" GridPane.columnIndex="7" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button mnemonicParsing="false" onAction="#report" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Report" GridPane.columnIndex="9" GridPane.rowIndex="1">
                     <font>
                         <Font size="20.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
             </children>
         </GridPane>
@@ -76,13 +91,16 @@
         <HBox layoutY="123.0" prefHeight="39.0" prefWidth="1200.0">
             <children>
                 <Separator prefHeight="52.0" prefWidth="86.0" visible="false" />
-                <ImageView fitHeight="60.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="60.0" fitWidth="50.0" onMouseClicked="#onReloadClick" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../../../reload.png" />
                     </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </ImageView>
                 <Separator prefHeight="52.0" prefWidth="374.0" visible="false" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" wrappingWidth="21.890625">
+                <Text fx:id="leftArrow" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" visible="false" wrappingWidth="21.890625">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -94,7 +112,7 @@
                     </HBox.margin>
                 </Text>
                 <Separator prefWidth="40.0" visible="false" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+                <Text fx:id="pageNumber" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -103,7 +121,7 @@
                     </HBox.margin>
                 </Text>
                 <Separator prefWidth="40.0" visible="false" />
-                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;">
+                <Text fx:id="rightArrow" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" visible="false">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -119,7 +137,7 @@
         <Separator layoutX="503.0" layoutY="155.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
         <Separator layoutX="-6.0" layoutY="191.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
         <Separator layoutX="1168.0" layoutY="179.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
-        <TableView layoutX="14.0" layoutY="211.0" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
+        <TableView layoutX="14.0" layoutY="211.0" onMouseClicked="#tableClicked" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
             <columns>
                 <TableColumn editable="false" prefWidth="211.20001220703125" style="-fx-background-color: FFFFFF;" text="id" />
                 <TableColumn editable="false" minWidth="9.60003662109375" prefWidth="223.199951171875" style="-fx-background-color: FFFFFF;" text="name" />

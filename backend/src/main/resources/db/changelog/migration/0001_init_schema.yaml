@@ -584,15 +584,6 @@ databaseChangeLog:
             constraintName: uc_positions_name
             tableName: positions
   - changeSet:
-      id: 1683146839788-28
-      author: Dayanch (generated)
-      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
-      changes:
-        - addUniqueConstraint:
-            columnNames: phone
-            constraintName: uc_public_data_phone
-            tableName: public_data
-  - changeSet:
       id: 1683146839788-29
       author: Dayanch (generated)
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
