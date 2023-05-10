@@ -18,7 +18,7 @@ import java.util.function.Consumer;
 import static by.ishangulyyev.desktop.controller.CargoController.CARGO_PAGE_URL;
 
 public abstract class CargoByIDNavigation implements EditButton, DeleteButton {
-    private RestApi<Cargo> restApi;
+    protected RestApi<Cargo> restApi;
     protected Cargo cargo;
     protected boolean isEdit;
     protected CargoScene cargoScene;

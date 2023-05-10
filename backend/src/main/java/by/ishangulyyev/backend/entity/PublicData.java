@@ -29,7 +29,7 @@ public class PublicData {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "phone", unique = true, nullable = false)
+    @Column(name = "phone", nullable = false)
     private String phone;
 
     @Override

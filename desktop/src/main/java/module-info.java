@@ -7,11 +7,12 @@ module by.ishangulyyev.desktop {
 
     opens by.ishangulyyev.desktop to javafx.fxml;
     opens by.ishangulyyev.desktop.model to com.google.gson;
-    opens by.ishangulyyev.desktop.service.impl to com.google.gson;
+    opens by.ishangulyyev.desktop.service to com.google.gson;
     opens by.ishangulyyev.desktop.controller to javafx.fxml;
 
     exports by.ishangulyyev.desktop;
     exports by.ishangulyyev.desktop.model;
     exports by.ishangulyyev.desktop.service;
+    exports by.ishangulyyev.desktop.service.impl;
     exports by.ishangulyyev.desktop.controller;
 }

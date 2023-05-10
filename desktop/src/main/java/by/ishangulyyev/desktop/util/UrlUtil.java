@@ -1,9 +1,13 @@
 package by.ishangulyyev.desktop.util;
 
 import by.ishangulyyev.desktop.model.AuthenticationRequest;
+import by.ishangulyyev.desktop.model.Cargo;
+import by.ishangulyyev.desktop.model.CargoContent;
 import by.ishangulyyev.desktop.model.Employee;
 import by.ishangulyyev.desktop.model.Person;
 import by.ishangulyyev.desktop.service.AuthenticationSerializer;
+import by.ishangulyyev.desktop.service.CargoContentSerializer;
+import by.ishangulyyev.desktop.service.CargoSerializer;
 import by.ishangulyyev.desktop.service.EmployeeSerializer;
 import by.ishangulyyev.desktop.service.PersonSerializer;
 import com.google.gson.Gson;
@@ -31,6 +35,8 @@ public class UrlUtil {
     @SneakyThrows
     public static <T> T put(String url, T entity, Class<T> tClass) {
         Gson gson = new GsonBuilder()
+                .registerTypeAdapter(Cargo.class, new CargoSerializer())
+                .registerTypeAdapter(CargoContent.class, new CargoContentSerializer())
                 .registerTypeAdapter(Employee.class, new EmployeeSerializer())
                 .registerTypeAdapter(AuthenticationRequest.class, new AuthenticationSerializer())
                 .registerTypeAdapter(Person.class, new PersonSerializer())
