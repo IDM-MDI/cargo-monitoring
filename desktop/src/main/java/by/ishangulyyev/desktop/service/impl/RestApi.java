@@ -3,23 +3,18 @@ package by.ishangulyyev.desktop.service.impl;
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.service.WebDelete;
 import by.ishangulyyev.desktop.service.WebGet;
+import by.ishangulyyev.desktop.service.WebPatch;
 import by.ishangulyyev.desktop.service.WebPost;
 import by.ishangulyyev.desktop.service.WebPut;
 import by.ishangulyyev.desktop.util.UrlUtil;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import lombok.SneakyThrows;
 
-public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete, WebPost<T> {
+public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete, WebPost<T>, WebPatch<T> {
     private static final String URL_PAGE_PARSE = "?page=%d&size=%d&filter=%s&direction=%s";
     @SneakyThrows
     @Override
     public Page getDTO(String url, int page, int size, String filter, String direction) {
-        return new Gson()
-                .fromJson(
-                        UrlUtil.readUrl(url + String.format(URL_PAGE_PARSE,page, size, filter, direction)),
-                        new TypeToken<Page>(){}.getType()
-                );
+        return UrlUtil.get(url + String.format(URL_PAGE_PARSE,page, size, filter, direction), Page.class);
     }
 
     @SneakyThrows
@@ -31,11 +26,7 @@ public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete, WebPost<T> {
     @SneakyThrows
     @Override
     public T getDTO(String url, Class<T> tClass) {
-        return new Gson()
-                .fromJson(
-                        UrlUtil.readUrl(url),
-                        tClass
-                );
+        return UrlUtil.get(url, tClass);
     }
 
     @Override
@@ -51,5 +42,10 @@ public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete, WebPost<T> {
     @Override
     public T post(String url, T entity, Class<T> tClass) {
         return UrlUtil.post(url, entity, tClass);
+    }
+
+    @Override
+    public T patch(String url, String id, String params, Class<T> tClass) {
+        return UrlUtil.patch(url + "/" + id + "?" + params, tClass);
     }
 }

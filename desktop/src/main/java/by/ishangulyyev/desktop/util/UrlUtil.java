@@ -14,81 +14,88 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPatch;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 @UtilityClass
 public class UrlUtil {
     @SneakyThrows
-    public String readUrl(String urlString) {
-        URL url = new URL(urlString);
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()))) {
-            return getResponseString(reader);
-        }
+    public <T> T get(String url, Class<T> tClass) {
+        return sendRequest(new HttpGet(url), tClass);
     }
 
     @SneakyThrows
     public static <T> T put(String url, T entity, Class<T> tClass) {
-        return sendRequestWithBody(
-                url,
-                "PUT",
+        return sendRequest(
+                new HttpPut(url),
                 entity,
                 tClass
         );
     }
     @SneakyThrows
     public static <T> T post(String url, T entity, Class<T> tClass) {
-        return sendRequestWithBody(
-                url,
-                "POST",
+        return sendRequest(
+                new HttpPost(url),
                 entity,
                 tClass
         );
     }
+    public static <T> T patch(String url, Class<T> tClass) {
+        return sendRequest(new HttpPatch(url), tClass);
+    }
     @SneakyThrows
     public int delete(String uri) {
-        URL url = new URL(uri);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("DELETE");
-        int responseCode = connection.getResponseCode();
-        connection.disconnect();
-        return responseCode;
+        return sendRequest(new HttpDelete(uri));
     }
 
-    private static String getResponseString(BufferedReader reader) throws IOException {
-        StringBuilder buffer = new StringBuilder();
-        int read;
-        char[] chars = new char[1024];
-        while ((read = reader.read(chars)) != -1)
-            buffer.append(chars, 0, read);
-        return buffer.toString();
-    }
-
-    private static <T> T sendRequestWithBody(String url, String method, T entity, Class<T> tClass) throws IOException {
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(Cargo.class, new CargoSerializer())
-                .registerTypeAdapter(CargoContent.class, new CargoContentSerializer())
-                .registerTypeAdapter(Employee.class, new EmployeeSerializer())
-                .registerTypeAdapter(AuthenticationRequest.class, new AuthenticationSerializer())
-                .registerTypeAdapter(Person.class, new PersonSerializer())
-                .create();
-        String json = gson.toJson(entity);
-        URL uri = new URL(url);
-        HttpURLConnection connection = (HttpURLConnection) uri.openConnection();
-        connection.setRequestMethod(method);
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setDoOutput(true);
-        try(OutputStream outputStream = connection.getOutputStream()) {
-            outputStream.write(json.getBytes());
-            outputStream.flush();
+    @SneakyThrows
+    private static <T> T sendRequest(HttpEntityEnclosingRequestBase method, T entity, Class<T> tClass) {
+        try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(Cargo.class, new CargoSerializer())
+                    .registerTypeAdapter(CargoContent.class, new CargoContentSerializer())
+                    .registerTypeAdapter(Employee.class, new EmployeeSerializer())
+                    .registerTypeAdapter(AuthenticationRequest.class, new AuthenticationSerializer())
+                    .registerTypeAdapter(Person.class, new PersonSerializer())
+                    .create();
+            method.setEntity(new StringEntity(gson.toJson(entity)));
+            CloseableHttpResponse response = httpClient.execute(method);
+            HttpEntity httpEntity = response.getEntity();
+            return gson.fromJson(EntityUtils.toString(httpEntity), tClass);
         }
-        try(BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-            return gson.fromJson(getResponseString(reader), tClass);
+    }
+    @SneakyThrows
+    private static <T> T sendRequest(HttpRequestBase method, Class<T> tClass) {
+        try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            Gson gson = new GsonBuilder()
+                    .registerTypeAdapter(Cargo.class, new CargoSerializer())
+                    .registerTypeAdapter(CargoContent.class, new CargoContentSerializer())
+                    .registerTypeAdapter(Employee.class, new EmployeeSerializer())
+                    .registerTypeAdapter(AuthenticationRequest.class, new AuthenticationSerializer())
+                    .registerTypeAdapter(Person.class, new PersonSerializer())
+                    .create();
+            CloseableHttpResponse response = httpClient.execute(method);
+            HttpEntity entity = response.getEntity();
+            return gson.fromJson(EntityUtils.toString(entity), tClass);
+        }
+    }
+    @SneakyThrows
+    private static int sendRequest(HttpRequestBase method) {
+        try(CloseableHttpClient httpClient = HttpClients.createDefault()) {
+            return httpClient.execute(method)
+                    .getStatusLine()
+                    .getStatusCode();
         }
     }
 }

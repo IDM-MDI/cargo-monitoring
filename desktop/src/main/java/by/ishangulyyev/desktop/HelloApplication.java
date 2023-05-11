@@ -1,5 +1,6 @@
 package by.ishangulyyev.desktop;
 
+import by.ishangulyyev.desktop.util.UrlUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

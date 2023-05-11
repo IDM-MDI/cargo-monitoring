@@ -2,6 +2,7 @@ package by.ishangulyyev.desktop.controller;
 
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.model.PointcutDTO;
+import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,8 +14,9 @@ import javafx.scene.input.MouseEvent;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
-public class RouteController extends PageController<PointcutDTO> implements AddButton, Initializable {
+public class PointcutController extends PageController<PointcutDTO> implements AddButton, Initializable {
     public static final String POINTCUT_PAGE_URL = "http://localhost:8080/api/v1/pointcuts";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
@@ -25,13 +27,13 @@ public class RouteController extends PageController<PointcutDTO> implements AddB
     private TableColumn<PointcutDTO, Long> orderColumn;
     @FXML
     private TableColumn<PointcutDTO, String> loginColumn;
-    public RouteController() {
+    public PointcutController() {
         super(POINTCUT_PAGE_URL, SIZE, FILTER, DIRECTION);
     }
 
     @Override
     public void add(ActionEvent event) {
-
+        SceneUtil.switchScene(event, "add-pointcut.fxml");
     }
 
     @Override
@@ -51,7 +53,8 @@ public class RouteController extends PageController<PointcutDTO> implements AddB
 
     @Override
     protected void tableClicked(MouseEvent event, TableView<PointcutDTO> table) {
-        restApi.delete(POINTCUT_PAGE_URL, table.getSelectionModel().getSelectedItem().getId());
+        Consumer<EditPointcutController> consumer = controller -> controller.setContent(table.getSelectionModel().getSelectedItem());
+        SceneUtil.switchScene(event, "edit-pointcut.fxml", consumer);
     }
 
     @Override

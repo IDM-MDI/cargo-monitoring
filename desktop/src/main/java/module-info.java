@@ -2,6 +2,8 @@ module by.ishangulyyev.desktop {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.google.gson;
+    requires org.apache.httpcomponents.httpclient;
+    requires org.apache.httpcomponents.httpcore;
     requires static lombok;
 
 
