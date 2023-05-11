@@ -38,7 +38,7 @@ public class CargoController extends PageController<CargoPage> implements AddBut
 
     @Override
     public void add(ActionEvent event) {
-
+        SceneUtil.switchScene(event, "add-cargo.fxml");
     }
 
     @Override
