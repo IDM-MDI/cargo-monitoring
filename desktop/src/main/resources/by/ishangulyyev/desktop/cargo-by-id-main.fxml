@@ -110,6 +110,22 @@
                </VBox.margin>
                <children>
                   <Separator prefHeight="10.0" prefWidth="14.0" visible="false" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pointcut">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Separator prefHeight="10.0" prefWidth="72.0" visible="false" />
+                  <TextField fx:id="mainPointcutField" disable="true" editable="false" prefHeight="38.0" prefWidth="323.0" style="-fx-background-color: #FFFFFF;">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <Separator orientation="VERTICAL" prefHeight="19.0" visible="false" />
+            <HBox prefHeight="36.0" prefWidth="500.0" style="-fx-border-width: 0.1; -fx-border-color: #000; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 0, 10.0, 0, 4); -fx-background-color: #FFFFFF; -fx-background-radius: 5;">
+               <children>
+                  <Separator prefHeight="10.0" prefWidth="14.0" visible="false" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival time">
                      <font>
                         <Font size="20.0" />
@@ -119,7 +135,32 @@
                   <TextField fx:id="mainArrivalField" editable="false" prefHeight="101.0" prefWidth="318.0" style="-fx-background-color: #FFFFFF;">
                      <font>
                         <Font size="20.0" />
-                     </font></TextField>
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="63.0" right="61.0" />
+               </VBox.margin>
+            </HBox>
+            <Separator orientation="VERTICAL" prefHeight="19.0" visible="false" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#accept" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #46A537;" text="Accept" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="60.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#decline" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #D45555;" text="Decline" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="260.0" top="20.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
          </children>

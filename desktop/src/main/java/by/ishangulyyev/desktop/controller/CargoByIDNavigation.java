@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 
 import static by.ishangulyyev.desktop.controller.CargoController.CARGO_PAGE_URL;
 
-public abstract class CargoByIDNavigation implements EditButton, DeleteButton {
+public abstract class CargoByIDNavigation implements EditButton, DeleteButton, AcceptButton {
     protected RestApi<Cargo> restApi;
     protected Cargo cargo;
     protected boolean isEdit;
@@ -32,6 +32,8 @@ public abstract class CargoByIDNavigation implements EditButton, DeleteButton {
     protected TextField mainStatusField;
     @FXML
     protected TextField mainArrivalField;
+    @FXML
+    protected TextField mainPointcutField;
     @FXML
     protected TextField clientNameField;
     @FXML
@@ -132,6 +134,7 @@ public abstract class CargoByIDNavigation implements EditButton, DeleteButton {
                 mainIDField.setText(cargo.getId());
                 mainArrivalField.setText(cargo.getArrivalTime().toString());
                 mainTypeField.setText(cargo.getType());
+                mainPointcutField.setText(cargo.getPointcut());
                 mainStatusField.setText(cargo.getStatus());
             }
             case CLIENT -> {

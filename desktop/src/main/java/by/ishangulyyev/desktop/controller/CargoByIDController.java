@@ -34,4 +34,13 @@ public class CargoByIDController extends CargoByIDNavigation {
     public void onBackClick(MouseEvent event) {
         SceneUtil.switchScene(event, "cargos.fxml");
     }
+
+    @Override
+    public void accept(ActionEvent event) {
+        // TODO: 5/13/2023 accept
+    }
+    @FXML
+    public void decline(ActionEvent event) {
+        // TODO: 5/13/2023 decline
+    }
 }

@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 public class Cargo {
     private String id;
     private String qrCodeURL;
+    private String pointcut;
     private Person person;
     private CargoContent content;
     private Company company;
