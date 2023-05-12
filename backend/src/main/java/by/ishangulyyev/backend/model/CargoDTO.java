@@ -22,6 +22,8 @@ public class CargoDTO {
     private String id;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private String qrCodeURL;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private String pointcut;
     @Valid
     private CargoContentDTO content;
     @Valid
@@ -34,7 +36,6 @@ public class CargoDTO {
     private LocalDateTime arrivalTime;
     @NotNull
     private CargoType type;
-
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private CargoStatus status;
 }

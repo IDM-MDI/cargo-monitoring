@@ -4,6 +4,7 @@ import by.ishangulyyev.backend.entity.Cargo;
 import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.entity.Origin;
 import by.ishangulyyev.backend.entity.Pointcut;
+import by.ishangulyyev.backend.model.CargoDTO;
 import by.ishangulyyev.backend.model.CargoPage;
 import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
@@ -53,6 +54,9 @@ public class RepositoryConfig {
                             .status(source.getStatus())
                             .build();
                 });
+
+        modelMapper.createTypeMap(Cargo.class, CargoDTO.class)
+                .addMappings(mapping -> mapping.map(source -> source.getPointcut().getName(), CargoDTO::setPointcut));
         return modelMapper;
     }
 }

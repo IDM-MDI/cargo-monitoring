@@ -64,7 +64,7 @@ public class Cargo {
     @ToString.Exclude
     private Airport departureAirport;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "pointcut_id", nullable = false)
     @ToString.Exclude
     private Pointcut pointcut;
