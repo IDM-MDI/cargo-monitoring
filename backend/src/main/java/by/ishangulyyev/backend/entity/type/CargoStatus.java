@@ -1,5 +1,5 @@
 package by.ishangulyyev.backend.entity.type;
 
 public enum CargoStatus {
-    ACTIVE, DELETED, ACCEPTED, DECLINED;
+    ACTIVE, DELETED, FINISHED, DECLINED;
 }

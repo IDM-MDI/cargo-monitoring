@@ -6,6 +6,7 @@ import by.ishangulyyev.backend.model.PointcutDTO;
 import by.ishangulyyev.backend.repository.PointcutRepository;
 import by.ishangulyyev.backend.service.EmployeeService;
 import by.ishangulyyev.backend.service.PointcutService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
@@ -49,6 +50,11 @@ public class PointcutServiceImpl implements PointcutService {
     public void delete(String id) {
         repository.findById(id).orElseThrow(EntityNotFoundException::new);
         repository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Pointcut> findNext(@Valid Pointcut pointcut) {
+        return repository.findByNumberGreaterThan(pointcut.getNumber());
     }
 
     @Override

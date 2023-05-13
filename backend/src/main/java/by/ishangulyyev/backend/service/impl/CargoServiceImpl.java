@@ -3,6 +3,7 @@ package by.ishangulyyev.backend.service.impl;
 import by.ishangulyyev.backend.entity.AcceptedCargo;
 import by.ishangulyyev.backend.entity.Cargo;
 import by.ishangulyyev.backend.entity.DeclinedCargo;
+import by.ishangulyyev.backend.entity.Pointcut;
 import by.ishangulyyev.backend.entity.type.CargoStatus;
 import by.ishangulyyev.backend.exception.EntityNotFoundException;
 import by.ishangulyyev.backend.model.CargoDTO;
@@ -26,6 +27,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -86,8 +88,6 @@ public class CargoServiceImpl implements CargoService {
     public void accept(String id, String login) {
         Cargo cargo = repository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
-        cargo.setStatus(CargoStatus.ACCEPTED);
-        repository.save(cargo);
         acceptedCargoRepository.save(
                 AcceptedCargo.builder()
                         .cargo(cargo)
@@ -99,6 +99,9 @@ public class CargoServiceImpl implements CargoService {
                         .time(LocalDateTime.now())
                         .build()
         );
+        pointcutService.findNext(cargo.getPointcut())
+                .ifPresentOrElse(cargo::setPointcut, () -> cargo.setStatus(CargoStatus.FINISHED));
+        repository.save(cargo);
     }
 
     @Override

@@ -12,6 +12,7 @@ public interface PointcutRepository extends JpaRepository<Pointcut, String> {
     Optional<Pointcut> findFirstByOrderByNumberDesc();
     Optional<Pointcut> findByNumber(Long number);
     Optional<Pointcut> findByEmployee_Authentication_Login(String login);
+    Optional<Pointcut> findByNumberGreaterThan(Long number);
     @Query(value = "SELECT p.number FROM Pointcut p " +
             "ORDER BY p.number ASC")
     List<Long> findAllNumbers();
