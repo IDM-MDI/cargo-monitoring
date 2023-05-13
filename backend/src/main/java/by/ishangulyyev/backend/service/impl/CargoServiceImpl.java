@@ -1,21 +1,17 @@
 package by.ishangulyyev.backend.service.impl;
 
-import by.ishangulyyev.backend.entity.AcceptedCargo;
 import by.ishangulyyev.backend.entity.Cargo;
-import by.ishangulyyev.backend.entity.DeclinedCargo;
-import by.ishangulyyev.backend.entity.Pointcut;
 import by.ishangulyyev.backend.entity.type.CargoStatus;
 import by.ishangulyyev.backend.exception.EntityNotFoundException;
 import by.ishangulyyev.backend.model.CargoDTO;
 import by.ishangulyyev.backend.model.CargoPage;
-import by.ishangulyyev.backend.repository.AcceptedCargoRepository;
 import by.ishangulyyev.backend.repository.CargoRepository;
-import by.ishangulyyev.backend.repository.DeclinedCargoRepository;
+import by.ishangulyyev.backend.service.AcceptedCargoService;
 import by.ishangulyyev.backend.service.AirportService;
 import by.ishangulyyev.backend.service.CargoContentService;
 import by.ishangulyyev.backend.service.CargoService;
 import by.ishangulyyev.backend.service.CompanyService;
-import by.ishangulyyev.backend.service.EmployeeService;
+import by.ishangulyyev.backend.service.DeclinedCargoService;
 import by.ishangulyyev.backend.service.PersonService;
 import by.ishangulyyev.backend.service.PointcutService;
 import by.ishangulyyev.backend.util.CargoUtil;
@@ -26,22 +22,18 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.util.Optional;
-
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class CargoServiceImpl implements CargoService {
     private final CargoRepository repository;
-    private final AcceptedCargoRepository acceptedCargoRepository;
-    private final DeclinedCargoRepository declinedCargoRepository;
     private final PersonService personService;
     private final AirportService airportService;
     private final CompanyService companyService;
     private final CargoContentService cargoContentService;
-    private final EmployeeService employeeService;
     private final PointcutService pointcutService;
+    private final AcceptedCargoService acceptedCargoService;
+    private final DeclinedCargoService declinedCargoService;
     private final ModelMapper mapper;
     @Override
     public Page<CargoPage> findAll(Pageable pageable) {
@@ -85,43 +77,24 @@ public class CargoServiceImpl implements CargoService {
     }
 
     @Override
+    @Transactional
     public void accept(String id, String login) {
         Cargo cargo = repository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
-        acceptedCargoRepository.save(
-                AcceptedCargo.builder()
-                        .cargo(cargo)
-                        .employee(
-                                employeeService.findByLogin(login)
-                                        .orElseThrow(EntityNotFoundException::new)
-                        )
-                        .pointcut(cargo.getPointcut())
-                        .time(LocalDateTime.now())
-                        .build()
-        );
         pointcutService.findNext(cargo.getPointcut())
                 .ifPresentOrElse(cargo::setPointcut, () -> cargo.setStatus(CargoStatus.FINISHED));
         repository.save(cargo);
+        acceptedCargoService.accept(cargo, login);
     }
 
     @Override
+    @Transactional
     public void decline(String id, String login, String reason) {
         Cargo cargo = repository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
         cargo.setStatus(CargoStatus.DECLINED);
         repository.save(cargo);
-        declinedCargoRepository.save(
-                DeclinedCargo.builder()
-                        .cargo(cargo)
-                        .employee(
-                                employeeService.findByLogin(login)
-                                        .orElseThrow(EntityNotFoundException::new)
-                        )
-                        .pointcut(cargo.getPointcut())
-                        .reason(reason)
-                        .time(LocalDateTime.now())
-                        .build()
-        );
+        declinedCargoService.decline(cargo, login, reason);
     }
 
     @Override

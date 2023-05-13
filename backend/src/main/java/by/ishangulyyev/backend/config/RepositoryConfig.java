@@ -1,11 +1,13 @@
 package by.ishangulyyev.backend.config;
 
 import by.ishangulyyev.backend.entity.Cargo;
+import by.ishangulyyev.backend.entity.DeclinedCargo;
 import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.entity.Origin;
 import by.ishangulyyev.backend.entity.Pointcut;
 import by.ishangulyyev.backend.model.CargoDTO;
 import by.ishangulyyev.backend.model.CargoPage;
+import by.ishangulyyev.backend.model.DeclinedCargoDTO;
 import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
 import by.ishangulyyev.backend.model.OriginDTO;
@@ -57,6 +59,12 @@ public class RepositoryConfig {
 
         modelMapper.createTypeMap(Cargo.class, CargoDTO.class)
                 .addMappings(mapping -> mapping.map(source -> source.getPointcut().getName(), CargoDTO::setPointcut));
+
+        modelMapper.createTypeMap(DeclinedCargo.class, DeclinedCargoDTO.class)
+                .addMappings(mapping -> mapping.map(source -> source.getPointcut().getName(), DeclinedCargoDTO::setPointcut))
+                .addMappings(mapping -> mapping.map(source -> source.getEmployee().getPerson().getName(), DeclinedCargoDTO::setName))
+                .addMappings(mapping -> mapping.map(source -> source.getEmployee().getPerson().getSurname(), DeclinedCargoDTO::setSurname))
+                .addMappings(mapping -> mapping.map(source -> source.getCargo().getId(), DeclinedCargoDTO::setCargoID));
         return modelMapper;
     }
 }
