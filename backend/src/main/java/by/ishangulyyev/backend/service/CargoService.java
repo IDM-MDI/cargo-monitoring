@@ -10,7 +10,7 @@ public interface CargoService {
     CargoDTO save(CargoDTO cargo);
     CargoDTO findBy(String id);
     CargoDTO update(CargoDTO cargo, String id);
-    void accept(String id);
-    void decline(String id, String reason);
+    void accept(String id, String login);
+    void decline(String id, String login, String reason);
     void delete(String id);
 }
