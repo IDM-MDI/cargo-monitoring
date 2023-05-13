@@ -54,7 +54,7 @@ public class PointcutServiceImpl implements PointcutService {
 
     @Override
     public Optional<Pointcut> findNext(@Valid Pointcut pointcut) {
-        return repository.findByNumberGreaterThan(pointcut.getNumber());
+        return repository.findFirstByNumberGreaterThan(pointcut.getNumber());
     }
 
     @Override

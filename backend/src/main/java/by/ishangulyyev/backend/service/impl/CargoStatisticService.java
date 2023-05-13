@@ -6,6 +6,7 @@ import by.ishangulyyev.backend.model.CargoStatistic;
 import by.ishangulyyev.backend.repository.CargoRepository;
 import by.ishangulyyev.backend.service.StatisticService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +18,9 @@ public class CargoStatisticService implements StatisticService {
     public CargoStatistic find() {
         return CargoStatistic.builder()
                 .type(
-                        repository.mostShippedType()
+                        repository.mostShippedType(Pageable.ofSize(1))
+                                .stream()
+                                .findFirst()
                                 .orElse(CargoType.GLASS)
                 )
                 .finished(
@@ -25,11 +28,15 @@ public class CargoStatisticService implements StatisticService {
                                 .orElse(0L)
                 )
                 .popularCountry(
-                        repository.mostPopularCountry()
+                        repository.mostPopularCountry(Pageable.ofSize(1))
+                                .stream()
+                                .findFirst()
                                 .orElse("Empty")
                 )
                 .unpopularCountry(
-                        repository.mostUnpopularCountry()
+                        repository.mostUnpopularCountry(Pageable.ofSize(1))
+                                .stream()
+                                .findFirst()
                                 .orElse("Empty")
                 )
                 .minWeight(
