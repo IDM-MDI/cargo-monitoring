@@ -1,6 +1,5 @@
 package by.ishangulyyev.desktop;
 
-import by.ishangulyyev.desktop.util.UrlUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +13,6 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("authentication.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        scene.getStylesheets().add("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap");
         scene.getStylesheets().add("/by/ishangulyyev/desktop/application.css");
         stage.getIcons().add(new Image("icon.png"));
         stage.setResizable(false);

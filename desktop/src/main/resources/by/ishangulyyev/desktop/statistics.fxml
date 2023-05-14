@@ -83,22 +83,22 @@
                 </Button>
             </children>
         </GridPane>
-        <Separator layoutX="50.0" layoutY="91.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="36.0" />
+        <Separator disable="true" layoutX="50.0" layoutY="91.0" orientation="VERTICAL" prefHeight="67.0" prefWidth="36.0" visible="false" />
         <Separator layoutY="179.0" prefHeight="618.0" prefWidth="50.0" />
         <Separator layoutX="1168.0" layoutY="179.0" prefHeight="618.0" prefWidth="50.0" visible="false" AnchorPane.rightAnchor="0.0" />
       <VBox layoutX="68.0" layoutY="158.0" prefHeight="177.0" prefWidth="315.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
          <children>
               <Separator orientation="VERTICAL" prefHeight="23.0" prefWidth="36.0" visible="false" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many cargoes are accepted">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How many cargoes are finished" textAlignment="CENTER" wrappingWidth="315.87074279785156">
                <font>
                   <Font size="14.0" />
                </font>
                <VBox.margin>
-                  <Insets left="49.0" />
+                  <Insets />
                </VBox.margin>
             </Text>
             <Separator orientation="VERTICAL" prefHeight="23.0" prefWidth="36.0" visible="false" />
-            <Text fx:id="acceptedCargo" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="315.65005111694336">
+            <Text fx:id="finishedCargo" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="315.65005111694336">
                <font>
                   <Font size="32.0" />
                </font>
@@ -108,8 +108,8 @@
             </Text>
          </children>
       </VBox>
-      <Separator layoutX="68.0" layoutY="336.0" orientation="VERTICAL" prefHeight="101.0" prefWidth="36.0" />
-      <Separator layoutX="383.0" layoutY="265.0" prefWidth="78.0" />
+      <Separator disable="true" layoutX="68.0" layoutY="336.0" orientation="VERTICAL" prefHeight="101.0" prefWidth="36.0" visible="false" />
+      <Separator disable="true" layoutX="383.0" layoutY="265.0" prefWidth="78.0" visible="false" />
       <VBox layoutX="68.0" layoutY="438.0" prefHeight="177.0" prefWidth="315.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
          <children>
             <Separator orientation="VERTICAL" prefHeight="23.0" prefWidth="36.0" visible="false" />
@@ -176,7 +176,7 @@
             </Text>
          </children>
       </VBox>
-      <Separator layoutX="776.0" layoutY="245.0" prefWidth="78.0" />
+      <Separator disable="true" layoutX="776.0" layoutY="245.0" prefWidth="78.0" visible="false" />
       <VBox layoutX="854.0" layoutY="158.0" prefHeight="177.0" prefWidth="315.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 10;">
          <children>
             <Separator orientation="VERTICAL" prefHeight="23.0" prefWidth="36.0" visible="false" />

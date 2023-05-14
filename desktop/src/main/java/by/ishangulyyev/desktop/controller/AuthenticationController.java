@@ -2,6 +2,7 @@ package by.ishangulyyev.desktop.controller;
 
 import by.ishangulyyev.desktop.model.Authentication;
 import by.ishangulyyev.desktop.service.impl.RestApi;
+import by.ishangulyyev.desktop.util.AlertUtil;
 import by.ishangulyyev.desktop.util.AuthenticationPropertiesUtil;
 import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
@@ -31,8 +32,9 @@ public class AuthenticationController {
                         .build(),
                 Authentication.class
         );
-        AuthenticationPropertiesUtil.setProperties("login", authentication.getToken());
+        AuthenticationPropertiesUtil.setProperties("login", authentication.getLogin());
         AuthenticationPropertiesUtil.setProperties("token", authentication.getToken());
+        AlertUtil.successMessage("Authorized", "You have been successfully authorized");
         SceneUtil.switchScene(event, "employees.fxml");
     }
 }

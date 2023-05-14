@@ -37,10 +37,15 @@ public class CargoByIDController extends CargoByIDNavigation {
 
     @Override
     public void accept(ActionEvent event) {
-        // TODO: 5/13/2023 accept
+        try {
+            restApi.patch(CARGO_PAGE_URL + "/" + cargo.getId() + "/accept", Cargo.class);
+        } catch (Exception e) {
+
+        }
+        setInitial(cargo.getId());
     }
     @FXML
     public void decline(ActionEvent event) {
-        // TODO: 5/13/2023 decline
+        restApi.patch(CARGO_PAGE_URL + "/" + cargo.getId() + "/decline?reason=Cargo%20declined%20by%20admin", Cargo.class);
     }
 }

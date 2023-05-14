@@ -100,7 +100,7 @@
                </cursor>
                 </ImageView>
                 <Separator prefHeight="52.0" prefWidth="374.0" visible="false" />
-                <Text fx:id="leftArrow" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" visible="false" wrappingWidth="21.890625">
+                <Text fx:id="leftArrow" disable="true" onMouseClicked="#onLeftArrowClick" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt;" visible="false" wrappingWidth="21.890625">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -121,7 +121,7 @@
                     </HBox.margin>
                 </Text>
                 <Separator prefWidth="40.0" visible="false" />
-                <Text fx:id="rightArrow" disable="true" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" visible="false">
+                <Text fx:id="rightArrow" disable="true" onMouseClicked="#onRightArrowClick" strokeType="OUTSIDE" strokeWidth="0.0" text="&gt;" visible="false">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -137,13 +137,13 @@
         <Separator layoutX="503.0" layoutY="155.0" orientation="VERTICAL" prefHeight="24.0" prefWidth="36.0" visible="false" />
         <Separator layoutX="-6.0" layoutY="191.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
         <Separator layoutX="1168.0" layoutY="179.0" prefHeight="618.0" prefWidth="28.0" visible="false" />
-        <TableView layoutX="14.0" layoutY="211.0" onMouseClicked="#tableClicked" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
+        <TableView fx:id="table" layoutX="14.0" layoutY="211.0" onMouseClicked="#tableClicked" prefHeight="553.0" prefWidth="1146.0" style="-fx-font-size: 20; -fx-background-color: FFFFFF; -fx-border-width: 0.3; -fx-border-color: #000;">
             <columns>
-                <TableColumn editable="false" prefWidth="211.20001220703125" style="-fx-background-color: FFFFFF;" text="id" />
-                <TableColumn editable="false" minWidth="9.60003662109375" prefWidth="223.199951171875" style="-fx-background-color: FFFFFF;" text="name" />
-                <TableColumn editable="false" prefWidth="228.7999267578125" style="-fx-background-color: FFFFFF;" text="surname" />
-                <TableColumn editable="false" prefWidth="245.60009765625" style="-fx-background-color: FFFFFF;" text="pointcut" />
-                <TableColumn editable="false" prefWidth="243.19989013671875" style="-fx-background-color: FFFFFF;" text="cargo" />
+                <TableColumn fx:id="id" editable="false" prefWidth="211.20001220703125" style="-fx-background-color: FFFFFF;" text="id" />
+                <TableColumn fx:id="name" editable="false" minWidth="9.60003662109375" prefWidth="223.199951171875" style="-fx-background-color: FFFFFF;" text="name" />
+                <TableColumn fx:id="surname" editable="false" prefWidth="228.7999267578125" style="-fx-background-color: FFFFFF;" text="surname" />
+                <TableColumn fx:id="pointcut" editable="false" prefWidth="245.60009765625" style="-fx-background-color: FFFFFF;" text="pointcut" />
+                <TableColumn fx:id="cargo" editable="false" prefWidth="243.19989013671875" style="-fx-background-color: FFFFFF;" text="cargo" />
             </columns>
         </TableView>
         <Separator layoutX="521.0" layoutY="736.0" orientation="VERTICAL" prefHeight="64.0" prefWidth="36.0" visible="false" />
