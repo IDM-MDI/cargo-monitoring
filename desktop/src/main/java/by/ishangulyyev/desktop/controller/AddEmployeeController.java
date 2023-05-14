@@ -1,5 +1,7 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.button.AcceptButton;
+import by.ishangulyyev.desktop.button.BackButton;
 import by.ishangulyyev.desktop.model.Authentication;
 import by.ishangulyyev.desktop.model.Employee;
 import by.ishangulyyev.desktop.model.Origin;

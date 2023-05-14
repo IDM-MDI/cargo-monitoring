@@ -1,12 +1,11 @@
 package by.ishangulyyev.desktop.controller;
 
-import by.ishangulyyev.desktop.HelloApplication;
+import by.ishangulyyev.desktop.button.AddButton;
 import by.ishangulyyev.desktop.model.EmployeePage;
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.util.SceneUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;

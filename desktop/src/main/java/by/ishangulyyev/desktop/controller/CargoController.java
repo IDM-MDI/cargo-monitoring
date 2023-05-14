@@ -1,6 +1,6 @@
 package by.ishangulyyev.desktop.controller;
 
-import by.ishangulyyev.desktop.model.Cargo;
+import by.ishangulyyev.desktop.button.AddButton;
 import by.ishangulyyev.desktop.model.CargoPage;
 import by.ishangulyyev.desktop.model.Page;
 import by.ishangulyyev.desktop.util.SceneUtil;

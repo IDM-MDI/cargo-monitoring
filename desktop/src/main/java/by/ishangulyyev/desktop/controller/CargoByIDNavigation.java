@@ -1,5 +1,8 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.button.AcceptButton;
+import by.ishangulyyev.desktop.button.DeleteButton;
+import by.ishangulyyev.desktop.button.EditButton;
 import by.ishangulyyev.desktop.model.Cargo;
 import by.ishangulyyev.desktop.model.CargoScene;
 import by.ishangulyyev.desktop.service.impl.RestApi;

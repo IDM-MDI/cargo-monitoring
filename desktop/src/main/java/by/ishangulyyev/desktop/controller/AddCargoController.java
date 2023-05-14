@@ -1,5 +1,7 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.button.AcceptButton;
+import by.ishangulyyev.desktop.button.BackButton;
 import by.ishangulyyev.desktop.model.Airport;
 import by.ishangulyyev.desktop.model.Cargo;
 import by.ishangulyyev.desktop.model.CargoContent;

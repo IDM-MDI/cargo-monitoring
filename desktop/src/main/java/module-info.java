@@ -20,4 +20,6 @@ module by.ishangulyyev.desktop {
     exports by.ishangulyyev.desktop.service.impl;
     exports by.ishangulyyev.desktop.controller;
     exports by.ishangulyyev.desktop.util;
+    exports by.ishangulyyev.desktop.button;
+    opens by.ishangulyyev.desktop.button to javafx.fxml;
 }

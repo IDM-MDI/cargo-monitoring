@@ -1,5 +1,8 @@
 package by.ishangulyyev.desktop.controller;
 
+import by.ishangulyyev.desktop.button.BackButton;
+import by.ishangulyyev.desktop.button.DeleteButton;
+import by.ishangulyyev.desktop.button.EditButton;
 import by.ishangulyyev.desktop.model.Employee;
 import by.ishangulyyev.desktop.model.EmployeePage;
 import by.ishangulyyev.desktop.service.impl.RestApi;
