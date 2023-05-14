@@ -1,11 +1,7 @@
 package by.ishangulyyev.desktop.controller;
 
-import by.ishangulyyev.desktop.model.AuthenticationRequest;
 import by.ishangulyyev.desktop.model.Employee;
 import by.ishangulyyev.desktop.model.EmployeePage;
-import by.ishangulyyev.desktop.model.Origin;
-import by.ishangulyyev.desktop.model.Person;
-import by.ishangulyyev.desktop.model.PublicData;
 import by.ishangulyyev.desktop.service.impl.RestApi;
 import by.ishangulyyev.desktop.util.PageUtil;
 import by.ishangulyyev.desktop.util.SceneUtil;
@@ -16,8 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
-
-import java.time.LocalDate;
 
 import static by.ishangulyyev.desktop.controller.AddEmployeeController.getEmployee;
 import static by.ishangulyyev.desktop.controller.EmployeeController.EMPLOYEE_PAGE_URL;

@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public class Employee {
     private String id;
     @SerializedName("authentication")
-    private AuthenticationRequest authentication;
+    private Authentication authentication;
     @SerializedName("person")
     private Person person;
     @SerializedName("salary")

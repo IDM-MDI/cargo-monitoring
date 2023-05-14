@@ -35,6 +35,11 @@ public class RestApi<T> implements WebGet<T>, WebPut<T>, WebDelete, WebPost<T>, 
     }
 
     @Override
+    public int delete(String url, String id, String token) {
+        return 0;
+    }
+
+    @Override
     public T put(String url, String id, T entity, Class<T> tClass) {
         return UrlUtil.put(url + "/" + id, entity, tClass);
     }

@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationRequest {
-    @SerializedName("login")
+public class Authentication {
     private String login;
-    @SerializedName("password")
     private String password;
+
+    private String role;
+    private String token;
 }

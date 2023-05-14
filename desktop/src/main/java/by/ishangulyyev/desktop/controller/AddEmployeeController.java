@@ -1,6 +1,6 @@
 package by.ishangulyyev.desktop.controller;
 
-import by.ishangulyyev.desktop.model.AuthenticationRequest;
+import by.ishangulyyev.desktop.model.Authentication;
 import by.ishangulyyev.desktop.model.Employee;
 import by.ishangulyyev.desktop.model.Origin;
 import by.ishangulyyev.desktop.model.Person;
@@ -81,7 +81,7 @@ public class AddEmployeeController implements BackButton, AcceptButton {
     public static Employee getEmployee(TextField loginField, TextField passwordField, TextField nameField, TextField surnameField, TextField lastnameField, TextField birthdayField, TextField genderField, TextField countryField, TextField cityField, TextField emailField, TextField phoneField, TextField salaryField, TextField positionField) {
         return Employee.builder()
                 .authentication(
-                        AuthenticationRequest.builder()
+                        Authentication.builder()
                                 .login(loginField.getText())
                                 .password(passwordField.getText())
                                 .build()
