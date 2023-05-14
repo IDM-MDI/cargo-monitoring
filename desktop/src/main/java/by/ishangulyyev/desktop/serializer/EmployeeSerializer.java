@@ -1,4 +1,4 @@
-package by.ishangulyyev.desktop.service;
+package by.ishangulyyev.desktop.serializer;
 
 import by.ishangulyyev.desktop.model.Employee;
 import com.google.gson.JsonElement;

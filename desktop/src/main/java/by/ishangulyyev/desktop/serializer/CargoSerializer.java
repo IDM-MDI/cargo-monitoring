@@ -1,4 +1,4 @@
-package by.ishangulyyev.desktop.service;
+package by.ishangulyyev.desktop.serializer;
 
 import by.ishangulyyev.desktop.model.Cargo;
 import com.google.gson.JsonElement;

@@ -1,18 +1,21 @@
-package by.ishangulyyev.desktop.service;
+package by.ishangulyyev.desktop.adapter;
 
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
+import lombok.SneakyThrows;
 
-import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class LocalDateTimeAdapter extends TypeAdapter<LocalDateTime> {
-    private final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+public class LocalDateAdapter extends TypeAdapter<LocalDate> {
+
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    @SneakyThrows
     @Override
-    public void write(JsonWriter out, LocalDateTime value) throws IOException {
+    public void write(JsonWriter out, LocalDate value){
         if (value == null) {
             out.nullValue();
         } else {
@@ -20,14 +23,22 @@ public class LocalDateTimeAdapter extends TypeAdapter<LocalDateTime> {
         }
     }
 
+    @SneakyThrows
     @Override
-    public LocalDateTime read(JsonReader in) throws IOException {
+    public LocalDate read(JsonReader in) {
         if (JsonToken.NULL.equals(in.peek())) {
             in.nextNull();
             return null;
         } else {
             String dateStr = in.nextString();
-            return LocalDateTime.parse(dateStr, formatter);
+            return LocalDate.parse(dateStr, formatter);
         }
     }
 }
+
+
+
+
+
+
+

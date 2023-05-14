@@ -22,4 +22,8 @@ module by.ishangulyyev.desktop {
     exports by.ishangulyyev.desktop.util;
     exports by.ishangulyyev.desktop.button;
     opens by.ishangulyyev.desktop.button to javafx.fxml;
+    exports by.ishangulyyev.desktop.adapter;
+    opens by.ishangulyyev.desktop.adapter to com.google.gson;
+    exports by.ishangulyyev.desktop.serializer;
+    opens by.ishangulyyev.desktop.serializer to com.google.gson;
 }

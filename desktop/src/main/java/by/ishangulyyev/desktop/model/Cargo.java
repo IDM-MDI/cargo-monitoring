@@ -1,6 +1,6 @@
 package by.ishangulyyev.desktop.model;
 
-import by.ishangulyyev.desktop.service.LocalDateTimeAdapter;
+import by.ishangulyyev.desktop.adapter.LocalDateTimeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
