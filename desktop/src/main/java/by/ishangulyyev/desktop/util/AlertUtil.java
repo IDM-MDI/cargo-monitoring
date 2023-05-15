@@ -27,9 +27,7 @@ public class AlertUtil {
         alert.getDialogPane().getStylesheets().add("/by/ishangulyyev/desktop/application.css");
         alert.getDialogPane().getStyleClass().add(css);
         Button okButton = (Button) alert.getDialogPane().lookupButton(ButtonType.OK);
-        Button cancelButton = (Button) alert.getDialogPane().lookupButton(ButtonType.CANCEL);
         okButton.getStyleClass().add("btn-default");
-        cancelButton.getStyleClass().add("btn-default");
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
