@@ -2,7 +2,6 @@ package by.ishangulyyev.backend.service.impl;
 
 import by.ishangulyyev.backend.entity.AcceptedCargo;
 import by.ishangulyyev.backend.entity.Cargo;
-import by.ishangulyyev.backend.entity.Employee;
 import by.ishangulyyev.backend.exception.EntityNotFoundException;
 import by.ishangulyyev.backend.repository.AcceptedCargoRepository;
 import by.ishangulyyev.backend.service.AcceptedCargoService;
@@ -24,7 +23,7 @@ public class AcceptedCargoServiceImpl implements AcceptedCargoService {
                 AcceptedCargo.builder()
                         .cargo(cargo)
                         .employee(
-                                employeeService.findByLogin(login)
+                                employeeService.findByLoginEntity(login)
                                         .orElseThrow(EntityNotFoundException::new)
                         )
                         .pointcut(cargo.getPointcut())

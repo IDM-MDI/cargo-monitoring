@@ -27,7 +27,7 @@ public class DeclinedCargoServiceImpl implements DeclinedCargoService {
                 DeclinedCargo.builder()
                         .cargo(cargo)
                         .employee(
-                                employeeService.findByLogin(login)
+                                employeeService.findByLoginEntity(login)
                                         .orElseThrow(EntityNotFoundException::new)
                         )
                         .pointcut(cargo.getPointcut())

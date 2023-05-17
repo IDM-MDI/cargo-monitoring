@@ -72,7 +72,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Optional<Employee> findByLogin(String login) {
+    public EmployeeDTO findByLogin(String login) {
+        return findByLoginEntity(login)
+                .map(employee -> mapper.map(employee, EmployeeDTO.class))
+                .orElseThrow(EntityNotFoundException::new);
+    }
+
+    @Override
+    public Optional<Employee> findByLoginEntity(String login) {
         return repository.findByAuthentication_Login(login);
     }
 }

@@ -2,7 +2,7 @@ package by.ishangulyyev.backend.controller;
 
 import by.ishangulyyev.backend.model.EmployeeDTO;
 import by.ishangulyyev.backend.model.EmployeePage;
-import by.ishangulyyev.backend.service.impl.EmployeeServiceImpl;
+import by.ishangulyyev.backend.service.EmployeeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/employees")
 @RequiredArgsConstructor
 public class EmployeeController {
-    private final EmployeeServiceImpl service;
+    private final EmployeeService service;
 
     @GetMapping
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
@@ -40,6 +40,12 @@ public class EmployeeController {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     public EmployeeDTO findBy(@PathVariable String id) {
         return service.findBy(id);
+    }
+
+    @GetMapping("/login/{login}")
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
+    public EmployeeDTO findByLogin(@PathVariable String login) {
+        return service.findByLogin(login);
     }
 
     @PutMapping("/{id}")

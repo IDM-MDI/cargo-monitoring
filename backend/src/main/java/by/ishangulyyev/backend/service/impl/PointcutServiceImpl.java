@@ -64,7 +64,7 @@ public class PointcutServiceImpl implements PointcutService {
                 .orElseThrow(EntityNotFoundException::new);
         nullExistedEmployee(login);
         pointcut.setEmployee(
-                        employeeService.findByLogin(login)
+                        employeeService.findByLoginEntity(login)
                                 .orElseThrow(EntityNotFoundException::new)
                 );
         return mapper.map(repository.save(pointcut), PointcutDTO.class);
@@ -73,7 +73,7 @@ public class PointcutServiceImpl implements PointcutService {
     private Pointcut savePointcut(PointcutDTO pointcut) {
         Pointcut entity = mapper.map(pointcut, Pointcut.class);
         entity.setEmployee(
-                employeeService.findByLogin(pointcut.getLogin())
+                employeeService.findByLoginEntity(pointcut.getLogin())
                         .orElseThrow(EntityNotFoundException::new)
         );
         return repository.save(entity);

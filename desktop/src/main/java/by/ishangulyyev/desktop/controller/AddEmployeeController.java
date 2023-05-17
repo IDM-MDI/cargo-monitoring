@@ -8,7 +8,9 @@ import by.ishangulyyev.desktop.model.Origin;
 import by.ishangulyyev.desktop.model.Person;
 import by.ishangulyyev.desktop.model.PublicData;
 import by.ishangulyyev.desktop.service.impl.RestApi;
+import by.ishangulyyev.desktop.util.AlertUtil;
 import by.ishangulyyev.desktop.util.SceneUtil;
+import by.ishangulyyev.desktop.validator.PersonValidator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -80,7 +82,36 @@ public class AddEmployeeController implements BackButton, AcceptButton {
         SceneUtil.switchScene(event, "employees.fxml");
     }
 
-    public static Employee getEmployee(TextField loginField, TextField passwordField, TextField nameField, TextField surnameField, TextField lastnameField, TextField birthdayField, TextField genderField, TextField countryField, TextField cityField, TextField emailField, TextField phoneField, TextField salaryField, TextField positionField) {
+    public static Employee getEmployee(TextField loginField,
+                                       TextField passwordField,
+                                       TextField nameField,
+                                       TextField surnameField,
+                                       TextField lastnameField,
+                                       TextField birthdayField,
+                                       TextField genderField,
+                                       TextField countryField,
+                                       TextField cityField,
+                                       TextField emailField,
+                                       TextField phoneField,
+                                       TextField salaryField,
+                                       TextField positionField
+    ) {
+        if(!PersonValidator.isStringValid(loginField.getText())) {
+            AlertUtil.errorMessage("Login not valid", "Login must be not empty and length between 2 and 50");
+            throw new RuntimeException("Login not valid");
+        } else if(!PersonValidator.isStringValid(passwordField.getText())) {
+            AlertUtil.errorMessage("Password not valid", "Password must be not empty and length between 2 and 50");
+            throw new RuntimeException("Password not valid");
+        } else if(!PersonValidator.isStringValid(nameField.getText())) {
+            AlertUtil.errorMessage("Name not valid", "Name must be not empty and length between 2 and 50");
+            throw new RuntimeException("Name not valid");
+        } else if(!PersonValidator.isStringValid(surnameField.getText())) {
+            AlertUtil.errorMessage("Surname not valid", "Surname must be not empty and length between 2 and 50");
+            throw new RuntimeException("Surname not valid");
+        } else if(!PersonValidator.isStringValid(lastnameField.getText())) {
+            AlertUtil.errorMessage("Lastname not valid", "Lastname must be not empty and length between 2 and 50");
+            throw new RuntimeException("Lastname not valid");
+        }
         return Employee.builder()
                 .authentication(
                         Authentication.builder()

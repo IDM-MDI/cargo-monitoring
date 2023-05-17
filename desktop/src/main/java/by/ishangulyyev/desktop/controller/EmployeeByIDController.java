@@ -140,7 +140,6 @@ public class EmployeeByIDController implements BackButton, EditButton, DeleteBut
         } else {
             isEdit = false;
             mainText.setText("EMPLOYEE");
-            // TODO: 5/9/2023 ADD VALIDATION
             this.employee = restApi.put(EMPLOYEE_PAGE_URL, employee.getId() , createEmployee(), Employee.class);
             setScene();
         }

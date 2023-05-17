@@ -14,6 +14,7 @@ public interface EmployeeService {
     EmployeeDTO findBy(String id);
     EmployeeDTO update(EmployeeDTO employee, String id);
     void delete(String id);
+    EmployeeDTO findByLogin(String login);
 
-    Optional<Employee> findByLogin(String login);
+    Optional<Employee> findByLoginEntity(String login);
 }
