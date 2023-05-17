@@ -81,6 +81,9 @@ public class CargoServiceImpl implements CargoService {
     public void accept(String id, String login) {
         Cargo cargo = repository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
+        if(cargo.getStatus().equals(CargoStatus.FINISHED)) {
+            return;
+        }
         pointcutService.findNext(cargo.getPointcut())
                 .ifPresentOrElse(cargo::setPointcut, () -> cargo.setStatus(CargoStatus.FINISHED));
         repository.save(cargo);
