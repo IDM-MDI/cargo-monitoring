@@ -53,14 +53,13 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    @Transactional
     public Authentication update(AuthenticationRequest authentication, String id) {
         Optional<Authentication> byId = repository.findById(id);
         if(byId.isEmpty()) {
             return registration(authentication);
         }
         Authentication entity = byId.get();
-        entity.setPassword(authentication.getPassword());
+        entity.setPassword(passwordEncoder.encode(authentication.getPassword()));
         return repository.save(entity);
     }
 }

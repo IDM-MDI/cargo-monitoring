@@ -38,6 +38,7 @@ public class EditPointcutController implements AcceptButton, BackButton, DeleteB
     public void accept(ActionEvent event) {
         this.pointcut = restApi.patch(POINTCUT_PAGE_URL, pointcut.getId(), "login=" + loginField.getText(), PointcutDTO.class);
         setFields(pointcut);
+        SceneUtil.switchScene(event, "routes.fxml");
     }
 
     @Override

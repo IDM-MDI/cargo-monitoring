@@ -22,8 +22,7 @@ public class CargoByIDController extends CargoByIDNavigation {
         if(isEdit) {
             isEdit = false;
             super.cargo = restApi.put(CARGO_PAGE_URL, cargo.getId(), cargo, Cargo.class);
-            setEditableFields();
-            setFields();
+            SceneUtil.switchScene(event, "cargos.fxml");
         } else {
             isEdit = true;
             setEditableFields();

@@ -95,6 +95,9 @@ public class CargoServiceImpl implements CargoService {
     public void decline(String id, String login, String reason) {
         Cargo cargo = repository.findById(id)
                 .orElseThrow(EntityNotFoundException::new);
+        if(cargo.getStatus().equals(CargoStatus.DECLINED)) {
+            return;
+        }
         cargo.setStatus(CargoStatus.DECLINED);
         repository.save(cargo);
         declinedCargoService.decline(cargo, login, reason);
