@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/navLayout"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/navImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/main_application_nav_shape" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/mainAppLayout"
+        android:layout_width="287dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/mainAppImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/main_application_name_shape" />
+
+        <TextView
+            android:layout_width="228dp"
+            android:layout_height="37dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="59dp"
+            android:text="Monitoring App"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:visibility="visible"
+            tools:visibility="visible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/loginForm"
+        android:layout_width="265dp"
+        android:layout_height="167dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="22dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainAppLayout">
+
+        <TextView
+            android:id="@+id/LoginText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_text"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/loginField"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="@string/login_field_hint"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/passwordField"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="@string/password_field_hint"
+            android:inputType="textPassword" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitButton"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="216dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="96dp"
+        android:background="#478BBC"
+        android:bottomLeftRadius="1dp"
+        android:bottomRightRadius="1dp"
+        android:text="@string/submit_button"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:topLeftRadius="1dp"
+        android:topRightRadius="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginForm"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
