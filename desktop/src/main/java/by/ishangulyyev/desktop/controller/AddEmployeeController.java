@@ -111,6 +111,30 @@ public class AddEmployeeController implements BackButton, AcceptButton {
         } else if(!PersonValidator.isStringValid(lastnameField.getText())) {
             AlertUtil.errorMessage("Lastname not valid", "Lastname must be not empty and length between 2 and 50");
             throw new RuntimeException("Lastname not valid");
+        } else if(!PersonValidator.isLocalDateValid(birthdayField.getText())) {
+            AlertUtil.errorMessage("Birthday not valid", "Birthday day need to be year-month-day");
+            throw new RuntimeException("Birthday not valid");
+        } else if(!PersonValidator.isStringValid(countryField.getText())) {
+            AlertUtil.errorMessage("Country not valid", "Country must be not empty and length between 2 and 50");
+            throw new RuntimeException("Country not valid");
+        } else if(!PersonValidator.isStringValid(cityField.getText())) {
+            AlertUtil.errorMessage("City not valid", "City must be not empty and length between 2 and 50");
+            throw new RuntimeException("City not valid");
+        } else if(!PersonValidator.isGenderValid(genderField.getText())) {
+            AlertUtil.errorMessage("Gender not valid", "Gender must be not empty and length between 2 and 50 AND MALE OR FEMALE");
+            throw new RuntimeException("Gender not valid");
+        } else if(!PersonValidator.isPhone(phoneField.getText())) {
+            AlertUtil.errorMessage("Phone not valid", "Phone must +number{1,3}-number{1,4}-number{1,4}-number{1,4}");
+            throw new RuntimeException("Phone not valid");
+        } else if(!PersonValidator.isEmail(emailField.getText())) {
+            AlertUtil.errorMessage("Email not valid", "Input value must be email");
+            throw new RuntimeException("Email not valid");
+        } else if(!PersonValidator.isStringValid(positionField.getText())) {
+            AlertUtil.errorMessage("Position not valid", "Position must be not empty and length between 2 and 50");
+            throw new RuntimeException("Position not valid");
+        } else if(!PersonValidator.isNumber(salaryField.getText())) {
+            AlertUtil.errorMessage("Salary not valid", "Salary must be number");
+            throw new RuntimeException("Salary not valid");
         }
         return Employee.builder()
                 .authentication(

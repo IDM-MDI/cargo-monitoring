@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Cargo Monitoring</string>
-    <string name="submit_button">Submit</string>
-    <string name="password_field_hint">Password</string>
-    <string name="login_field_hint">Login</string>
-    <string name="login_text">Login</string>
-</resources>
