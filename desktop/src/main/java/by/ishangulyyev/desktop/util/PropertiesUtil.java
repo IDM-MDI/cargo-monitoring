@@ -3,13 +3,20 @@ package by.ishangulyyev.desktop.util;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Properties;
 
 @UtilityClass
-public class AuthenticationPropertiesUtil {
-    private static final String FILENAME = "C:\\Work\\cargo-monitoring\\desktop\\src\\main\\resources\\authentication.properties";
+public class PropertiesUtil {
+    private static final String FILENAME = "property.properties";
+
+    @SneakyThrows
+    public static void init() {
+        File file = new File(FILENAME);
+        file.createNewFile();
+    }
 
     @SneakyThrows
     public static void setProperties(String key, String value) {

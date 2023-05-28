@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 
 
 public class EmployeeController extends PageController<EmployeePage> implements Initializable, AddButton {
-    public static final String EMPLOYEE_PAGE_URL = "http://localhost:8080/api/v1/employees";
+    public static final String EMPLOYEE_PAGE_URL = "/api/v1/employees";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";

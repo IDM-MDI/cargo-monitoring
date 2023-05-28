@@ -2,7 +2,7 @@ package by.ishangulyyev.desktop.service;
 
 import by.ishangulyyev.desktop.model.Authentication;
 import by.ishangulyyev.desktop.util.AlertUtil;
-import by.ishangulyyev.desktop.util.AuthenticationPropertiesUtil;
+import by.ishangulyyev.desktop.util.PropertiesUtil;
 import by.ishangulyyev.desktop.util.SceneUtil;
 import by.ishangulyyev.desktop.validator.AuthenticationValidator;
 import javafx.event.ActionEvent;
@@ -24,8 +24,8 @@ public interface AuthenticationService {
     }
 
     static void save(Authentication result) {
-        AuthenticationPropertiesUtil.setProperties("login", result.getLogin());
-        AuthenticationPropertiesUtil.setProperties("token", result.getToken());
+        PropertiesUtil.setProperties("login", result.getLogin());
+        PropertiesUtil.setProperties("token", result.getToken());
     }
 
     static void adminChecker(String role) {

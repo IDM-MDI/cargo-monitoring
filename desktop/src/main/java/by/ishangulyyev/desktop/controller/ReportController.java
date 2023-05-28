@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
 public class ReportController extends PageController<Report> implements Initializable {
-    public static final String REPORT_PAGE_URL = "http://localhost:8080/api/v1/cargos/decline";
+    public static final String REPORT_PAGE_URL = "/api/v1/cargos/decline";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";

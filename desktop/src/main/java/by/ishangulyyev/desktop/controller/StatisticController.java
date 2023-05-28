@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StatisticController extends PageHeader implements Initializable {
-    private static final String STATISTIC_URL = "http://localhost:8080/api/v1/statistics/cargo";
+    private static final String STATISTIC_URL = "/api/v1/statistics/cargo";
     private final RestApi<CargoStatistic> restApi;
     @FXML
     private Text finishedCargo;

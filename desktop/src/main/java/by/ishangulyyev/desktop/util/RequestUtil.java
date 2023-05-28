@@ -73,7 +73,7 @@ public class RequestUtil {
         }
     }
     private static void setToken(HttpRequestBase method) {
-        String token = AuthenticationPropertiesUtil.getPropertyValue("token");
+        String token = PropertiesUtil.getPropertyValue("token");
         if(Objects.isNull(token) || token.isBlank()) {
             return;
         }

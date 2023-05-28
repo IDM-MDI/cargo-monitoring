@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 import java.util.function.Consumer;
 
 public class PointcutController extends PageController<PointcutDTO> implements AddButton, Initializable {
-    public static final String POINTCUT_PAGE_URL = "http://localhost:8080/api/v1/pointcuts";
+    public static final String POINTCUT_PAGE_URL = "/api/v1/pointcuts";
     private static final int SIZE = 15;
     private static final String FILTER = "id";
     private static final String DIRECTION = "asc";

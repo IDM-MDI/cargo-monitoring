@@ -1,5 +1,7 @@
 package by.ishangulyyev.desktop;
 
+import by.ishangulyyev.desktop.util.IPUtil;
+import by.ishangulyyev.desktop.util.PropertiesUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +13,7 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        PropertiesUtil.init();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("authentication.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add("/by/ishangulyyev/desktop/application.css");

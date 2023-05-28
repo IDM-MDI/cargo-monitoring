@@ -5,7 +5,7 @@ import by.ishangulyyev.desktop.service.AuthenticationService;
 import javafx.event.ActionEvent;
 
 public class AuthenticationServiceImpl implements AuthenticationService {
-    private static final String AUTHENTICATION_URL = "http://localhost:8080/api/v1/user/login";
+    private static final String AUTHENTICATION_URL = "/api/v1/user/login";
     private final RestApi<Authentication> restApi;
 
     public AuthenticationServiceImpl() {
