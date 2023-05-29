@@ -31,10 +31,7 @@ public class AuthenticationController implements Initializable {
 
     @FXML
     public void submit(ActionEvent event) {
-        service.submit(event,Authentication.builder()
-                .login(loginField.getText())
-                .password(passwordField.getText())
-                .build());
+        service.submit(event,loginField.getText(), passwordField.getText());
     }
 
     @Override

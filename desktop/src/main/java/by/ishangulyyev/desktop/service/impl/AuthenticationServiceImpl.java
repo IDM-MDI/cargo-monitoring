@@ -13,8 +13,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public void submit(ActionEvent event, Authentication authentication) {
-        AuthenticationService.validChecker(authentication);
+    public void submit(ActionEvent event, String login, String password) {
+        Authentication authentication = AuthenticationService.getAuthentication(login, password);
         Authentication result = restApi.post(AUTHENTICATION_URL, authentication, Authentication.class);
         AuthenticationService.adminChecker(result.getRole());
         AuthenticationService.save(result);
